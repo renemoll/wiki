@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-27T22:24:01.319Z
+date: 2022-01-27T22:24:43.564Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -27,6 +27,7 @@ On `volatile`:
 
 ## On software design
 * [A Procedure for Designing Abstract Interfaces for Device Interface Modules](https://embeddedartistry.com/fieldatlas/a-procedure-for-designing-abstract-interfaces-for-device-interface-modules/)
+* [Prototyping and Design for Change: Lightweight Architectural Strategies](https://embeddedartistry.com/blog/2020/01/20/prototyping-for-portability-lightweight-architectural-strategies/)
 
 ## Embedded debugging
 
