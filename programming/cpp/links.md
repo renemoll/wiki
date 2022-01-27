@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-27T22:24:43.564Z
+date: 2022-01-27T22:25:52.565Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -10,6 +10,7 @@ dateCreated: 2022-01-27T22:05:03.403Z
 
 # C++ links
 
+A collection of pages I encountered which might be useful
 
 ## Usefull code
 * [SI units](https://github.com/bernedom/SI)
