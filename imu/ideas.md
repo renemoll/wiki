@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T21:53:58.900Z
+date: 2022-01-27T21:57:01.695Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -43,3 +43,4 @@ This page is a "link dump" with ideas and potential useful information/framework
 ## General
 
 * [My IMU estimation experience](https://sites.google.com/site/myimuestimationexperience/home): a starting point, but didn't get very far.
+* [On the Orientation Error of IMU: Investigating Static and Dynamic Accuracy Targeting Human Motion](https://www.researchgate.net/publication/307969925_On_the_Orientation_Error_of_IMU_Investigating_Static_and_Dynamic_Accuracy_Targeting_Human_Motion)
