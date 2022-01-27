@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T22:03:53.223Z
+date: 2022-01-27T22:09:15.809Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -40,11 +40,14 @@ This page is a "link dump" with ideas and potential useful information/framework
 
 * [Kalman and Bayesian Filters in Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python): great interactive introduction to Kalman filtering.
 
-
 ## General
 
 * [My IMU estimation experience](https://sites.google.com/site/myimuestimationexperience/home): a starting point, but didn't get very far.
 * [On the Orientation Error of IMU: Investigating Static and Dynamic Accuracy Targeting Human Motion](https://www.researchgate.net/publication/307969925_On_the_Orientation_Error_of_IMU_Investigating_Static_and_Dynamic_Accuracy_Targeting_Human_Motion)
+
+## Implementations
+
+* [AHRS: Attitude and Heading Reference Systems](https://ahrs.readthedocs.io/en/latest/)
 
 ## Sensors
 
