@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T22:02:58.769Z
+date: 2022-01-27T22:03:53.223Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
