@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T21:28:22.495Z
+date: 2022-01-27T21:53:58.900Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -10,6 +10,7 @@ dateCreated: 2022-01-27T21:26:50.775Z
 
 # Ideas & links
 
+This page is a "link dump" with ideas and potential useful information/frameworks/solutions/etc.
 
 ## Linear algebra
 
@@ -18,3 +19,27 @@ dateCreated: 2022-01-27T21:26:50.775Z
 
 ### x64
 * [libxsmm (Intel)](https://libxsmm.readthedocs.io/en/latest/)
+
+
+## Sensor fusion
+
+* [Sensor Fusion](https://sensorfusion.se/) online course material from Linköping University.
+* [Sensor Fusion: Part 1](https://telesens.co/2017/04/27/sensor-fusion-part-1/): a brief 4 part series fusing accelerometer and gyroscope data into orientation estimates.
+
+### IMU error sources
+
+* [An Intuitive Approach to Inertial Sensor Bias Estimation](https://www.hindawi.com/journals/ijno/2013/762758/)
+
+
+### Complementry filters
+
+* [Reading a IMU Without Kalman: The Complementary Filter](https://pieter-jan.com/node/11)
+
+### Kalman
+
+* [Kalman and Bayesian Filters in Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python): great interactive introduction to Kalman filtering.
+
+
+## General
+
+* [My IMU estimation experience](https://sites.google.com/site/myimuestimationexperience/home): a starting point, but didn't get very far.
