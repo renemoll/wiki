@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T21:59:55.941Z
+date: 2022-01-27T22:02:58.769Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -45,3 +45,7 @@ This page is a "link dump" with ideas and potential useful information/framework
 
 * [My IMU estimation experience](https://sites.google.com/site/myimuestimationexperience/home): a starting point, but didn't get very far.
 * [On the Orientation Error of IMU: Investigating Static and Dynamic Accuracy Targeting Human Motion](https://www.researchgate.net/publication/307969925_On_the_Orientation_Error_of_IMU_Investigating_Static_and_Dynamic_Accuracy_Targeting_Human_Motion)
+
+## Sensors
+
+* [TI Precision Labs - Magnetic sensors](https://training.ti.com/ti-precision-labs-magnetic-sensors)
