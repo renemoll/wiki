@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-27T22:16:02.753Z
+date: 2022-01-27T22:18:55.079Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -25,3 +25,9 @@ On `volatile`:
 
 * [Ending the Embedded Software Dark Ages: Let’s Start With Processor Fault Debugging!](https://embeddedartistry.com/blog/2021/01/11/hard-fault-debugging/)
 * [How to debug a HardFault on an ARM Cortex-M MCU](https://interrupt.memfault.com/blog/cortex-m-fault-debug?query=hardfault)
+
+## On embedded software design
+
+* [Embedded Virtual Machine](https://github.com/embvm)
+* [Virtual Devices in Embedded Systems Software](https://embeddedartistry.com/blog/2020/08/03/virtual-devices-in-embedded-systems-software/)
+* [Real-World Portable Driver Examples](https://embeddedartistry.com/blog/2020/11/23/real-world-portable-driver-examples/)
