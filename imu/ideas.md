@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T21:57:01.695Z
+date: 2022-01-27T21:59:55.941Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -25,6 +25,7 @@ This page is a "link dump" with ideas and potential useful information/framework
 
 * [Sensor Fusion](https://sensorfusion.se/) online course material from Linköping University.
 * [Sensor Fusion: Part 1](https://telesens.co/2017/04/27/sensor-fusion-part-1/): a brief 4 part series fusing accelerometer and gyroscope data into orientation estimates.
+* [sensor fusion library](https://github.com/xioTechnologies/Fusion) in C for fusing accelerometer, gyroscope and magnetometer data.
 
 ### IMU error sources
 
