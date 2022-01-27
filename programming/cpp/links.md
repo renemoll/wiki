@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-27T22:12:37.673Z
+date: 2022-01-27T22:16:02.753Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -15,5 +15,13 @@ On `volatile`:
 * [Modern Embedded C++ – Deprecation of volatile](https://blog.feabhas.com/2021/05/modern-embedded-c-deprecation-of-volatile/#more-3495)
 * [Improve volatile Usage with volatile_load() and volatile_store()](https://embeddedartistry.com/blog/2019/03/11/improve-volatile-usage-with-volatile_load-and-volatile_store/)
 
-On algorithm implementation:
+## On algorithm implementation:
 * [Numerical Recipes](http://numerical.recipes/)
+
+## On software design
+* [A Procedure for Designing Abstract Interfaces for Device Interface Modules](https://embeddedartistry.com/fieldatlas/a-procedure-for-designing-abstract-interfaces-for-device-interface-modules/)
+
+## Embedded debugging
+
+* [Ending the Embedded Software Dark Ages: Let’s Start With Processor Fault Debugging!](https://embeddedartistry.com/blog/2021/01/11/hard-fault-debugging/)
+* [How to debug a HardFault on an ARM Cortex-M MCU](https://interrupt.memfault.com/blog/cortex-m-fault-debug?query=hardfault)
