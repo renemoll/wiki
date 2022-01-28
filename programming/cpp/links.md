@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T21:46:39.535Z
+date: 2022-01-28T21:49:49.306Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -54,6 +54,15 @@ On `volatile`:
 * [Bare bones](https://wiki.osdev.org/Bare_bones)
 * [A tale of two toolchains and glibc](https://www.collabora.com/news-and-blog/blog/2021/09/30/a-tale-of-two-toolchains-and-glibc/)
 * [Generating relocatable code for ARM processors](https://blog.llvm.org/posts/2021-10-01-generating-relocatable-code-for-arm-processors/)
+
+* [Code Size Optimization: GCC Compiler Flags](https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags?query=improving%20compilation%20time)
+* [Improving Compilation Time of C/C++ Projects](https://interrupt.memfault.com/blog/improving-compilation-times-c-cpp-projects?query=improving%20compilation%20time)
+* [Better Firmware with LLVM/Clang](https://interrupt.memfault.com/blog/arm-cortexm-with-llvm-clang?query=better%20firmware%20with%20llvm)
+* [GNU Binutils: the ELF Swiss Army Knife](https://interrupt.memfault.com/blog/gnu-binutils?query=gnu%20binutil)
+
+### On linters, formatters, sanityzers and such
+
+* [Automatically format and lint code with pre-commit](https://interrupt.memfault.com/blog/pre-commit?query=automatically%20format%20and%20lint)
 
 ## On QML
 
