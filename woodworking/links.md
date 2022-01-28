@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:32:11.194Z
+date: 2022-01-28T22:35:50.405Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -18,6 +18,7 @@ dateCreated: 2022-01-28T22:04:39.055Z
 
 * [How To Make A Spoon](https://commonwoodworking.com/courses/how-to-make-a-spoon/)
 * [End tables](https://woodworkingmasterclasses.com/videos/sellers-home-end-tables/)
+* [How To Make A Drill Guide](https://ibuildit.ca/projects/how-to-make-a-drill-guide/)
 
 ### Inspiration: nightstand
 
