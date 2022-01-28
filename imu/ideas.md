@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-27T22:25:55.407Z
+date: 2022-01-28T22:17:24.200Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -20,6 +20,10 @@ This page is a "link dump" with ideas and potential useful information/framework
 ### x64
 * [libxsmm (Intel)](https://libxsmm.readthedocs.io/en/latest/)
 
+## On rotations
+
+* [Better rotation representations for accurate pose estimation](https://towardsdatascience.com/better-rotation-representations-for-accurate-pose-estimation-e890a7e1317f)
+* [3D Rotations: Intuitions And Limitations](https://towardsdatascience.com/3d-rotations-intuitions-and-limitations-f3ae2122fe23)
 
 ## Sensor fusion
 
