@@ -2,7 +2,7 @@
 title: STM32 bootstrap
 description: 
 published: true
-date: 2022-01-28T22:53:48.766Z
+date: 2022-01-28T22:54:57.274Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:38:54.482Z
@@ -19,3 +19,6 @@ Input:
   * [the code](https://github.com/memfault/zero-to-main)
 * [A General Overview of What Happens Before main()](https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/)
 * [Exploring Startup Implementations: Newlib (ARM)](https://embeddedartistry.com/blog/2019/04/17/exploring-startup-implementations-newlib-arm/)
+* [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
+
+* [Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
