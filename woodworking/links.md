@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:26:05.231Z
+date: 2022-01-28T22:32:11.194Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -17,6 +17,13 @@ dateCreated: 2022-01-28T22:04:39.055Z
 ## Projects
 
 * [How To Make A Spoon](https://commonwoodworking.com/courses/how-to-make-a-spoon/)
+* [End tables](https://woodworkingmasterclasses.com/videos/sellers-home-end-tables/)
+
+### Inspiration: nightstand
+
+* [Mid-Century Nightstand with Hexagon Patterned Drawers](https://www.youtube.com/watch?v=dgR8AwBmx7w)
+* [Making a Modern Nightstand / Bedside Table with Wireless Charging || How To Build - Woodworking](https://www.youtube.com/watch?v=UrvwLAaE0QQ)
+* [Walnut Side Table with Sapwood Inlay](https://www.youtube.com/watch?v=sCTI97jfHVo)
 
 
 ## Finishes
