@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-27T22:25:52.565Z
+date: 2022-01-28T21:42:44.336Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -44,3 +44,16 @@ On `volatile`:
 ## On documentation
 
 * [Embedded Artistry README Template](https://embeddedartistry.com/blog/2017/11/30/embedded-artistry-readme-template/)
+
+## Toolchain background
+
+* [ELF file structure](https://wiki.osdev.org/ELF) and [object file](https://en.wikipedia.org/wiki/Object_file)
+* [GCC sections](https://gcc.gnu.org/onlinedocs/gccint/Sections.html)
+* [Boot sequence](https://wiki.osdev.org/Boot_sequence)
+* [How kernel, compiler, and C library work together](https://wiki.osdev.org/How_kernel,_compiler,_and_C_library_work_together)
+* [Bare bones](https://wiki.osdev.org/Bare_bones)
+
+## On QML
+
+* [Developing a QML Keypad with TDD](https://embeddeduse.com/2021/11/18/developing-a-qml-keypad-with-tdd/)
+
