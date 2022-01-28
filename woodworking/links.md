@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:35:50.405Z
+date: 2022-01-28T22:36:13.509Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -49,3 +49,5 @@ dateCreated: 2022-01-28T22:04:39.055Z
 * [How To Choose Wood](https://commonwoodworking.com/choosing-wood/)
 
 ## Joinery
+
+* [The Practice Joint Frame](https://freeonlinewoodworkingschool.com/projects/the-practice-joint-frame/)
