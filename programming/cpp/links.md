@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T21:45:52.440Z
+date: 2022-01-28T21:46:39.535Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -53,6 +53,7 @@ On `volatile`:
 * [How kernel, compiler, and C library work together](https://wiki.osdev.org/How_kernel,_compiler,_and_C_library_work_together)
 * [Bare bones](https://wiki.osdev.org/Bare_bones)
 * [A tale of two toolchains and glibc](https://www.collabora.com/news-and-blog/blog/2021/09/30/a-tale-of-two-toolchains-and-glibc/)
+* [Generating relocatable code for ARM processors](https://blog.llvm.org/posts/2021-10-01-generating-relocatable-code-for-arm-processors/)
 
 ## On QML
 
