@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T22:33:31.142Z
+date: 2022-01-28T22:34:07.043Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -70,6 +70,7 @@ On `volatile`:
 * [Automatically format and lint code with pre-commit](https://interrupt.memfault.com/blog/pre-commit?query=automatically%20format%20and%20lint)
 * [LINT does not do peer reviews](https://betterembsw.blogspot.com/2020/08/lint-does-not-do-peer-reviews.html)
 * [Static checks with CMake/CDash (iwyu, clang-tidy, lwyu, cpplint and cppcheck)](https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/)
+* [cmake scripts](https://github.com/StableCoder/cmake-scripts#sanitizer-builds-sanitizerscmake)
 
 ## On QML
 
