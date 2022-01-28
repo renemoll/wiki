@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T21:49:49.306Z
+date: 2022-01-28T22:17:25.773Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -12,10 +12,13 @@ dateCreated: 2022-01-27T22:05:03.403Z
 
 A collection of pages I encountered which might be useful
 
+## Blogs
+
+* [Better Embedded System SW](https://betterembsw.blogspot.com/)
+
 ## Usefull code
 * [SI units](https://github.com/bernedom/SI)
-
-
+* foonathan [memory](https://github.com/foonathan/memory)
 
 On `volatile`:
 * [Modern Embedded C++ – Deprecation of volatile](https://blog.feabhas.com/2021/05/modern-embedded-c-deprecation-of-volatile/#more-3495)
@@ -60,9 +63,12 @@ On `volatile`:
 * [Better Firmware with LLVM/Clang](https://interrupt.memfault.com/blog/arm-cortexm-with-llvm-clang?query=better%20firmware%20with%20llvm)
 * [GNU Binutils: the ELF Swiss Army Knife](https://interrupt.memfault.com/blog/gnu-binutils?query=gnu%20binutil)
 
+* [Modern CMake – Tips and Tricks](https://www.incredibuild.com/blog/modern-cmake-tips-and-tricks)
+
 ### On linters, formatters, sanityzers and such
 
 * [Automatically format and lint code with pre-commit](https://interrupt.memfault.com/blog/pre-commit?query=automatically%20format%20and%20lint)
+* [LINT does not do peer reviews](https://betterembsw.blogspot.com/2020/08/lint-does-not-do-peer-reviews.html)
 
 ## On QML
 
