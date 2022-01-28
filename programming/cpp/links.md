@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T22:34:07.043Z
+date: 2022-01-28T22:36:40.705Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -24,14 +24,14 @@ On `volatile`:
 * [Modern Embedded C++ – Deprecation of volatile](https://blog.feabhas.com/2021/05/modern-embedded-c-deprecation-of-volatile/#more-3495)
 * [Improve volatile Usage with volatile_load() and volatile_store()](https://embeddedartistry.com/blog/2019/03/11/improve-volatile-usage-with-volatile_load-and-volatile_store/)
 
-
-
 ## On algorithm implementation:
 * [Numerical Recipes](http://numerical.recipes/)
 
 ## On software design
 * [A Procedure for Designing Abstract Interfaces for Device Interface Modules](https://embeddedartistry.com/fieldatlas/a-procedure-for-designing-abstract-interfaces-for-device-interface-modules/)
 * [Prototyping and Design for Change: Lightweight Architectural Strategies](https://embeddedartistry.com/blog/2020/01/20/prototyping-for-portability-lightweight-architectural-strategies/)
+* [Feature Flag-Driven Development](https://dzone.com/articles/feature-flag-driven-development)
+
 
 ## Embedded debugging
 
@@ -71,6 +71,8 @@ On `volatile`:
 * [LINT does not do peer reviews](https://betterembsw.blogspot.com/2020/08/lint-does-not-do-peer-reviews.html)
 * [Static checks with CMake/CDash (iwyu, clang-tidy, lwyu, cpplint and cppcheck)](https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/)
 * [cmake scripts](https://github.com/StableCoder/cmake-scripts#sanitizer-builds-sanitizerscmake)
+
+* [sourcegraph](https://about.sourcegraph.com/)
 
 ## On QML
 
