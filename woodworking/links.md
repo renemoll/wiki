@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:17:21.635Z
+date: 2022-01-28T22:26:05.231Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -26,6 +26,18 @@ dateCreated: 2022-01-28T22:04:39.055Z
 * [Spar Urethane vs. Polyurethane: Which Is Better?](https://www.h2ouse.org/spar-urethane-vs-polyurethane/)
 * [Top 5 Best Oil-Based Polyurethane for Hardwood Floors Reviews](https://woodworkingclarity.com/best-oil-based-polyurethane-for-hardwood-floors/)
 
+* [How To Choose A Wood Finish](https://commonwoodworking.com/wood-finishes/)
+
+* [No-Fuss Finishing for Wood](https://www.youtube.com/watch?v=JQA-EbQ2EGk)
+* [Advanced Staining Techniques](https://www.youtube.com/watch?v=8gKJcx5MMIk)
+* [Traditional Soap Finish | Experimental Wood Finishes #5](https://www.youtube.com/watch?v=FAs33bjnyDU)
+
 ## People
 
 * [PETER FOLLANSBEE: JOINER’S NOTES](https://pfollansbee.wordpress.com/)
+
+## Wood
+
+* [How To Choose Wood](https://commonwoodworking.com/choosing-wood/)
+
+## Joinery
