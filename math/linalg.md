@@ -2,7 +2,7 @@
 title: Linear algebra
 description: 
 published: true
-date: 2022-01-28T22:21:36.702Z
+date: 2022-01-28T22:43:38.772Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:21:36.702Z
@@ -17,6 +17,7 @@ dateCreated: 2022-01-28T22:21:36.702Z
   * [playlist](https://www.youtube.com/watch?v=8o5Cmfpeo6g&list=PLE7DDD91010BC51F8&index=40)
 * [Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/), book by Gilbert Strang.
 * [The Big Picture of Linear Algebra](https://www.youtube.com/watch?v=ggWYkes-n6E)
+* [Essence of linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=18), by  3Blue1Brown
 
 * [MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning, Spring ](https://www.youtube.com/watch?v=Cx5Z-OslNWE&list=PLUl4u3cNGP63oMNUHXqIUcrkS2PivhN3k)
 
