@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:43:31.213Z
+date: 2022-01-28T22:56:27.018Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -15,6 +15,12 @@ dateCreated: 2022-01-28T22:04:39.055Z
 
 
 ## Projects
+
+Corner clamp
+* [Video](https://www.youtube.com/watch?v=NSouUr3_lcc)
+* [Instructions](https://ibuildit.ca/projects/how-to-make-a-corner-clamp/)
+* [plans](https://ibuildit.ca/wp-content/uploads/Corner-Clamp-Plan.pdf)
+
 
 * [How To Make A Spoon](https://commonwoodworking.com/courses/how-to-make-a-spoon/)
 * [End tables](https://woodworkingmasterclasses.com/videos/sellers-home-end-tables/)
