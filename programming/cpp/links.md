@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T22:36:40.705Z
+date: 2022-01-28T22:36:52.488Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -71,6 +71,8 @@ On `volatile`:
 * [LINT does not do peer reviews](https://betterembsw.blogspot.com/2020/08/lint-does-not-do-peer-reviews.html)
 * [Static checks with CMake/CDash (iwyu, clang-tidy, lwyu, cpplint and cppcheck)](https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/)
 * [cmake scripts](https://github.com/StableCoder/cmake-scripts#sanitizer-builds-sanitizerscmake)
+
+## Tooling
 
 * [sourcegraph](https://about.sourcegraph.com/)
 
