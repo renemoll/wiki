@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T22:36:52.488Z
+date: 2022-01-28T22:37:12.961Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -65,12 +65,16 @@ On `volatile`:
 
 * [Modern CMake – Tips and Tricks](https://www.incredibuild.com/blog/modern-cmake-tips-and-tricks)
 
+* [text, data and bss: Code and Data Size Explained](https://mcuoneclipse.com/2013/04/14/text-data-and-bss-code-and-data-size-explained/)
+
 ### On linters, formatters, sanityzers and such
 
 * [Automatically format and lint code with pre-commit](https://interrupt.memfault.com/blog/pre-commit?query=automatically%20format%20and%20lint)
 * [LINT does not do peer reviews](https://betterembsw.blogspot.com/2020/08/lint-does-not-do-peer-reviews.html)
 * [Static checks with CMake/CDash (iwyu, clang-tidy, lwyu, cpplint and cppcheck)](https://www.kitware.com/static-checks-with-cmake-cdash-iwyu-clang-tidy-lwyu-cpplint-and-cppcheck/)
 * [cmake scripts](https://github.com/StableCoder/cmake-scripts#sanitizer-builds-sanitizerscmake)
+
+
 
 ## Tooling
 
