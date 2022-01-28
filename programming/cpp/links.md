@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-28T21:42:44.336Z
+date: 2022-01-28T21:45:52.440Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -52,6 +52,7 @@ On `volatile`:
 * [Boot sequence](https://wiki.osdev.org/Boot_sequence)
 * [How kernel, compiler, and C library work together](https://wiki.osdev.org/How_kernel,_compiler,_and_C_library_work_together)
 * [Bare bones](https://wiki.osdev.org/Bare_bones)
+* [A tale of two toolchains and glibc](https://www.collabora.com/news-and-blog/blog/2021/09/30/a-tale-of-two-toolchains-and-glibc/)
 
 ## On QML
 
