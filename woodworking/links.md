@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-28T22:56:27.018Z
+date: 2022-01-29T10:28:11.597Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -57,3 +57,4 @@ Corner clamp
 ## Joinery
 
 * [The Practice Joint Frame](https://freeonlinewoodworkingschool.com/projects/the-practice-joint-frame/)
+* [A Comprehensive Guide to Cutting Dovetails - Tips and Tricks Galore](https://www.youtube.com/watch?v=qEhHrINwk8w)
