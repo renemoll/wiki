@@ -2,7 +2,7 @@
 title: STM32 bootstrap
 description: 
 published: true
-date: 2022-01-28T22:54:57.274Z
+date: 2022-01-29T10:42:26.607Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:38:54.482Z
@@ -22,3 +22,14 @@ Input:
 * [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
 
 * [Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
+
+## CMSIS
+
+* [startup_<device>.c](https://arm-software.github.io/CMSIS_5/Core/html/startup_c_pg.html)
+* [SystemInit](https://arm-software.github.io/CMSIS_5/Core/html/group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2)
+* [Device Header File <device.h>](https://arm-software.github.io/CMSIS_5/Core/html/device_h_pg.html)
+  
+> determine what to re-use from CMSIS
+{.is-info}
+
+  
