@@ -2,7 +2,7 @@
 title: Python links
 description: 
 published: true
-date: 2022-01-28T22:43:35.276Z
+date: 2022-01-29T21:54:39.333Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T21:36:07.643Z
@@ -10,11 +10,21 @@ dateCreated: 2022-01-28T21:36:07.643Z
 
 # Python links
 
-## On packaging
+# On packaging
+
+## pyproject.toml
+
+A new file which specifies the build system to use when building your package ([PEP-0518](https://www.python.org/dev/peps/pep-0518/)).
 
 * [pyproject.toml](https://martin-thoma.com/pyproject-toml/)
-* [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 * [What is pyproject.toml file for?](https://stackoverflow.com/questions/62983756/what-is-pyproject-toml-file-for)
-* [pypa build](https://pypa-build.readthedocs.io/en/stable/)
+
+## setup.cfg
+
 * [Configuring setup() using setup.cfg files](https://setuptools.pypa.io/en/latest/userguide/declarative_config.html)
+
+
+# Project setup
+
+* [Hypermodern Python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/)
 * [Packaging Python Projects](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
