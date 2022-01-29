@@ -2,7 +2,7 @@
 title: Woodworking links
 description: 
 published: true
-date: 2022-01-29T10:30:19.646Z
+date: 2022-01-29T10:45:40.559Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-28T22:04:39.055Z
@@ -45,6 +45,9 @@ Corner clamp
 * [No-Fuss Finishing for Wood](https://www.youtube.com/watch?v=JQA-EbQ2EGk)
 * [Advanced Staining Techniques](https://www.youtube.com/watch?v=8gKJcx5MMIk)
 * [Traditional Soap Finish | Experimental Wood Finishes #5](https://www.youtube.com/watch?v=FAs33bjnyDU)
+
+* [Tungolie](https://www.hout-olie.nl/contents/nl/d253_tungolie.html)
+* [Olie en Gezondheid](https://hout-olie.nl/contents/nl/d351.html)
 
 ## People
 
