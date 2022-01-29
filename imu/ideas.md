@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-29T10:27:45.927Z
+date: 2022-01-29T10:48:27.386Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T21:26:50.775Z
@@ -46,6 +46,7 @@ This page is a "link dump" with ideas and potential useful information/framework
 ### Kalman
 
 * [Kalman and Bayesian Filters in Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python): great interactive introduction to Kalman filtering.
+* [How a Kalman filter works, in pictures](https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/)
 
 ## General
 
