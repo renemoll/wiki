@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:33:28.494Z
+date: 2022-02-07T21:35:45.277Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -92,6 +92,9 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 > fstack-usage link and how to use the output.
 > fvar-tracking-assignments
 > fdiagnostics-show-template-tree
+> fomit-frame-pointer (?)
+> fwrapv
+> -x assembler-with-cpp
 
 ## Embedded
 
@@ -130,5 +133,5 @@ Flag | Description |
 4. GCC [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html)
 5. GCC [Options for Code Generation Conventions](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
 6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
-7. [https://linux.die.net/man/1/ld](ld)
+7. [ld](https://linux.die.net/man/1/ld)
 8. [Three GCC Flags for Analyzing Memory Usage](https://embeddedartistry.com/blog/2020/08/17/three-gcc-flags-for-analyzing-memory-usage/)
