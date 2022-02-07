@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:03:19.841Z
+date: 2022-02-07T21:07:46.102Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -68,11 +68,11 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
+[`-Wvla`](https://clang.llvm.org/docs/DiagnosticsReference.html#wvla) | Warn about the use of variable length arrays. | Both | ? |
+[`-Wwrite-strings`](https://clang.llvm.org/docs/DiagnosticsReference.html#wwrite-strings) | Warn about casting string literals. | Both | ? |
+[`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Verify the format string for functions such as `printf`, `scanf`, etc. | Both | ? |
+[`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn calls to format functions (`printf` and such) where the output might be truncated. | GCC | ? |
 
-`-Wvla` | Warn about variable-length arrays being used.
-`-Wwrite-strings` | Warn when attempting to write to a string constant.
-`-Wformat=2` | Verify printf/scanf/.. arguments and format strings match.
-`-Wformat-truncation=2` | Warn when the output of sprintf/... might be truncated. | GCC
 
 `-Wtrampolines` | ?
 `-fno-common` | ?
