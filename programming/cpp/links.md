@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-01-29T10:44:56.286Z
+date: 2022-02-07T21:39:59.700Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -66,6 +66,8 @@ On `volatile`:
 * [Modern CMake – Tips and Tricks](https://www.incredibuild.com/blog/modern-cmake-tips-and-tricks)
 
 * [text, data and bss: Code and Data Size Explained](https://mcuoneclipse.com/2013/04/14/text-data-and-bss-code-and-data-size-explained/)
+
+* http://www.catb.org/esr/structure-packing/
 
 ### On linters, formatters, sanityzers and such
 
