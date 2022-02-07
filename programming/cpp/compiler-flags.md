@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:30:14.048Z
+date: 2022-02-07T21:30:52.483Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -101,8 +101,8 @@ Flag | Description | GCC/Clang |
 [`-fno-unwind-tables`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-funwind-tables) | Disable generation of unwind tables (for backtraces) | Both |
 [`-fno-rtti`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-frtti) | Disable run-time type information | Both |
 
-**Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use will (very likely) be build with support for these!
-
+> **Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use will (very likely) be build with support for these!
+{.is-warning}
 
 ### Linker
 
@@ -113,10 +113,10 @@ Flag | Description |
 [`--cref`](https://linux.die.net/man/1/ld) | Generate a cross reference table to determine declaration and use of symbols |
 `--print-memory-usage` | Print out the memory usage summary after linking |
 
-todo: `sysroot`?
-
 > These options only apply to `ld`, hence no GCC/Clang/MSVC column.
 {.is-info}
+
+> todo: `sysroot`?
 
 
 # References
