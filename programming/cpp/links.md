@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-02-07T21:39:59.700Z
+date: 2022-02-07T21:44:38.208Z
 tags: 
 editor: markdown
 dateCreated: 2022-01-27T22:05:03.403Z
@@ -68,6 +68,9 @@ On `volatile`:
 * [text, data and bss: Code and Data Size Explained](https://mcuoneclipse.com/2013/04/14/text-data-and-bss-code-and-data-size-explained/)
 
 * http://www.catb.org/esr/structure-packing/
+
+> https://interrupt.memfault.com/blog/arm-cortexm-with-llvm-clang?query=clang
+> https://clang.llvm.org/docs/CrossCompilation.html
 
 ### On linters, formatters, sanityzers and such
 
