@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T19:43:47.928Z
+date: 2022-02-07T20:25:31.533Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -10,9 +10,9 @@ dateCreated: 2022-02-07T19:28:50.042Z
 
 # Compiler flags
 
-Flag | Description | GCC/Clang | MSVC equivelant | Motivation
---- | --- | --- | --- | ---
-`-Wall` | Enable warnings for common coding mistakes or potential errors. |
+Flag | Description | GCC/Clang | MSVC equivelant |
+--- | --- | --- | --- |
+[`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) | Enable warnings for common coding mistakes or potential errors. | Both (though not equal) | ? |
 `-Wextra` | Extensions for -Wall |
 `-Werror` | Treat warnings as errors to fail the build in case of warnings.
 `-pedantic` | (below)
@@ -37,7 +37,7 @@ Flag | Description | GCC/Clang | MSVC equivelant | Motivation
 `-Wduplicated-branches>` | Warn about identifcal branches in if-else expressions. | GCC
 `-Wduplicated-cond` | Warn about duplicated conditions in if-else expressions. | GCC
 `-Wredundant-decls` | Warn about multiple declarations within the same scope. | GCC
-`-Wswitch-enum` | Warn about switch statements not using all possible enum values.
+`-Wswitch-enum` | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
 `-Wimplicit-fallthrough` | Warn about implicit, un-annotated, fallthroughs.
 `-Wnull-dereference` | Warn about possible null pointer dereference code paths.
 `-Wvla` | Warn about variable-length arrays being used.
@@ -51,9 +51,8 @@ Flag | Description | GCC/Clang | MSVC equivelant | Motivation
 `-Wmisleading-indentation` | Warn about indentation giving the impression of scope. | GCC
 `-Winline` | Warn when desired inlining is not possible.
 `-Wtrampolines` | ?
-
-`-fno-common`
-`-Warray-bounds`
+`-fno-common` | ?
+[`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
 
 
 # Embedded
@@ -76,4 +75,6 @@ todo: `sysroot`?
 
 # References
 
+1. https://clang.llvm.org/docs/DiagnosticsReference.html
+1. https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
 1. https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html
