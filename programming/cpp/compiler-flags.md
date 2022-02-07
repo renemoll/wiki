@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:20:30.245Z
+date: 2022-02-07T21:29:15.925Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -91,7 +91,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 
 ## Embedded
 
-**Compiler**
+### Compiler
 
 Flag | Description | GCC/Clang |
 --- | --- | --- |
@@ -103,13 +103,21 @@ Flag | Description | GCC/Clang |
 
 **Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use will (very likely) be build with support for these!
 
-linker
-`-mthumb` ??
-`--gc-sections`
-`--cref`
+
+### Linker
+
+
+Flag | Description |
+--- | --- | --- |
+[`--gc-sections`](https://linux.die.net/man/1/ld) | Remove any unused sections |
+[`--cref`](https://linux.die.net/man/1/ld) | Generate a cross reference table to determine declaration and use of symbols |
 `--print-memory-usage`
 
 todo: `sysroot`?
+
+> This only applies to `ld`, hence no GCC/Clang/MSVC column.
+{.is-info}
+
 
 # References
 
@@ -119,3 +127,4 @@ todo: `sysroot`?
 4. GCC [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html)
 5. GCC [Options for Code Generation Conventions](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
 6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
+7. [https://linux.die.net/man/1/ld](ld)
