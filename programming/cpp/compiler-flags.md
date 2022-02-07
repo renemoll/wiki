@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T20:54:36.299Z
+date: 2022-02-07T21:01:49.917Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -51,21 +51,18 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | Warn about variables with the same name, shadowing the one(s) in a broader scope. | Both | ? |
 [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | Additional shadowing checks | Clang | ? |
-
 [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about identifcal branches in if-else expressions. | GCC | ? |
 [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about duplicated conditions in if-else expressions. | GCC | ? |
-
-`-Wredundant-decls` | Warn about multiple declarations within the same scope. | GCC
-`-Wswitch-enum` | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
-`-Wimplicit-fallthrough` | Warn about implicit, un-annotated, fallthroughs.
-`-Wnull-dereference` | Warn about possible null pointer dereference code paths.
-`-Wundef` | Warn when undefined macros are used (implicit conversion to 0.)
-`-Wlogical-op` | Warn about potential errors with logical operations. | GCC
-`-Wstrict-prototypes` | Warn when a function declaration misses argument types.
-`-Wunused` | Warn about any unused parameter/function/variable/etc...
-`-Wmisleading-indentation` | Warn about indentation giving the impression of scope. | GCC
-`-Winline` | Warn when desired inlining is not possible.
-
+[`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about multiple declarations within the same scope. | GCC | ? |
+[`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
+[`-Wimplicit-fallthrough`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough) | Warn about implicit, un-annotated, fallthroughs. | Both | ? |
+[`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) | Warn about possible null pointer dereference. | Both | ? |
+[`-Wundef`](https://clang.llvm.org/docs/DiagnosticsReference.html#wundef) | Warn about the use of undefined macros (which implicitly convert to 0.) | Both | ? |
+[`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about potential errors with logical operations. | GCC | ? |
+[`-Wstrict-prototypes`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-prototypes) | Warn about function declarations misses argument types.
+[`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | Warn about any unused parameter/function/variable/etc. | Both | ? |
+[`-Wmisleading-indentation`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmisleading-indentation) | Warn about indentation giving the impression of scope. | Both | ? |
+[`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about functions marked as `inline` which cannot/will not be inlined. | GCC | ? |
 
 **String**
 
