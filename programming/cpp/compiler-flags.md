@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:29:15.925Z
+date: 2022-02-07T21:30:14.048Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -111,11 +111,11 @@ Flag | Description |
 --- | --- | --- |
 [`--gc-sections`](https://linux.die.net/man/1/ld) | Remove any unused sections |
 [`--cref`](https://linux.die.net/man/1/ld) | Generate a cross reference table to determine declaration and use of symbols |
-`--print-memory-usage`
+`--print-memory-usage` | Print out the memory usage summary after linking |
 
 todo: `sysroot`?
 
-> This only applies to `ld`, hence no GCC/Clang/MSVC column.
+> These options only apply to `ld`, hence no GCC/Clang/MSVC column.
 {.is-info}
 
 
