@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:01:49.917Z
+date: 2022-02-07T21:03:19.841Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -99,6 +99,7 @@ todo: `sysroot`?
 
 # References
 
-1. https://clang.llvm.org/docs/DiagnosticsReference.html
-1. https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html
-1. https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html
+1. [Diagnostic flags in Clang](https://clang.llvm.org/docs/DiagnosticsReference.html)
+1. GCC [Options to Request or Suppress Warnings](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+1. GCC [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html)
+1. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
