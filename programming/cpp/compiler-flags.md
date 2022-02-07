@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:35:45.277Z
+date: 2022-02-07T21:46:18.426Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -12,7 +12,7 @@ dateCreated: 2022-02-07T19:28:50.042Z
 
 ## Generic
 
-Based on [1], [3], [4] and [6].
+Based on [1], [3], [4] and [6] [9]
 
 **General**
 
@@ -22,6 +22,8 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra) | Set of additional warnings to accompany `-Wall` | Both (though set not equal) | ? |
 [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Treat warnings as errors, to fail the build in case of warnings. | Both | ? |
 [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about non-ISO standard C/C++ constructions. | Both | ? |
+
+> -Wdocumentation
 
 **Type conversion**
 
@@ -70,7 +72,6 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
 [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
 
-
 **String**
 
 Flag | Description | GCC/Clang | MSVC equivelant |
@@ -82,7 +83,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 
 **Code generation**
 
-Based on [2] and [5]
+Based on [2], [5] and [8]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
@@ -123,7 +124,15 @@ Flag | Description |
 {.is-info}
 
 > todo: `sysroot`?
+> https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags#c-library
 
+## Debugging
+
+[9]
+
+
+> -g3
+> -Os / -O1
 
 # References
 
@@ -135,3 +144,4 @@ Flag | Description |
 6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
 7. [ld](https://linux.die.net/man/1/ld)
 8. [Three GCC Flags for Analyzing Memory Usage](https://embeddedartistry.com/blog/2020/08/17/three-gcc-flags-for-analyzing-memory-usage/)
+9. [The Best and Worst GCC Compiler Flags For Embedded](https://interrupt.memfault.com/blog/best-and-worst-gcc-clang-compiler-flags)
