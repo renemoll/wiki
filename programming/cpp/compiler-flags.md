@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:30:52.483Z
+date: 2022-02-07T21:32:07.802Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -87,6 +87,9 @@ Based on [2] and [5]
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error | Both | ? |
+`-fstack-usage` | Generate stack usage files for detailed stack analysis | ? | ? |
+
+> fstack-usage link and how to use the output.
 
 
 ## Embedded
@@ -105,7 +108,6 @@ Flag | Description | GCC/Clang |
 {.is-warning}
 
 ### Linker
-
 
 Flag | Description |
 --- | --- | --- |
@@ -128,3 +130,4 @@ Flag | Description |
 5. GCC [Options for Code Generation Conventions](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
 6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
 7. [https://linux.die.net/man/1/ld](ld)
+8. [Three GCC Flags for Analyzing Memory Usage](https://embeddedartistry.com/blog/2020/08/17/three-gcc-flags-for-analyzing-memory-usage/)
