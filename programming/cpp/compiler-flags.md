@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:19:05.919Z
+date: 2022-02-07T21:20:30.245Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -98,10 +98,10 @@ Flag | Description | GCC/Clang |
 [`-ffunction-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) | Place each function into its own section | Both |
 [`-fdata-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) | Place each data element into its own section | Both |
 [`-fno-exceptions`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fexceptions) | Disable support for exceptions | Both |
-`-fno-unwind-tables`
-`-fno-rtti`
+[`-fno-unwind-tables`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-funwind-tables) | Disable generation of unwind tables (for backtraces) | Both |
+[`-fno-rtti`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-frtti) | Disable run-time type information | Both |
 
-**Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use may be build differently!
+**Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use will (very likely) be build with support for these!
 
 linker
 `-mthumb` ??
