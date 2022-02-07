@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T19:30:53.854Z
+date: 2022-02-07T19:32:11.489Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -10,19 +10,16 @@ dateCreated: 2022-02-07T19:28:50.042Z
 
 # Compiler flags
 
-Flag | Description | Source | GCC/Clang | MSVC equivelant
+Flag | Description | GCC/Clang | MSVC equivelant | Motivation
 --- | --- | --- | --- | ---
 `-Wall` | Enable warnings for common coding mistakes or potential errors. |
-`-Werror` | Extensions for -Wall |
+`-Wextra` | Extensions for -Wall |
+`-Werror` | Treat warnings as errors to fail the build in case of warnings.
 `-Wshadow`
 `-Wnon-virtual-dtor`
 `-pedantic`
-
--Wall												# 
--Wextra												# .
-				-Werror												# Treat warnings as errors to fail the build in case of warnings.
-				-Wpedantic											# Warn for now standard C++.
-				-Wconversion										# Warn about implicit type conversions which (may) change the value.
+`-Wpedantic` | # Warn for now standard C++.
+`-Wconversion` | Warn about implicit type conversions which (may) change the value.
 				-Wsign-conversion									# Warn about implicit sign conversions.
 				-Wdouble-promotion									# Warn about floats being implictly converted to doubles.
 				-Wfloat-equal										# Warn about floatint point values used in equality tests.
