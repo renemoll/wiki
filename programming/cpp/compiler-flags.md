@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T19:38:06.481Z
+date: 2022-02-07T19:43:47.928Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -51,6 +51,28 @@ Flag | Description | GCC/Clang | MSVC equivelant | Motivation
 `-Wmisleading-indentation` | Warn about indentation giving the impression of scope. | GCC
 `-Winline` | Warn when desired inlining is not possible.
 `-Wtrampolines` | ?
+
+`-fno-common`
+`-Warray-bounds`
+
+
+# Embedded
+
+Compiler:
+`-mthumb`
+`-ffunction-sections`
+`-fdata-sections`
+`-fno-exceptions`
+`-fno-unwind-tables`
+`-fno-rtti`
+
+linker
+`-mthumb` ??
+`--gc-sections`
+`--cref`
+`--print-memory-usage`
+
+todo: `sysroot`?
 
 # References
 
