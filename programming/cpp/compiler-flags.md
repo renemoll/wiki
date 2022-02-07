@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:32:07.802Z
+date: 2022-02-07T21:33:28.494Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -90,7 +90,8 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 `-fstack-usage` | Generate stack usage files for detailed stack analysis | ? | ? |
 
 > fstack-usage link and how to use the output.
-
+> fvar-tracking-assignments
+> fdiagnostics-show-template-tree
 
 ## Embedded
 
