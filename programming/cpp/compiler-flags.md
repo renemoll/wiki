@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T20:48:01.424Z
+date: 2022-02-07T20:54:36.299Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -45,26 +45,38 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) | Warn about derived methods hiding a virtual function of the base class. | Both | ? |
 
 
+**Misc**
 
+Flag | Description | GCC/Clang | MSVC equivelant |
+--- | --- | --- | --- |
+[`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | Warn about variables with the same name, shadowing the one(s) in a broader scope. | Both | ? |
+[`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | Additional shadowing checks | Clang | ? |
 
-`-Wshadow`  | Warn about duplicated variable names
-`-Wshadow-all` | (?) | Clang
-`-Wduplicated-branches>` | Warn about identifcal branches in if-else expressions. | GCC
-`-Wduplicated-cond` | Warn about duplicated conditions in if-else expressions. | GCC
+[`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about identifcal branches in if-else expressions. | GCC | ? |
+[`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about duplicated conditions in if-else expressions. | GCC | ? |
+
 `-Wredundant-decls` | Warn about multiple declarations within the same scope. | GCC
 `-Wswitch-enum` | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
 `-Wimplicit-fallthrough` | Warn about implicit, un-annotated, fallthroughs.
 `-Wnull-dereference` | Warn about possible null pointer dereference code paths.
-`-Wvla` | Warn about variable-length arrays being used.
-`-Wwrite-strings` | Warn when attempting to write to a string constant.
-`-Wformat=2` | Verify printf/scanf/.. arguments and format strings match.
-`-Wformat-truncation=2` | Warn when the output of sprintf/... might be truncated. | GCC
 `-Wundef` | Warn when undefined macros are used (implicit conversion to 0.)
 `-Wlogical-op` | Warn about potential errors with logical operations. | GCC
 `-Wstrict-prototypes` | Warn when a function declaration misses argument types.
 `-Wunused` | Warn about any unused parameter/function/variable/etc...
 `-Wmisleading-indentation` | Warn about indentation giving the impression of scope. | GCC
 `-Winline` | Warn when desired inlining is not possible.
+
+
+**String**
+
+Flag | Description | GCC/Clang | MSVC equivelant |
+--- | --- | --- | --- |
+
+`-Wvla` | Warn about variable-length arrays being used.
+`-Wwrite-strings` | Warn when attempting to write to a string constant.
+`-Wformat=2` | Verify printf/scanf/.. arguments and format strings match.
+`-Wformat-truncation=2` | Warn when the output of sprintf/... might be truncated. | GCC
+
 `-Wtrampolines` | ?
 `-fno-common` | ?
 [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
