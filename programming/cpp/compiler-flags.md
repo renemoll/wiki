@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:09:09.855Z
+date: 2022-02-07T21:09:36.946Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -64,6 +64,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wmisleading-indentation`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmisleading-indentation) | Warn about indentation giving the impression of scope. | Both | ? |
 [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about functions marked as `inline` which cannot/will not be inlined. | GCC | ? |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
+[`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
 
 
 **String**
@@ -77,7 +78,6 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 
 
 `-fno-common` | ?
-[`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
 
 
 # Embedded
