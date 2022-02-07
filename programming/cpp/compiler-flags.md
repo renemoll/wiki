@@ -2,13 +2,17 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:09:36.946Z
+date: 2022-02-07T21:19:05.919Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
 ---
 
 # Compiler flags
+
+## Generic
+
+Based on [1], [3], [4] and [6].
 
 **General**
 
@@ -76,19 +80,28 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Verify the format string for functions such as `printf`, `scanf`, etc. | Both | ? |
 [`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn calls to format functions (`printf` and such) where the output might be truncated. | GCC | ? |
 
+**Code generation**
 
-`-fno-common` | ?
+Based on [2] and [5]
+
+Flag | Description | GCC/Clang | MSVC equivelant |
+--- | --- | --- | --- |
+[`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error | Both | ? |
 
 
-# Embedded
+## Embedded
 
-Compiler:
-`-mthumb`
-`-ffunction-sections`
-`-fdata-sections`
-`-fno-exceptions`
+**Compiler**
+
+Flag | Description | GCC/Clang |
+--- | --- | --- |
+[`-ffunction-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) | Place each function into its own section | Both |
+[`-fdata-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) | Place each data element into its own section | Both |
+[`-fno-exceptions`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fexceptions) | Disable support for exceptions | Both |
 `-fno-unwind-tables`
 `-fno-rtti`
+
+**Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use may be build differently!
 
 linker
 `-mthumb` ??
@@ -101,6 +114,8 @@ todo: `sysroot`?
 # References
 
 1. [Diagnostic flags in Clang](https://clang.llvm.org/docs/DiagnosticsReference.html)
-1. GCC [Options to Request or Suppress Warnings](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
-1. GCC [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html)
-1. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
+2. [Clang command line argument reference](https://clang.llvm.org/docs/ClangCommandLineReference.html)
+3. GCC [Options to Request or Suppress Warnings](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+4. GCC [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html)
+5. GCC [Options for Code Generation Conventions](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
+6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
