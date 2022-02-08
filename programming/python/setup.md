@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T18:51:16.709Z
+date: 2022-02-08T18:55:42.676Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -56,7 +56,7 @@ Configuration in: `pyproject.toml`
 # Todo
 
 * checkout tox vs nox
-
+* https://cjolowicz.github.io/posts/hypermodern-python-02-testing/#endtoend-testing
 
 # References
 
@@ -64,4 +64,4 @@ Configuration in: `pyproject.toml`
 1. flake8 manual + github
 1. sqlalchemy github
 1. pytest manual
-
+1. [Hyper moden python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/), while I found most information by checking out various tools, which tend to refer to each other, this blog series is a nice summary.
