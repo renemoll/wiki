@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T19:10:07.039Z
+date: 2022-02-08T19:10:41.629Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -63,12 +63,11 @@ Configuration in: `pyproject.toml`
 
 * checkout tox vs nox
 * https://cjolowicz.github.io/posts/hypermodern-python-02-testing/#endtoend-testing
-* flake8-black
 * flake8-annotations
-* flake8-bandit
 * pytype 
 * typeguard 
 * sphinx 
+* https://github.com/pyupio/safety
 
 # References
 
