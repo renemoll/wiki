@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T19:56:27.180Z
+date: 2022-02-08T19:57:03.181Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -65,11 +65,11 @@ Configuration in: `pyproject.toml`
 
 * checkout tox vs nox
 * https://cjolowicz.github.io/posts/hypermodern-python-02-testing/#endtoend-testing
-* pytype 
-* typeguard 
-* sphinx 
-* https://github.com/pyupio/safety
-*  xdoctest -> test examples in documentation
+* pytype -> type checker
+* typeguard -> check type annotations during run-time
+* sphinx -> documentation
+* https://github.com/pyupio/safety -> check dependancies for CVEs
+* xdoctest -> test examples in documentation
 
 # References
 
