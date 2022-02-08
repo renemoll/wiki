@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T19:57:03.181Z
+date: 2022-02-08T21:02:37.913Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
