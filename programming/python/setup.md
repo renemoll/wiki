@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T18:50:02.908Z
+date: 2022-02-08T18:51:16.709Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -52,6 +52,11 @@ Configuration in: `setup.cfg`
 mypy (path/to/code)
 ```
 Configuration in: `pyproject.toml`
+
+# Todo
+
+* checkout tox vs nox
+
 
 # References
 
