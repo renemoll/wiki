@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T19:10:41.629Z
+date: 2022-02-08T19:54:51.530Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -46,9 +46,11 @@ flake8 (path/to/code)
 
 * Configuration in: `setup.cfg`
 * plugins:
+  * annotations
   * black
   * bandit
   * bugbear
+  * darglint
   * docstring
   * import-order
 
@@ -63,7 +65,6 @@ Configuration in: `pyproject.toml`
 
 * checkout tox vs nox
 * https://cjolowicz.github.io/posts/hypermodern-python-02-testing/#endtoend-testing
-* flake8-annotations
 * pytype 
 * typeguard 
 * sphinx 
@@ -73,6 +74,6 @@ Configuration in: `pyproject.toml`
 
 1. black manual
 1. flake8 manual + github
-1. sqlalchemy github
+1. [sqlalchemy](https://github.com/sqlalchemy/sqlalchemy/)
 1. pytest manual
 1. [Hyper moden python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/), while I found most information by checking out various tools, which tend to refer to each other, this blog series is a nice summary.
