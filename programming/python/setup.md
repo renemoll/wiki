@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T18:55:42.676Z
+date: 2022-02-08T19:10:07.039Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -44,7 +44,13 @@ Configuration in: `pyproject.toml`
 flake8 (path/to/code)
 ```
 
-Configuration in: `setup.cfg`
+* Configuration in: `setup.cfg`
+* plugins:
+  * black
+  * bandit
+  * bugbear
+  * docstring
+  * import-order
 
 ### mypy
 
@@ -57,6 +63,12 @@ Configuration in: `pyproject.toml`
 
 * checkout tox vs nox
 * https://cjolowicz.github.io/posts/hypermodern-python-02-testing/#endtoend-testing
+* flake8-black
+* flake8-annotations
+* flake8-bandit
+* pytype 
+* typeguard 
+* sphinx 
 
 # References
 
