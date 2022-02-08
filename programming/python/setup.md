@@ -2,7 +2,7 @@
 title: Project setup - Python
 description: 
 published: true
-date: 2022-02-08T18:31:07.235Z
+date: 2022-02-08T18:49:48.393Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-08T18:27:45.879Z
@@ -26,7 +26,8 @@ The bob project integrates:
 pytest
 ```
 
-Configuration in: `pyproject.toml`
+* Configuration in: `pyproject.toml`
+* With coverage reporting and failure under 100% coverage.
 
 ### black
 
@@ -50,3 +51,11 @@ Configuration in: `setup.cfg`
 mypy (path/to/code)
 ```
 Configuration in: `pyproject.toml`
+
+# References
+
+1. black manual
+1. flake8 manual + github
+1. sqlalchemy github
+1. pytest manual
+
