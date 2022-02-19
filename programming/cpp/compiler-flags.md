@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-19T17:43:22.056Z
+date: 2022-02-19T17:49:39.867Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -88,21 +88,20 @@ Based on [2], [5] and [8]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error | Both | ? |
-`-fstack-usage` | Generate stack usage files for detailed stack analysis | ? | ? |
-`-x assembler-with-cpp` | 
+[`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error. | Both | ? |
+`-fstack-usage` | Generate stack usage files for detailed stack analysis. | ? | ? |
+[`-x assembler-with-cpp`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-x-language) | Tell the compiler the source language. | Both | ?
 [`fwrapv`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) | Treat signed integer overflow as two’s complement integers. | Both | ?
 
 **Debugging**
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-gdwarf-4`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Generate debugging information | Both | ?
-[`-fvar-tracking-assignments`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Annotates variables to improve debugging | GCC | ?
-
+[`-gdwarf-4`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Generate debugging information. | Both | ?
+[`-fvar-tracking-assignments`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Annotates variables to improve debugging. | GCC | ?
+[`-fdiagnostics-show-template-tree`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fdiagnostics-show-template-tree) | Highlight the differences when diagnosing template type errors. | Both | ?
 
 > fstack-usage link and how to use the output.
-> fdiagnostics-show-template-tree
 > fomit-frame-pointer (?)
 > 
 
