@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-19T17:20:40.295Z
+date: 2022-02-19T17:43:22.056Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -90,13 +90,21 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error | Both | ? |
 `-fstack-usage` | Generate stack usage files for detailed stack analysis | ? | ? |
+`-x assembler-with-cpp` | 
+[`fwrapv`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) | Treat signed integer overflow as two’s complement integers. | Both | ?
+
+**Debugging**
+
+Flag | Description | GCC/Clang | MSVC equivelant |
+--- | --- | --- | --- |
+[`-gdwarf-4`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Generate debugging information | Both | ?
+[`-fvar-tracking-assignments`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Annotates variables to improve debugging | GCC | ?
+
 
 > fstack-usage link and how to use the output.
-> fvar-tracking-assignments
 > fdiagnostics-show-template-tree
 > fomit-frame-pointer (?)
-> fwrapv
-> -x assembler-with-cpp
+> 
 
 ## Embedded
 
@@ -110,7 +118,7 @@ Flag | Description | GCC/Clang |
 [`-fno-unwind-tables`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-funwind-tables) | Disable generation of unwind tables (for backtraces) | Both |
 [`-fno-rtti`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-frtti) | Disable run-time type information | Both |
 
-> **Beware**: dropping excpetion handling, unwind tables and RTTI only applied to the application you build. The runtime you use will (very likely) be build with support for these!
+> **Beware**: dropping excpetion handling, unwind tables and RTTI only applies to the libraries/applications you build with these flags. The runtime you use will (very likely) be build with support for these features.
 {.is-warning}
 
 ### Linker
