@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-07T21:46:18.426Z
+date: 2022-02-19T17:20:40.295Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -24,6 +24,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about non-ISO standard C/C++ constructions. | Both | ? |
 
 > -Wdocumentation
+> -Weverything
 
 **Type conversion**
 
@@ -125,6 +126,7 @@ Flag | Description |
 
 > todo: `sysroot`?
 > https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags#c-library
+> No stdlib?
 
 ## Debugging
 
