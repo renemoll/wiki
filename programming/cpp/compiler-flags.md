@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-03-01T19:31:24.369Z
+date: 2022-03-01T19:31:39.812Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -134,6 +134,7 @@ Flag | Description |
 > todo: `sysroot`?
 > https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags#c-library
 > No stdlib?
+> -spec=nano.spec
 
 ## Debugging
 
