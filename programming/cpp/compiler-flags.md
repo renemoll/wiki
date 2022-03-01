@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-02-19T17:49:39.867Z
+date: 2022-03-01T19:31:24.369Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
@@ -139,9 +139,10 @@ Flag | Description |
 
 [9]
 
-
 > -g3
 > -Os / -O1
+
+Note that CMake already provides optimization flags (`-On` and `-g`) depending on the build configuration.
 
 # References
 
