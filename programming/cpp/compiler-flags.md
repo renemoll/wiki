@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-03-01T19:31:39.812Z
+date: 2022-03-01T19:38:33.565Z
 tags: 
 editor: markdown
 dateCreated: 2022-02-07T19:28:50.042Z
