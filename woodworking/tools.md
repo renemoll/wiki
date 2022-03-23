@@ -2,7 +2,7 @@
 title: Tools
 description: 
 published: true
-date: 2022-03-23T21:00:42.942Z
+date: 2022-03-23T21:47:55.088Z
 tags: 
 editor: markdown
 dateCreated: 2022-03-23T21:00:24.902Z
@@ -13,6 +13,9 @@ dateCreated: 2022-03-23T21:00:24.902Z
 ## Planes
 
 Basic setup
+* #4 with 25/30 degree?
+* LA with 25/50 degree?
+
 
 ### When to use ...
 
