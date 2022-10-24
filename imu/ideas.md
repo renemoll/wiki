@@ -60,3 +60,11 @@ This page is a "link dump" with ideas and potential useful information/framework
 ## Sensors
 
 * [TI Precision Labs - Magnetic sensors](https://training.ti.com/ti-precision-labs-magnetic-sensors)
+
+## Alternatives
+
+* [MPU-9250 with Madgwick](https://github.com/kriswiner/MPU9250)
+
+## Optmization filters
+
+* [Ceres](https://github.com/ceres-solver/ceres-solver)
