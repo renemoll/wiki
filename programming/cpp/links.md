@@ -14,7 +14,23 @@ A collection of pages I encountered which might be useful
 
 ## Blogs
 
+* [Meeting C++ blogroll](https://www.meetingcpp.com/blog/blogroll/)
+
+* [Andrzej's C++ blog](https://akrzemi1.wordpress.com/)
 * [Better Embedded System SW](https://betterembsw.blogspot.com/)
+* [Embedded Artistry](https://embeddedartistry.com/blog)
+* [foonathan::blog()](https://www.foonathan.net/)
+* [Interrupt](https://interrupt.memfault.com/blog/)
+* [Modernes C++](https://www.modernescpp.com/)
+* [The Pasture](https://thephd.dev/)
+* [Sticky Bits](https://blog.feabhas.com/)
+
+* [Sutter’s Mill](https://herbsutter.com/)
+
+### Not updated anymore
+
+* [IT Hare](http://ithare.com/)
+* [Simplify C++](https://arne-mertz.de/)
 
 ## Usefull code
 * [SI units](https://github.com/bernedom/SI)
@@ -90,3 +106,6 @@ On `volatile`:
 
 * [Developing a QML Keypad with TDD](https://embeddeduse.com/2021/11/18/developing-a-qml-keypad-with-tdd/)
 
+## CMake
+
+* [Tutorial: Preparing libraries for CMake FetchContent](https://www.foonathan.net/2022/06/cmake-fetchcontent/)
