@@ -2,7 +2,7 @@
 title: Linear algebra
 description: 
 published: true
-date: 2022-12-15T10:16:45.835Z
+date: 2022-12-15T10:17:41.909Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:25.965Z
@@ -33,3 +33,7 @@ dateCreated: 2022-12-14T19:48:25.965Z
 * [What Is a QR Factorization?](https://nhigham.com/2020/11/10/what-is-a-qr-factorization/)
 * [What Is an LU Factorization?](https://nhigham.com/2021/04/20/what-is-an-lu-factorization/)
 * [https://nhigham.com/2020/07/28/what-is-the-polar-decomposition/](https://nhigham.com/2020/07/28/what-is-the-polar-decomposition/)
+
+## books
+
+* https://www.maths.manchester.ac.uk/~higham/asna/index.php
