@@ -2,7 +2,7 @@
 title: Linear algebra
 description: 
 published: true
-date: 2022-12-15T10:13:12.983Z
+date: 2022-12-15T10:14:25.881Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:25.965Z
@@ -29,3 +29,4 @@ dateCreated: 2022-12-14T19:48:25.965Z
 * [What Is a Cholesky Factorization?](https://nhigham.com/2020/08/11/what-is-a-cholesky-factorization/)
 * [Seven Sins of Numerical Linear Algebra](https://nhigham.com/2022/10/11/seven-sins-of-numerical-linear-algebra/)
 * [What Is a Symmetric Positive Definite Matrix?](https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/)
+* [What Is the Singular Value Decomposition?](https://nhigham.com/2020/10/13/what-is-the-singular-value-decomposition/)
