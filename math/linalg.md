@@ -2,7 +2,7 @@
 title: Linear algebra
 description: 
 published: true
-date: 2022-12-15T10:14:25.881Z
+date: 2022-12-15T10:16:45.835Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:25.965Z
@@ -30,3 +30,6 @@ dateCreated: 2022-12-14T19:48:25.965Z
 * [Seven Sins of Numerical Linear Algebra](https://nhigham.com/2022/10/11/seven-sins-of-numerical-linear-algebra/)
 * [What Is a Symmetric Positive Definite Matrix?](https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/)
 * [What Is the Singular Value Decomposition?](https://nhigham.com/2020/10/13/what-is-the-singular-value-decomposition/)
+* [What Is a QR Factorization?](https://nhigham.com/2020/11/10/what-is-a-qr-factorization/)
+* [What Is an LU Factorization?](https://nhigham.com/2021/04/20/what-is-an-lu-factorization/)
+* [https://nhigham.com/2020/07/28/what-is-the-polar-decomposition/](https://nhigham.com/2020/07/28/what-is-the-polar-decomposition/)
