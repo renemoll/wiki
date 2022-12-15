@@ -2,10 +2,10 @@
 title: Linear algebra
 description: 
 published: true
-date: 2022-01-28T22:43:38.772Z
+date: 2022-12-15T10:13:12.983Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-28T22:21:36.702Z
+dateCreated: 2022-12-14T19:48:25.965Z
 ---
 
 # Linear algebra
@@ -23,3 +23,9 @@ dateCreated: 2022-01-28T22:21:36.702Z
 
 * [Differential Equations and Linear Algebra](https://ocw.mit.edu/resources/res-18-009-learn-differential-equations-up-close-with-gilbert-strang-and-cleve-moler-fall-2015/differential-equations-and-linear-algebra/)
 * [Learn Differential Equations: Up Close with Gilbert Strang and Cleve Moler](https://ocw.mit.edu/resources/res-18-009-learn-differential-equations-up-close-with-gilbert-strang-and-cleve-moler-fall-2015/index.htm)
+
+## Specific topics
+
+* [What Is a Cholesky Factorization?](https://nhigham.com/2020/08/11/what-is-a-cholesky-factorization/)
+* [Seven Sins of Numerical Linear Algebra](https://nhigham.com/2022/10/11/seven-sins-of-numerical-linear-algebra/)
+* [What Is a Symmetric Positive Definite Matrix?](https://nhigham.com/2020/07/21/what-is-a-symmetric-positive-definite-matrix/)
