@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:32:28.196Z
+date: 2022-12-20T15:45:54.001Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -24,6 +24,9 @@ This page is a "link dump" with ideas and potential useful information/framework
 
 * [Better rotation representations for accurate pose estimation](https://towardsdatascience.com/better-rotation-representations-for-accurate-pose-estimation-e890a7e1317f)
 * [3D Rotations: Intuitions And Limitations](https://towardsdatascience.com/3d-rotations-intuitions-and-limitations-f3ae2122fe23)
+
+* [How do you find angular velocity given a pair of 3x3 rotation matrices?](https://math.stackexchange.com/questions/668866/how-do-you-find-angular-velocity-given-a-pair-of-3x3-rotation-matrices)
+* [What is the structure of 𝑆𝑂(3) and its Lie Algebra? [closed]](https://mathoverflow.net/questions/81247/what-is-the-structure-of-so3-and-its-lie-algebra/81249#81249)
 
 ## Sensor fusion
 
