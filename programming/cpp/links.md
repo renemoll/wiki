@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-12-20T15:19:43.254Z
+date: 2022-12-20T15:51:28.560Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -74,6 +74,7 @@ On `volatile`:
 * [A tale of two toolchains and glibc](https://www.collabora.com/news-and-blog/blog/2021/09/30/a-tale-of-two-toolchains-and-glibc/)
 * [Generating relocatable code for ARM processors](https://blog.llvm.org/posts/2021-10-01-generating-relocatable-code-for-arm-processors/)
 
+* [Tracking Firmware Code Size](https://interrupt.memfault.com/blog/code-size-deltas?query=compile%20flags)
 * [Code Size Optimization: GCC Compiler Flags](https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags?query=improving%20compilation%20time)
 * [Improving Compilation Time of C/C++ Projects](https://interrupt.memfault.com/blog/improving-compilation-times-c-cpp-projects?query=improving%20compilation%20time)
 * [Better Firmware with LLVM/Clang](https://interrupt.memfault.com/blog/arm-cortexm-with-llvm-clang?query=better%20firmware%20with%20llvm)
