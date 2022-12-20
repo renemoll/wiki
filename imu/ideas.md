@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:47:53.073Z
+date: 2022-12-20T15:48:17.331Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -78,7 +78,7 @@ This page is a "link dump" with ideas and potential useful information/framework
 * [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
 * [Differentiable Programming from Scratch](https://thenumb.at/Autodiff/)
 * [Introduction to Differentiable Physics](https://physicsbaseddeeplearning.org/diffphys.html)
-
+* [ Numerical Differentiation](http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf)
 
 # Physics
 
