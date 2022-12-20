@@ -2,10 +2,10 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-01-29T11:04:48.336Z
+date: 2022-12-20T14:43:18.330Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-29T11:04:48.336Z
+dateCreated: 2022-12-14T19:48:37.182Z
 ---
 
 # Notes - SW
@@ -14,3 +14,7 @@ dateCreated: 2022-01-29T11:04:48.336Z
 # Frameworks
 
 * [Grafana ](https://grafana.com/): for time series data visualization
+
+# Embedded
+
+* [Awesome-Embedded](https://github.com/nhivp/Awesome-Embedded)
