@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:16:16.400Z
+date: 2022-12-20T15:31:59.070Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -70,3 +70,9 @@ This page is a "link dump" with ideas and potential useful information/framework
 * [Ceres](https://github.com/ceres-solver/ceres-solver)
 * [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
 * [Interactive Gradient Descent Demo](https://blog.skz.dev/gradient-descent)
+
+# Physics
+
+* [Classical Mechanics](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/assignments/)
+* [Euler's equations (rigid body dynamics)](https://en.wikipedia.org/wiki/Euler%27s_equations_(rigid_body_dynamics))
+* [oPhysics: Interactive Physics Simulations](https://ophysics.com/k.html)
