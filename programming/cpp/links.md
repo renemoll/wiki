@@ -2,10 +2,10 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-02-07T21:46:08.868Z
+date: 2022-12-20T15:18:40.814Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-27T22:05:03.403Z
+dateCreated: 2022-12-14T19:49:06.828Z
 ---
 
 # C++ links
@@ -109,3 +109,7 @@ On `volatile`:
 ## CMake
 
 * [Tutorial: Preparing libraries for CMake FetchContent](https://www.foonathan.net/2022/06/cmake-fetchcontent/)
+
+## Cppcon
+
+* [Real-time Programming with the C++ Standard Library - Timur Doumler - CppCon 2021](https://www.youtube.com/watch?v=Tof5pRedskI)
