@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:31:59.070Z
+date: 2022-12-20T15:32:28.196Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -74,5 +74,6 @@ This page is a "link dump" with ideas and potential useful information/framework
 # Physics
 
 * [Classical Mechanics](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/assignments/)
+* [Khan Academy](https://www.khanacademy.org/science/physics)
 * [Euler's equations (rigid body dynamics)](https://en.wikipedia.org/wiki/Euler%27s_equations_(rigid_body_dynamics))
 * [oPhysics: Interactive Physics Simulations](https://ophysics.com/k.html)
