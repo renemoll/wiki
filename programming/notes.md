@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:37:52.579Z
+date: 2022-12-20T15:40:27.033Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -15,6 +15,11 @@ dateCreated: 2022-12-14T19:48:37.182Z
 
 * [Algebra-Driven Design](https://github.com/isovector/algebra-driven-design)
 * [Event-Based Firmware](https://luckyresistor.me/2019/07/09/event-based-firmware-2/)
+
+## dispatch queue
+
+* [Dispatch Queues](https://embeddedartistry.com/blog/2017/02/06/dispatch-queues/)
+* [Implementing an Asynchronous Dispatch Queue](https://embeddedartistry.com/blog/2017/02/08/implementing-an-asynchronous-dispatch-queue/)
 
 # Frameworks
 
