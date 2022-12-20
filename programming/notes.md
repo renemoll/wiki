@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T14:52:13.025Z
+date: 2022-12-20T14:52:41.566Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -18,6 +18,7 @@ dateCreated: 2022-12-14T19:48:37.182Z
 # Frameworks
 
 * [Grafana ](https://grafana.com/): for time series data visualization
+* [Building a CI Pipeline with CTest and CDash](https://embeddeduse.com/2022/05/02/building-a-ci-pipeline-with-ctest-and-cdash/)
 
 # Embedded
 
