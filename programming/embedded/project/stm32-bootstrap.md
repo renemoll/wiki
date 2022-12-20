@@ -2,7 +2,7 @@
 title: STM32 bootstrap
 description: 
 published: true
-date: 2022-12-20T14:48:04.579Z
+date: 2022-12-20T15:21:47.801Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:28.911Z
@@ -24,6 +24,9 @@ Input:
 
 * [Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
 
+## alt
+
+* [MCUboot](https://github.com/mcu-tools/mcuboot)
 
 ## CMSIS
 
