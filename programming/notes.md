@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T14:46:54.231Z
+date: 2022-12-20T14:50:52.043Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -23,6 +23,7 @@ dateCreated: 2022-12-14T19:48:37.182Z
 
 * [Awesome-Embedded](https://github.com/nhivp/Awesome-Embedded)
 * [Introduction to Embedded Systems Programming (ADA)](https://learn.adacore.com/courses/intro-to-embedded-sys-prog/index.html)
+* [Hexagonal Architecture: The Standard for Qt Embedded Applications](https://embeddeduse.com/2021/11/07/my-talk-hexagonal-architecture-the-standard-for-qt-embedded-applications-at-meeting-embedded-2021/)
 
 # Documentation
 
