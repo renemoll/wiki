@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:08:22.276Z
+date: 2022-12-20T15:36:20.404Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -26,6 +26,7 @@ dateCreated: 2022-12-14T19:48:37.182Z
 * [Awesome-Embedded](https://github.com/nhivp/Awesome-Embedded)
 * [Introduction to Embedded Systems Programming (ADA)](https://learn.adacore.com/courses/intro-to-embedded-sys-prog/index.html)
 
+* [Position-Independent Code with GCC for ARM Cortex-M](https://mcuoneclipse.com/2021/06/05/position-independent-code-with-gcc-for-arm-cortex-m/)
 
 * [Architecture of Qt Embedded Systems: Getting Started](https://embeddeduse.com/2020/12/20/determining-the-architecture-of-qt-embedded-systems-getting-started/#successful-architecture)
 
@@ -38,6 +39,8 @@ dateCreated: 2022-12-14T19:48:37.182Z
 # C++
 
 * [Making sure that people use make_unique and make_shared to make your object](https://devblogs.microsoft.com/oldnewthing/20220721-00/?p=106879#comments)
+* [ccache](https://ccache.dev/)
+
 
 # Patterns
 
