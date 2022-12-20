@@ -2,10 +2,10 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-01-29T10:48:27.386Z
+date: 2022-12-20T15:16:00.958Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-27T21:26:50.775Z
+dateCreated: 2022-12-14T19:48:21.807Z
 ---
 
 # Ideas & links
@@ -68,3 +68,4 @@ This page is a "link dump" with ideas and potential useful information/framework
 ## Optmization filters
 
 * [Ceres](https://github.com/ceres-solver/ceres-solver)
+* [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
