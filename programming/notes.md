@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:06:39.520Z
+date: 2022-12-20T15:07:22.361Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -34,3 +34,7 @@ dateCreated: 2022-12-14T19:48:37.182Z
 * [Diátaxis - A systematic framework for technical documentation authoring.](https://diataxis.fr/)
 * [Visualising Module Dependencies with CMake and Graphviz](https://embeddeduse.com/2022/03/01/visualising-module-dependencies-with-cmake-and-graphviz/)
 * [Visualising the Architecture of Qt Embedded Systems: Context and Container Diagrams](https://embeddeduse.com/2022/07/11/visualising-the-architecture-of-qt-embedded-systems-context-and-container-diagrams/)
+
+# C++
+
+* [Making sure that people use make_unique and make_shared to make your object](https://devblogs.microsoft.com/oldnewthing/20220721-00/?p=106879#comments)
