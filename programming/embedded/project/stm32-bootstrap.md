@@ -2,10 +2,10 @@
 title: STM32 bootstrap
 description: 
 published: true
-date: 2022-01-29T10:42:26.607Z
+date: 2022-12-20T14:48:04.579Z
 tags: 
 editor: markdown
-dateCreated: 2022-01-28T22:38:54.482Z
+dateCreated: 2022-12-14T19:49:28.911Z
 ---
 
 # STM32 bootstrap
@@ -20,8 +20,10 @@ Input:
 * [A General Overview of What Happens Before main()](https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/)
 * [Exploring Startup Implementations: Newlib (ARM)](https://embeddedartistry.com/blog/2019/04/17/exploring-startup-implementations-newlib-arm/)
 * [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
+* [A general overview of what happens before main() (2019)](https://news.ycombinator.com/item?id=32556048)
 
 * [Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
+
 
 ## CMSIS
 
