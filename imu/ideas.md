@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:45:54.001Z
+date: 2022-12-20T15:47:53.073Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -71,8 +71,14 @@ This page is a "link dump" with ideas and potential useful information/framework
 ## Optmization filters
 
 * [Ceres](https://github.com/ceres-solver/ceres-solver)
-* [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
 * [Interactive Gradient Descent Demo](https://blog.skz.dev/gradient-descent)
+
+## Differentiable programming
+
+* [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
+* [Differentiable Programming from Scratch](https://thenumb.at/Autodiff/)
+* [Introduction to Differentiable Physics](https://physicsbaseddeeplearning.org/diffphys.html)
+
 
 # Physics
 
