@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-12-20T15:18:40.814Z
+date: 2022-12-20T15:19:30.438Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -102,9 +102,11 @@ On `volatile`:
 
 * [sourcegraph](https://about.sourcegraph.com/)
 
-## On QML
+## On Qt/QML
 
 * [Developing a QML Keypad with TDD](https://embeddeduse.com/2021/11/18/developing-a-qml-keypad-with-tdd/)
+* [QCustomPlot ](https://www.qcustomplot.com/)
+* [PyQt6 events and signals](https://zetcode.com/pyqt6/eventssignals/)
 
 ## CMake
 
