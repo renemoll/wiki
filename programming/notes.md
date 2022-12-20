@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:36:20.404Z
+date: 2022-12-20T15:36:42.980Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -39,8 +39,8 @@ dateCreated: 2022-12-14T19:48:37.182Z
 # C++
 
 * [Making sure that people use make_unique and make_shared to make your object](https://devblogs.microsoft.com/oldnewthing/20220721-00/?p=106879#comments)
-* [ccache](https://ccache.dev/)
-
+* [ccache](https://ccache.dev/)	
+* [Back to Basics at CppCon 2019](https://quuxplusone.github.io/blog/2019/09/12/cppcon-2019-b2b-track/)
 
 # Patterns
 
