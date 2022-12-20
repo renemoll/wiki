@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T14:52:41.566Z
+date: 2022-12-20T15:05:51.888Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -14,6 +14,7 @@ dateCreated: 2022-12-14T19:48:37.182Z
 # Paradigms
 
 * [Algebra-Driven Design](https://github.com/isovector/algebra-driven-design)
+* [Event-Based Firmware](https://luckyresistor.me/2019/07/09/event-based-firmware-2/)
 
 # Frameworks
 
