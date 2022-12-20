@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:40:27.033Z
+date: 2022-12-20T15:44:26.736Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -20,6 +20,15 @@ dateCreated: 2022-12-14T19:48:37.182Z
 
 * [Dispatch Queues](https://embeddedartistry.com/blog/2017/02/06/dispatch-queues/)
 * [Implementing an Asynchronous Dispatch Queue](https://embeddedartistry.com/blog/2017/02/08/implementing-an-asynchronous-dispatch-queue/)
+
+## pub-sub
+
+* [Differentiating Observer and Publish-Subscribe Patterns](https://embeddedartistry.com/fieldatlas/differentiating-observer-and-publish-subscribe-patterns/)
+
+## message passing
+
+* [Message Handling in Embedded: a Declarative, Modern C++ Approach - Michael Caisse - CppNow 2022](https://www.youtube.com/watch?v=LdPgNFR7OL8)
+* [C++Now 2019: Michael Caisse “Embedded Domain Specific Languages for Embedded Bare Metal Projects”](https://www.youtube.com/watch?v=OkeRijjmoh8)
 
 # Frameworks
 
