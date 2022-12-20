@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T14:51:57.041Z
+date: 2022-12-20T14:52:13.025Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -31,3 +31,4 @@ dateCreated: 2022-12-14T19:48:37.182Z
 
 * [Diátaxis - A systematic framework for technical documentation authoring.](https://diataxis.fr/)
 * [Visualising Module Dependencies with CMake and Graphviz](https://embeddeduse.com/2022/03/01/visualising-module-dependencies-with-cmake-and-graphviz/)
+* [Visualising the Architecture of Qt Embedded Systems: Context and Container Diagrams](https://embeddeduse.com/2022/07/11/visualising-the-architecture-of-qt-embedded-systems-context-and-container-diagrams/)
