@@ -2,7 +2,7 @@
 title: Notes - SW
 description: 
 published: true
-date: 2022-12-20T15:36:42.980Z
+date: 2022-12-20T15:37:25.971Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:37.182Z
@@ -46,3 +46,4 @@ dateCreated: 2022-12-14T19:48:37.182Z
 
 * [Hexagonal Architecture: The Standard for Qt Embedded Applications](https://embeddeduse.com/2021/11/07/my-talk-hexagonal-architecture-the-standard-for-qt-embedded-applications-at-meeting-embedded-2021/)
 * [The Pattern: Ports and Adapters (‘’Object Structural’’)](https://alistair.cockburn.us/hexagonal-architecture/)
+* [Anti patterns](http://www.modernescpp.com/index.php/anti-patterns)
