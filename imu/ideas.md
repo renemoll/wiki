@@ -2,7 +2,7 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:16:00.958Z
+date: 2022-12-20T15:16:16.400Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:48:21.807Z
@@ -69,3 +69,4 @@ This page is a "link dump" with ideas and potential useful information/framework
 
 * [Ceres](https://github.com/ceres-solver/ceres-solver)
 * [Automatic Differentiation: Forward and Reverse](https://jingnanshi.com/blog/autodiff.html)
+* [Interactive Gradient Descent Demo](https://blog.skz.dev/gradient-descent)
