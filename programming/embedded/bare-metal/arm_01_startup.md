@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-01-31T20:31:06.925Z
+date: 2023-01-31T20:35:55.796Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -22,3 +22,11 @@ the reset line held in a certain level, maybe some boot pin can be used to confi
 1. hardware initialization
 1. memory initialization
 1. initialization of the C environment
+
+
+# ref
+
+* check older notes
+* https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/
+* https://www.amazon.com/dp/0750676094
+* https://github.com/payne92/bare-metal-arm
