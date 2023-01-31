@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-01-31T20:53:54.453Z
+date: 2023-01-31T20:54:23.228Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
