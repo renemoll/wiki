@@ -2,7 +2,7 @@
 title: C (runtime) library
 description: 
 published: true
-date: 2023-01-31T20:52:05.281Z
+date: 2023-01-31T20:53:09.904Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:19:03.970Z
