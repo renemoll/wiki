@@ -2,7 +2,7 @@
 title: C (runtime) library
 description: 
 published: true
-date: 2023-01-31T20:54:26.536Z
+date: 2023-04-27T14:27:29.462Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:19:03.970Z
@@ -31,7 +31,7 @@ Commercial
 C library
 
 others
-* embedded artistry
+* [embedded artistry](https://github.com/embeddedartistry/libc)
 
 Bionic libc -> Android
 dietlibc -> (embedded) Linux
@@ -48,5 +48,6 @@ can be an option, does mean no standard functions will be available.
 
 1. https://en.wikipedia.org/wiki/Crt0
 1. https://sourceware.org/newlib/libgloss.html
-1. https://www.purposeful.co.uk/arm_rtabi/ARMv7M__aeabi_lmul.html
-1. https://www.embecosm.com/appnotes/ean9/html/ch05s02.html
+1. [ARM Cortex-M Run-Time Library Analysis](https://www.purposeful.co.uk/arm_rtabi/ARMv7M__aeabi_lmul.html)
+1. [The C Runtime Initialization, crt0.o](https://www.embecosm.com/appnotes/ean9/html/ch05s02.html)
+1. [My review of the C standard library in practice](https://nullprogram.com/blog/2023/02/11/)
