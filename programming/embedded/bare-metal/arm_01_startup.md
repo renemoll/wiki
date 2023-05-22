@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-05-22T19:28:15.052Z
+date: 2023-05-22T19:29:52.518Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -55,7 +55,9 @@ Section 4
 * <stdint.h>: defines various integers types
 * <stdnoreturn.h>: defines the no-return macro
 
-Note: these headers only define language elements. No functions are defined.
+Note: these headers only define language elements. No library functions are defined.
+Yet, any freestanding library may implement library functions.
+ -> depends on library/compiler?
 
 * storage durations of objects (6.2.4), 
 * initialization (6.7.9).
