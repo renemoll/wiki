@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-01-31T20:54:23.228Z
+date: 2023-05-22T19:28:15.052Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -23,6 +23,45 @@ the reset line held in a certain level, maybe some boot pin can be used to confi
 1. memory initialization
 1. initialization of the C environment
 
+# 3 parts
+
+1. MCU boot
+1. C runtime
+1. C++ runtime
+
+Examples: STM32F7, NXP flashless? AVR ATmega8?
+
+# MCU boot
+
+
+
+# C runtime environment
+
+Section 5.1.2
+> Two execution environments are defined: *freestanding* and *hosted*. In both cases, program startup occurs when a designated C function is called by the execution environment. All objects with static storage duration shall be initialized (set to their initial values) before program startup. 
+
+Section 4
+> The two forms of conforming implementation are hosted and freestanding. A conforming hosted implementation shall accept any strictly conforming program. A conforming freestanding implementation shall accept any strictly conforming program in which the use of the features specified in the library clause (Clause 7) is confined to the contents of the standard headers <float.h>, <iso646.h>, <limits.h>, <stdalign.h>, <stdarg.h>, <stdbool.h>, <stddef.h>, <stdint.h>, and <stdnoreturn.h>. A conforming implementation may have extensions (including additional library functions), provided they do not alter the behavior of any strictly conforming program.4)
+
+[C17](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2310.pdf)
+
+* <float.h>: macros for limits/constraint/parameters for floats
+* <iso646.h>: macros for operators
+* <limits.h>: macros for limits/contrains/parameters for integers
+* <stdalign.h>: macros for alignment?
+* <stdarg.h>: macros for variable argument lists
+* <stdbool.h>: macros to define booleans
+* <stddef.h>: common types
+* <stdint.h>: defines various integers types
+* <stdnoreturn.h>: defines the no-return macro
+
+Note: these headers only define language elements. No functions are defined.
+
+* storage durations of objects (6.2.4), 
+* initialization (6.7.9).
+
+
+# C++ runtime environment
 
 # ref
 
