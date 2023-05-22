@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-05-22T19:49:07.410Z
+date: 2023-05-22T19:50:09.343Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -59,6 +59,7 @@ Note: these headers only define language elements. No library functions are defi
 Yet, any freestanding library may implement library functions.
  -> depends on library/compiler?
  -> for example, GCC provides a large number of build in functions which it will provide. https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html
+ -> Clang provides a number of memory operation functions https://clang.llvm.org/docs/CommandGuide/clang.html
 
 > In a freestanding environment (in which C program execution may take place without any benefit of an operating system), the name and type of the function called at program startup are implementation-defined. Any library facilities available to a freestanding program, other than the minimal set
 required by Clause 4, are implementation-defined.
