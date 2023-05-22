@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-05-22T19:29:52.518Z
+date: 2023-05-22T19:49:07.410Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -58,10 +58,19 @@ Section 4
 Note: these headers only define language elements. No library functions are defined.
 Yet, any freestanding library may implement library functions.
  -> depends on library/compiler?
+ -> for example, GCC provides a large number of build in functions which it will provide. https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html
+
+> In a freestanding environment (in which C program execution may take place without any benefit of an operating system), the name and type of the function called at program startup are implementation-defined. Any library facilities available to a freestanding program, other than the minimal set
+required by Clause 4, are implementation-defined.
+
+Hosted implementations are required to have a `main` function, freestanding might differ. 
 
 * storage durations of objects (6.2.4), 
 * initialization (6.7.9).
 
+Why would you use freestanding?
+
+* https://en.cppreference.com/w/cpp/freestanding
 
 # C++ runtime environment
 
