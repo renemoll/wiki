@@ -2,7 +2,7 @@
 title: ARM booting
 description: 
 published: true
-date: 2023-05-22T19:50:09.343Z
+date: 2023-05-22T20:39:45.720Z
 tags: 
 editor: markdown
 dateCreated: 2023-01-31T20:31:06.925Z
@@ -66,12 +66,29 @@ required by Clause 4, are implementation-defined.
 
 Hosted implementations are required to have a `main` function, freestanding might differ. 
 
+Differences
+* the library may depend on functionality provided by an operating system, such as opening a file or manipulating memory.
+
+
+
 * storage durations of objects (6.2.4), 
 * initialization (6.7.9).
 
 Why would you use freestanding?
 
 * https://en.cppreference.com/w/cpp/freestanding
+
+Example
+https://sourceware.org/newlib/libc.html#Stubs
+Newlib library lists which system calls should be provided to make the library work. Options: no standard library (provide your own stubs), 
+
+* linux
+* nosys: stubbed system calls
+* nano: 
+* pid
+* rdimon: semihost
+* rdpmon
+* redboot
 
 # C++ runtime environment
 
