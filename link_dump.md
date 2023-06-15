@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:50:09.174Z
+date: 2023-06-15T20:51:33.347Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -19,6 +19,8 @@ dateCreated: 2023-06-15T20:41:00.876Z
 * [C start-up](http://www.bravegnu.org/gnu-eprog/c-startup.html)
 * [On segments](https://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/specialsections.html)
 * [On segments - AVR](https://www.nongnu.org/avr-libc/user-manual/mem_sections.html)
+
+* [C stdlib](https://electronics.stackexchange.com/questions/223929/c-standard-libraries-on-bare-metal)
 
 # C++
 
