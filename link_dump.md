@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T21:00:33.386Z
+date: 2023-06-15T21:03:12.566Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -59,3 +59,6 @@ Interrupt attributes
 
 * [Choosing the Most Suitable MEMS Accelerometer for Your Application—Part 1](https://www.analog.com/en/analog-dialogue/articles/choosing-the-most-suitable-mems-accelerometer-for-your-application-part-1.html)
 * [Choosing the Most Suitable Accelerometer for Your Application—Part 2](https://www.analog.com/en/analog-dialogue/articles/choosing-the-most-suitable-accelerometer-for-your-application-part-2.html)
+
+* https://filterpy.readthedocs.io/en/latest/kalman/SquareRootFilter.html
+* https://gekko.readthedocs.io/en/latest/overview.html
