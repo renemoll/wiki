@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:57:27.316Z
+date: 2023-06-15T21:00:17.453Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -26,6 +26,7 @@ dateCreated: 2023-06-15T20:41:00.876Z
 * https://github.com/payne92/bare-metal-arm/blob/master/_startup.c
 * https://github.com/eblot/newlib/blob/master/libgloss/arm/crt0.S
 * [Programming embedded systems: Startup code and the world before main()](https://www.embedded.com/programming-embedded-systems-startup-code-and-the-world-before-main/)
+* [From Zero to main(): Demystifying Firmware Linker Scripts](https://interrupt.memfault.com/blog/how-to-write-linker-scripts-for-firmware)
 
 * [Is there a meaningful distinction between freestanding and hosted implementations?](https://stackoverflow.com/questions/30825151/is-there-a-meaningful-distinction-between-freestanding-and-hosted-implementation)
 * [Freestanding](https://www.embedded.com/freestanding-vs-hosted-implementations/)
