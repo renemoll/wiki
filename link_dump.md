@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:52:12.954Z
+date: 2023-06-15T20:52:38.654Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -23,6 +23,8 @@ dateCreated: 2023-06-15T20:41:00.876Z
 * [C stdlib](https://electronics.stackexchange.com/questions/223929/c-standard-libraries-on-bare-metal)
 
 * [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
+* https://github.com/payne92/bare-metal-arm/blob/master/_startup.c
+* [Programming embedded systems: Startup code and the world before main()](https://www.embedded.com/programming-embedded-systems-startup-code-and-the-world-before-main/)
 
 # C++
 
