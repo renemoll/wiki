@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T21:00:17.453Z
+date: 2023-06-15T21:00:33.386Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -36,6 +36,8 @@ dateCreated: 2023-06-15T20:41:00.876Z
 Interrupt attributes
 * [Interrupts](https://jsandler18.github.io/tutorial/interrupts.html)
 * [GCC](https://gcc.gnu.org/onlinedocs/gcc/ARM-Function-Attributes.html)
+
+* [Get the most out of the linker map file](https://interrupt.memfault.com/blog/get-the-most-out-of-the-linker-map-file)
 
 # C++
 
