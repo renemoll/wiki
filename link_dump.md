@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:51:33.347Z
+date: 2023-06-15T20:52:12.954Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -21,6 +21,8 @@ dateCreated: 2023-06-15T20:41:00.876Z
 * [On segments - AVR](https://www.nongnu.org/avr-libc/user-manual/mem_sections.html)
 
 * [C stdlib](https://electronics.stackexchange.com/questions/223929/c-standard-libraries-on-bare-metal)
+
+* [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
 
 # C++
 
