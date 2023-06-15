@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:52:51.862Z
+date: 2023-06-15T20:54:52.417Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -24,8 +24,13 @@ dateCreated: 2023-06-15T20:41:00.876Z
 
 * [Building Bare-Metal ARM Systems with GNU: Part 1 – Getting Started](https://www.embedded.com/building-bare-metal-arm-systems-with-gnu-part-1-getting-started/)
 * https://github.com/payne92/bare-metal-arm/blob/master/_startup.c
+* https://github.com/eblot/newlib/blob/master/libgloss/arm/crt0.S
 * [Programming embedded systems: Startup code and the world before main()](https://www.embedded.com/programming-embedded-systems-startup-code-and-the-world-before-main/)
+
+* [Is there a meaningful distinction between freestanding and hosted implementations?](https://stackoverflow.com/questions/30825151/is-there-a-meaningful-distinction-between-freestanding-and-hosted-implementation)
 * [Freestanding](https://www.embedded.com/freestanding-vs-hosted-implementations/)
+
+* [Preventing dynamic allocation](https://www.embedded.com/preventing-dynamic-allocation/)
 
 # C++
 
