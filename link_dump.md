@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:54:52.417Z
+date: 2023-06-15T20:55:41.016Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -49,3 +49,5 @@ dateCreated: 2023-06-15T20:41:00.876Z
 * [Tilt Sensing Using Linear Accelerometers](https://www.thierry-lequeu.fr/data/AN3461.pdf)
 * [AN-1057: Using an Accelerometer for Inclination Sensing](https://www.analog.com/en/app-notes/an-1057.html)
 
+
+* [Choosing the Most Suitable MEMS Accelerometer for Your Application—Part 1](https://www.analog.com/en/analog-dialogue/articles/choosing-the-most-suitable-mems-accelerometer-for-your-application-part-1.html)
