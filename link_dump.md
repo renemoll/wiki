@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T20:55:41.016Z
+date: 2023-06-15T20:57:27.316Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -32,6 +32,10 @@ dateCreated: 2023-06-15T20:41:00.876Z
 
 * [Preventing dynamic allocation](https://www.embedded.com/preventing-dynamic-allocation/)
 
+Interrupt attributes
+* [Interrupts](https://jsandler18.github.io/tutorial/interrupts.html)
+* [GCC](https://gcc.gnu.org/onlinedocs/gcc/ARM-Function-Attributes.html)
+
 # C++
 
 * [Casey Muratori is wrong about clean code (but he's also right)](https://blog.codef00.com/2023/04/13/casey-muratori-is-wrong-about-clean-code)
@@ -51,3 +55,4 @@ dateCreated: 2023-06-15T20:41:00.876Z
 
 
 * [Choosing the Most Suitable MEMS Accelerometer for Your Application—Part 1](https://www.analog.com/en/analog-dialogue/articles/choosing-the-most-suitable-mems-accelerometer-for-your-application-part-1.html)
+* [Choosing the Most Suitable Accelerometer for Your Application—Part 2](https://www.analog.com/en/analog-dialogue/articles/choosing-the-most-suitable-accelerometer-for-your-application-part-2.html)
