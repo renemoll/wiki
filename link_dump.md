@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T21:03:12.566Z
+date: 2023-06-15T21:04:13.698Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -62,3 +62,8 @@ Interrupt attributes
 
 * https://filterpy.readthedocs.io/en/latest/kalman/SquareRootFilter.html
 * https://gekko.readthedocs.io/en/latest/overview.html
+* https://github.com/rlabbe/Python-for-Signal-Processing
+* https://github.com/numerical-mooc/numerical-mooc
+* https://github.com/AllenDowney/ThinkBayes
+
+* [Kalman Filters for Nonlinear Systems and Heavy-Tailed Noise](https://www.diva-portal.org/smash/get/diva2:648389/FULLTEXT02)
