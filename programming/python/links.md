@@ -2,13 +2,16 @@
 title: Python links
 description: 
 published: true
-date: 2022-12-20T15:33:31.993Z
+date: 2023-07-16T13:13:28.139Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:17.985Z
 ---
 
 # Python links
+
+* [How to create a Python package in 2022](https://mathspp.com/blog/how-to-create-a-python-package-in-2022)
+* [pip-audit](https://github.com/pypa/pip-audit/blob/main/pyproject.toml) -> example
 
 # On packaging
 
