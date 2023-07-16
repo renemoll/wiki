@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-07-16T13:07:15.555Z
+date: 2023-07-16T13:12:13.474Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -14,8 +14,12 @@ dateCreated: 2023-06-15T20:41:00.876Z
 # embedded
 
 * [theEmbeddedNewTestament.github.io](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io)
+* [Callbacks and Lambdas in Embedded C++](https://blog.stratifylabs.dev/device/2022-12-01-Callback-and-Lambdas-in-embedded-cpp/)
+* [A bare metal programming guide](https://github.com/cpq/bare-metal-programming-guide)
 * [Configuring a Linker Script for Accurate Linker Memory Usage Reporting](https://embeddedartistry.com/blog/2023/03/01/configuring-a-linker-script-for-accurate-linker-memory-usage-reporting/).
 * [Measuring Stack Usage the Hard Way](https://interrupt.memfault.com/blog/measuring-stack-usage)
+
+* [Better Embedded System SW](https://betterembsw.blogspot.com/2017/11/embedded-software-course-notes-on-line.html)
 
 * [C start-up](http://www.bravegnu.org/gnu-eprog/c-startup.html)
 * [On segments](https://refspecs.linuxbase.org/LSB_3.0.0/LSB-PDA/LSB-PDA/specialsections.html)
