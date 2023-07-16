@@ -1,4 +1,14 @@
 ---
+title: air_quality
+description: 
+published: true
+date: 2023-07-16T13:04:57.516Z
+tags: 
+editor: markdown
+dateCreated: 2022-12-14T19:49:10.541Z
+---
+
+---
 title: Project: air quality
 description: 
 published: true
@@ -23,3 +33,7 @@ Dutch
 Norms
 * WHO
 * EU/NL
+
+# alt
+
+* [	The hidden cost of air quality monitoring](https://news.ycombinator.com/item?id=36499905)
