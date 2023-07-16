@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2023-07-16T12:02:07.033Z
+date: 2023-07-16T12:03:52.862Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -35,8 +35,13 @@ A collection of pages I encountered which might be useful
 ## C++20
 
 * [C++20: The Big Four](https://www.modernescpp.com/index.php/thebigfour)
+* [Concepts](https://www.modernescpp.com/index.php/define-concepts)
 * [Modules](https://www.modernescpp.com/index.php/cpp20-modules)
-
+* [Ranges intro](https://www.modernescpp.com/index.php/c-20-the-ranges-library)
+* [Ranges](https://www.modernescpp.com/index.php/the-ranges-library-in-c-20-a-deep-dive)
+* [Coroutines](https://www.modernescpp.com/index.php/c-20-coroutines-the-first-overview)
+  * [C++20 Coroutines on Microcontrollers—What We Learned](file:///C:/Users/RMQ/Downloads/Belsonetal.-2020-C20CoroutinesonMicrocontrollers-WhatWeLearned.pdf)
+    Interesting code, not yet suitable for embedded.
 
 ## Usefull code
 * [SI units](https://github.com/bernedom/SI)
