@@ -2,7 +2,7 @@
 title: Requirements
 description: 
 published: true
-date: 2023-07-16T13:51:23.130Z
+date: 2023-07-16T13:51:50.271Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-20T15:14:28.578Z
