@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-07-16T13:00:04.653Z
+date: 2023-07-16T13:07:15.555Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -13,6 +13,7 @@ dateCreated: 2023-06-15T20:41:00.876Z
 
 # embedded
 
+* [theEmbeddedNewTestament.github.io](https://github.com/theEmbeddedGeorge/theEmbeddedNewTestament.github.io)
 * [Configuring a Linker Script for Accurate Linker Memory Usage Reporting](https://embeddedartistry.com/blog/2023/03/01/configuring-a-linker-script-for-accurate-linker-memory-usage-reporting/).
 * [Measuring Stack Usage the Hard Way](https://interrupt.memfault.com/blog/measuring-stack-usage)
 
