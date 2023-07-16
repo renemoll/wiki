@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2023-07-16T12:03:52.862Z
+date: 2023-07-16T12:05:07.177Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -40,7 +40,7 @@ A collection of pages I encountered which might be useful
 * [Ranges intro](https://www.modernescpp.com/index.php/c-20-the-ranges-library)
 * [Ranges](https://www.modernescpp.com/index.php/the-ranges-library-in-c-20-a-deep-dive)
 * [Coroutines](https://www.modernescpp.com/index.php/c-20-coroutines-the-first-overview)
-  * [C++20 Coroutines on Microcontrollers—What We Learned](file:///C:/Users/RMQ/Downloads/Belsonetal.-2020-C20CoroutinesonMicrocontrollers-WhatWeLearned.pdf)
+  * [C++20 Coroutines on Microcontrollers—What We Learned](https://www.researchgate.net/publication/339221041_C20_Coroutines_on_Microcontrollers_-What_We_Learned)
     Interesting code, not yet suitable for embedded.
 
 ## Usefull code
