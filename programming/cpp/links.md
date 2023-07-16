@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2022-12-20T15:51:28.560Z
+date: 2023-07-16T12:02:07.033Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -31,6 +31,12 @@ A collection of pages I encountered which might be useful
 
 * [IT Hare](http://ithare.com/)
 * [Simplify C++](https://arne-mertz.de/)
+
+## C++20
+
+* [C++20: The Big Four](https://www.modernescpp.com/index.php/thebigfour)
+* [Modules](https://www.modernescpp.com/index.php/cpp20-modules)
+
 
 ## Usefull code
 * [SI units](https://github.com/bernedom/SI)
