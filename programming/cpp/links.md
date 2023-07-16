@@ -2,7 +2,7 @@
 title: C++ Links
 description: 
 published: true
-date: 2023-07-16T12:56:44.007Z
+date: 2023-07-16T12:58:44.023Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:06.828Z
@@ -109,10 +109,7 @@ On `volatile`:
 * [CodeChecker](https://github.com/Ericsson/CodeChecker)
 * [oclint](https://oclint.org/)
 * [ikos](https://github.com/NASA-SW-VnV/ikos)
-
-## Tooling
-
-* [sourcegraph](https://about.sourcegraph.com/)
+* [Valgrind Memcheck: Different ways to lose your memory](https://developers.redhat.com/blog/2021/04/23/valgrind-memcheck-different-ways-to-lose-your-memory#)
 
 ## On Qt/QML
 
