@@ -2,7 +2,7 @@
 title: startup
 description: 
 published: true
-date: 2023-07-16T13:05:53.357Z
+date: 2023-07-16T13:06:41.564Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-16T12:00:20.774Z
