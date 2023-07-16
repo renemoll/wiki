@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2023-06-15T21:06:21.822Z
+date: 2023-07-16T13:00:04.653Z
 tags: 
 editor: markdown
 dateCreated: 2023-06-15T20:41:00.876Z
@@ -67,3 +67,5 @@ Interrupt attributes
 * https://github.com/AllenDowney/ThinkBayes
 
 * [Kalman Filters for Nonlinear Systems and Heavy-Tailed Noise](https://www.diva-portal.org/smash/get/diva2:648389/FULLTEXT02)
+
+* [An Introduction to Statistical Learning](https://www.statlearning.com/)
