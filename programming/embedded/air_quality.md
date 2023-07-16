@@ -2,7 +2,7 @@
 title: air_quality
 description: 
 published: true
-date: 2023-07-16T13:04:57.516Z
+date: 2023-07-16T13:06:44.032Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:10.541Z
