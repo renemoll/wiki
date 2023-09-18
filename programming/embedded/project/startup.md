@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-18T20:07:21.061Z
+date: 2023-09-18T20:11:55.690Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -39,6 +39,7 @@ Cortex-M23/33/55/85 -> ARMv8-M
 ### RTOS
 
 https://en.wikipedia.org/wiki/ARM_architecture_family#Embedded_operating_systems
+https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 * open-source
 * cortex-m
 
@@ -51,6 +52,7 @@ https://en.wikipedia.org/wiki/ARM_architecture_family#Embedded_operating_systems
 | mbed-OS | Uses STM/CMSIS start-up code. | 
 | NuttX | [vector table](https://github.com/apache/nuttx/blob/master/arch/arm/src/armv7-m/arm_vectors.c), [start-up](https://github.com/apache/nuttx/blob/master/arch/arm/src/stm32f7/stm32_start.c) |
 | RIOT | [reset handler](https://github.com/RIOT-OS/RIOT/blob/master/cpu/cortexm_common/vectors_cortexm.c)
+| rtthread | Uses STM/CMSIS start-up code. | 
 | ThreadX | [start-up](https://github.com/azure-rtos/threadx/blob/master/ports/cortex_m7/gnu/example_build/cortexm7_crt0.S)
 
 
