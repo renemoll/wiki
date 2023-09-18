@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-18T18:47:56.505Z
+date: 2023-09-18T19:01:51.628Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -33,3 +33,19 @@ https://en.wikipedia.org/wiki/ARM_architecture_family#Embedded_operating_systems
 | --- | --- |
 | ChibiOS/RT | |
 | NuttX | [vector table](https://github.com/apache/nuttx/blob/master/arch/arm/src/armv7-m/arm_vectors.c), [start-up](https://github.com/apache/nuttx/blob/master/arch/arm/src/stm32f7/stm32_start.c) |
+
+
+### NuttX
+* Reset MPU
+* Clear BSS (inline C)
+ > unclear if optimized by compiler
+* Copy data (inline C)
+ > unclear if optimized by compiler
+* Optinal: copy function to RAM
+* Clock config
+* FPU config
+* Optional: enable UART
+* Enable TC memory
+* Enable caches
+* Optional: enable system log (ITM)
+* Optional: initialize user-space
