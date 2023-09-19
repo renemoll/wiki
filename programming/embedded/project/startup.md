@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-19T20:13:39.917Z
+date: 2023-09-19T20:35:36.595Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -41,9 +41,8 @@ Cortex-M23/33/55/85 -> ARMv8-M
 | lib | code |
 | --- | --- |
 | CMSIS | [startup_ARMCM7.S](https://github.com/ARM-software/CMSIS_5/blob/develop/Device/ARM/ARMCM7/Source/GCC/startup_ARMCM7.S), [system_ARMCM7.c](https://github.com/ARM-software/CMSIS_5/blob/develop/Device/ARM/ARMCM7/Source/system_ARMCM7.c) |
-| newlib | (?)  |
-| newlib-nano | (?) |
-| picolib | (?) |
+| newlib / newlib-nano | [crt0.S](https://github.com/bminor/newlib/blob/master/libgloss/arm/crt0.S) |
+| picolibc | [crt0.c](https://github.com/picolibc/picolibc/blob/main/picocrt/machine/arm/crt0.c), [crt0.h](https://github.com/picolibc/picolibc/blob/main/picocrt/crt0.h) |
 | STM | cmsis_device_f7 |
 | modm | (?) |
 
@@ -54,6 +53,33 @@ Cortex-M23/33/55/85 -> ARMv8-M
 * set VTOR
 * enable FPU
 * UNALIGNED_SUPPORT_DISABLE (SCB->CCR)
+
+#### newlib / newlib-nano / libgloss
+
+* zero BSS
+* call init/fini
+
+#### modm
+
+* set main stack pointer
+* enable FPU
+* enable TCMs
+* copy data
+* zero bss
+* enable I cache
+* set VTOR
+* SCB_CCR_DIV_0_TRP_Msk
+* call __init_array_start
+
+
+
+#### picolibc
+
+* configure FPU
+* copy data
+* clear bss
+* TLS
+* __libc_init_array
 
 #### STM
 
