@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-18T20:20:47.985Z
+date: 2023-09-19T20:12:11.671Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -34,7 +34,27 @@ Cortex-M23/33/55/85 -> ARMv8-M
 * newlib-nano
 * picolibc
 * modm
+* CMSIS
+* STM
 * ...
+
+| lib | code |
+| --- | --- |
+| CMSIS | [startup_ARMCM7.S](https://github.com/ARM-software/CMSIS_5/blob/develop/Device/ARM/ARMCM7/Source/GCC/startup_ARMCM7.S), [system_ARMCM7.c](https://github.com/ARM-software/CMSIS_5/blob/develop/Device/ARM/ARMCM7/Source/system_ARMCM7.c) |
+| newlib | (?)  |
+| newlib-nano | (?) |
+| picolib | (?) |
+| STM | (?) |
+| modm | (?) |
+
+#### CMSIS
+
+* copy data
+* zero bss
+* set VTOR
+* enable FPU
+* UNALIGNED_SUPPORT_DISABLE (SCB->CCR)
+
 
 ### RTOS
 
@@ -47,7 +67,8 @@ https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 
 | OS | Code |
 | --- | --- |
-| ChibiOS/RT | |
+| ChibiOS/RT | crt0_v7m.s |
+| Contiki-NG | Uses CMSIS start-up code. |
 | FreeRTOS | Uses STM/CMSIS start-up code. |
 | mbed-OS | Uses STM/CMSIS start-up code. | 
 | NuttX | [vector table](https://github.com/apache/nuttx/blob/master/arch/arm/src/armv7-m/arm_vectors.c), [start-up](https://github.com/apache/nuttx/blob/master/arch/arm/src/stm32f7/stm32_start.c) |
@@ -56,7 +77,20 @@ https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 | ThreadX | [start-up](https://github.com/azure-rtos/threadx/blob/master/ports/cortex_m7/gnu/example_build/cortexm7_crt0.S)
 
 
+#### ChibiOS
 
+* disable interrupts
+* optional: set main&process stack pointer
+* optional: set VTOR
+* optional: enable & configure FPU
+* optional: enable caches
+* init gpio & clock
+* optional: fill stack spaces
+* optional: copy irq vector table
+* optional: clear BSS
+* optional: copy data
+* optional: init RAM (copy / clear)
+* optional: call init/fini
 
 #### NuttX
 * Reset MPU
