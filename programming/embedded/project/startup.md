@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-19T20:12:11.671Z
+date: 2023-09-19T20:13:39.917Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -44,7 +44,7 @@ Cortex-M23/33/55/85 -> ARMv8-M
 | newlib | (?)  |
 | newlib-nano | (?) |
 | picolib | (?) |
-| STM | (?) |
+| STM | cmsis_device_f7 |
 | modm | (?) |
 
 #### CMSIS
@@ -55,6 +55,13 @@ Cortex-M23/33/55/85 -> ARMv8-M
 * enable FPU
 * UNALIGNED_SUPPORT_DISABLE (SCB->CCR)
 
+#### STM
+
+* copy data
+* zero bss
+* enable FPU
+* set VTOR 
+* __libc_init_array
 
 ### RTOS
 
