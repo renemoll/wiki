@@ -2,7 +2,7 @@
 title: actor model
 description: 
 published: true
-date: 2023-09-14T20:14:34.805Z
+date: 2023-09-21T18:12:33.963Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-14T18:57:54.795Z
