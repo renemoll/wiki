@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-19T20:35:36.595Z
+date: 2023-09-22T07:44:24.896Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -162,3 +162,81 @@ https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 info on
 * crtbegin/crtend etc...
 * TLS
+
+
+
+
+Going through linkerscripts, and may even low-level initialization code provided by libc implementations, you may run into the following
+
+init: https://github.com/eblot/newlib/blob/master/newlib/libc/misc/init.c
+fini: https://github.com/eblot/newlib/blob/master/newlib/libc/misc/fini.c
+
+You may find resources discussion .ctors/dtors, crtbegin/crtend, crti/crtn...
+
+And begin to wonder, what is all this, what is it for and is it even relevant?
+
+
+All have to do with initialization before `main` is called and finalization after main returns.
+
+
+There seem to be N groups:
+
+- .ctors/dtors
+- init/fini
+- .init_array/.fini_array
+
+> where does crtbegin/crtend, crti/crtn fit in?
+
+## background
+
+https://maskray.me/blog/2021-11-07-init-ctors-init-array
+
+[System V Application Binary Interface](https://www.sco.com/developers/gabi/latest/contents.html)
+* brief intro on the sections: https://www.sco.com/developers/gabi/latest/ch4.sheader.html#special_sections
+								https://www.sco.com/developers/gabi/latest/ch5.dynamic.html#dynamic_section
+
+
+
+.init initialization instructions
+.fini termination instructions
+
+.pre_initarray, list of pre-initialization functions
+.init_array, list of initialization functions
+.fini_array, list of termination functions
+
+.ctors
+.dtors
+> removed -> https://gcc.gnu.org/bugzilla/show_bug.cgi?id=46770
+
+
+## How to trigger it
+
+1. natural occourance
+1. compiler arguments & extensions/attributes
+
+
+* https://docs.oracle.com/cd/E19683-01/816-1386/6m7qcobkh/index.html#chapter2-48195
+The registration of initialization and termination functions can be carried out directly by the link-editor using the -z initarray and -z finiarray options
+
+
+## How to initialize it
+
+Linker tags these sections with: DT_PREINIT_ARRAY and DT_PREINIT_ARRAYSZ, DT_INIT_ARRAY and DT_INIT_ARRAYSZ, and DT_FINI_ARRAY and DT_FINI_ARRAYSZ, DT_INIT and DT_FINI  (usefull?)
+
+On a computer with an OS, the OS takes care of calling all the init/fini related code.
+
+On a MCU we don't have that luxery. either we avoid needing this. or we perform the initialization.
+
+* https://docs.oracle.com/cd/E19683-01/816-1386/6m7qcobkh/index.html#chapter2-48195
+* https://docs.oracle.com/cd/E19683-01/816-1386/6m7qcobks/index.html
+* https://refspecs.linuxbase.org/elf/gabi4+/ch5.dynamic.html
+
+
+
+## Thread local storage
+
+
+.tbss
+This section holds uninitialized thread-local data that contribute to the program's memory image. By definition, the system initializes the data with zeros when the data is instantiated for each new execution flow. The section occupies no file space, as indicated by the section type, SHT_NOBITS. Implementations need not support thread-local storage.
+.tdata
+This section holds initialized thread-local data that contributes to the program's memory image. A copy of its contents is instantiated by the system for each new execution flow. Implementations need not support thread-local storage.
