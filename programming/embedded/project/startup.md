@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-22T07:44:24.896Z
+date: 2023-09-24T09:52:57.685Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -159,14 +159,7 @@ https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 
 ## Theory / background
 
-info on
-* crtbegin/crtend etc...
-* TLS
-
-
-
-
-Going through linkerscripts, and may even low-level initialization code provided by libc implementations, you may run into the following
+Going through linkerscripts, and maybe even low-level initialization code provided by a libc implementations, you may run into the following
 
 init: https://github.com/eblot/newlib/blob/master/newlib/libc/misc/init.c
 fini: https://github.com/eblot/newlib/blob/master/newlib/libc/misc/fini.c
@@ -186,6 +179,10 @@ There seem to be N groups:
 - .init_array/.fini_array
 
 > where does crtbegin/crtend, crti/crtn fit in?
+
+[GCC intenals](https://gcc.gnu.org/onlinedocs/gccint/Initialization.html)
+
+Before an application is executed, it may require initialization. Same when it terminates. 
 
 ## background
 
