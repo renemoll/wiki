@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-25T20:08:55.344Z
+date: 2023-09-25T20:32:58.619Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -193,6 +193,18 @@ target-def.h
 #. `INIT_SECTION_ASM_OP`
 #. `INIT_SECTION_ASM_OP` = false, `TARGET_ASM_CONSTRUCTOR` list
 #. `TARGET_HAVE_CTORS_DTORS` = false
+
+* `TARGET_ASM_NAMED_SECTION`: no real effect
+* `CTORS_SECTION_ASM_OP` / `DTORS_SECTION_ASM_OP`
+* `INIT_SECTION_ASM_OP`
+* `TARGET_ASM_CONSTRUCTOR`
+* `TARGET_HAVE_CTORS_DTORS`
+* `USE_INITFINI_ARRAY`, when enabled:
+  * disables:
+    * `INIT_SECTION_ASM_OP` / `FINI_SECTION_ASM_OP`
+  * enables:
+    * `INIT_ARRAY_SECTION_ASM_OP` / `FINI_ARRAY_SECTION_ASM_OP`
+    * `TARGET_ASM_CONSTRUCTOR` / `TARGET_ASM_DESTRUCTOR`
 
 * crti
   * `.init` section with `_init` function prelouge 
