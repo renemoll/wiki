@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-25T20:32:58.619Z
+date: 2023-09-25T20:33:07.553Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -199,6 +199,7 @@ target-def.h
 * `INIT_SECTION_ASM_OP`
 * `TARGET_ASM_CONSTRUCTOR`
 * `TARGET_HAVE_CTORS_DTORS`
+
 * `USE_INITFINI_ARRAY`, when enabled:
   * disables:
     * `INIT_SECTION_ASM_OP` / `FINI_SECTION_ASM_OP`
