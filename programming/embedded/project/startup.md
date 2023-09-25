@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-24T09:52:57.685Z
+date: 2023-09-25T20:08:55.344Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -157,7 +157,7 @@ https://en.wikipedia.org/wiki/Comparison_of_real-time_operating_systems
 * Copy data
 * call static constructors
 
-## Theory / background
+# Theory / background
 
 Going through linkerscripts, and maybe even low-level initialization code provided by a libc implementations, you may run into the following
 
@@ -174,13 +174,35 @@ All have to do with initialization before `main` is called and finalization afte
 
 There seem to be N groups:
 
-- .ctors/dtors
+- .ctors/.dtors -> list of constructors/destructors
 - init/fini
 - .init_array/.fini_array
 
 > where does crtbegin/crtend, crti/crtn fit in?
 
 [GCC intenals](https://gcc.gnu.org/onlinedocs/gccint/Initialization.html)
+* The linker must build two lists of these functions—a list of initialization functions, called `__CTOR_LIST__`, and a list of termination functions, called `__DTOR_LIST__`.
+Four variants:
+#. arbitrary sections: on systems that support a .init section (`crtstuff.c `) (`INIT_SECTION_ASM_OP`)
+#. arbitrary sections:  the `__main` function is defined in `libgcc2.c` and runs the global constructors.
+#. no arbitrary sections: fucntion pointer list in a special section (`TARGET_ASM_CONSTRUCTOR`)
+#. no arbitrary sections: no special section: These functions are called via __main as described above. In order to use this method, use_collect2 must be defined in the target in config.gcc. 
+
+target-def.h
+#. `TARGET_ASM_NAMED_SECTION` / `CTORS_SECTION_ASM_OP` / `DTORS_SECTION_ASM_OP`
+#. `INIT_SECTION_ASM_OP`
+#. `INIT_SECTION_ASM_OP` = false, `TARGET_ASM_CONSTRUCTOR` list
+#. `TARGET_HAVE_CTORS_DTORS` = false
+
+* crti
+  * `.init` section with `_init` function prelouge 
+
+
+
+* crtn
+  * `.fini` section with `_fini` function epilouge 
+
+
 
 Before an application is executed, it may require initialization. Same when it terminates. 
 
