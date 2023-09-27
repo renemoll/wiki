@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-27T18:59:19.266Z
+date: 2023-09-27T19:03:40.135Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -299,4 +299,13 @@ Even better, if you are working on bare-metal applications (like embedded), you 
   * 6.9.3.2:
     * Variables with static storage duration are initialized as a consequence of program initiation. Variables with thread storage duration are initialized as a consequence of thread execution.
     * Constant initialization is performed if a variable or temporary object with static or thread storage duration is constant-initialized (7.7). If constant initialization is not performed, a variable with static storage duration (6.7.5.1) or thread storage duration (6.7.5.2) is zero-initialized
-    
+
+From the above, we know:
+* static variables need to be initialized: either zero or with a constant value.
+* static object's constructors are to be executed
+
+Unclear:
+* thread-local storage
+  * [link](https://maskray.me/blog/2021-02-14-all-about-thread-local-storage)
+  * [gcc](https://gcc.gnu.org/onlinedocs/gcc/Thread-Local.html)
+  
