@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-27T18:49:26.572Z
+date: 2023-09-27T18:59:19.266Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -278,6 +278,10 @@ This section holds initialized thread-local data that contributes to the program
 
 Your application does not start with `main`. For C/C++ applications, `main` may be the main starting point, however there are things happening before and after. 
 
+Even better, if you are working on bare-metal applications (like embedded), you don't even have to have a `main`.
+
+
+
 * Working draft [C23](https://open-std.org/JTC1/SC22/WG14/www/docs/n3096.pdf)
   * section 5.1.2:
   > All objects with static storage duration shall be initialized (set to their initial values) before program startup. The manner and timing of such initialization are otherwise unspecified.
@@ -292,4 +296,7 @@ Your application does not start with `main`. For C/C++ applications, `main` may 
       * may have multiple threads
 * Working draft [C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/n4849.pdf)
  > 6.9.3.1: start-up contains the execution of constructors for objects of namespace scope with static storage duration; termination contains the execution of destructors for objects with static storage duration
-  * a
+  * 6.9.3.2:
+    * Variables with static storage duration are initialized as a consequence of program initiation. Variables with thread storage duration are initialized as a consequence of thread execution.
+    * Constant initialization is performed if a variable or temporary object with static or thread storage duration is constant-initialized (7.7). If constant initialization is not performed, a variable with static storage duration (6.7.5.1) or thread storage duration (6.7.5.2) is zero-initialized
+    
