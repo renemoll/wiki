@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-27T18:24:48.539Z
+date: 2023-09-27T18:49:26.572Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -278,8 +278,18 @@ This section holds initialized thread-local data that contributes to the program
 
 Your application does not start with `main`. For C/C++ applications, `main` may be the main starting point, however there are things happening before and after. 
 
-
-
-
-
-
+* Working draft [C23](https://open-std.org/JTC1/SC22/WG14/www/docs/n3096.pdf)
+  * section 5.1.2:
+  > All objects with static storage duration shall be initialized (set to their initial values) before program startup. The manner and timing of such initialization are otherwise unspecified.
+    * freestanding:
+      * exeucting may take place without an operating system
+      > the name and type of the function called at program startup are implementation-defined
+      * library support may be limited, a certain set is required (Clause 4), the remaining is implementation-defined. [link](https://en.cppreference.com/w/cpp/freestanding)
+      * threads are implementation defined
+    * hosted
+      * start-up function calls `int main(void)` or `int main(int argc, char *argv[])`
+      * complete library available (Clause 7)
+      * may have multiple threads
+* Working draft [C++](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/n4849.pdf)
+ > 6.9.3.1: start-up contains the execution of constructors for objects of namespace scope with static storage duration; termination contains the execution of destructors for objects with static storage duration
+  * a
