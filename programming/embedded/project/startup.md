@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-25T20:35:11.005Z
+date: 2023-09-27T18:24:48.539Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -272,3 +272,14 @@ On a MCU we don't have that luxery. either we avoid needing this. or we perform 
 This section holds uninitialized thread-local data that contribute to the program's memory image. By definition, the system initializes the data with zeros when the data is instantiated for each new execution flow. The section occupies no file space, as indicated by the section type, SHT_NOBITS. Implementations need not support thread-local storage.
 .tdata
 This section holds initialized thread-local data that contributes to the program's memory image. A copy of its contents is instantiated by the system for each new execution flow. Implementations need not support thread-local storage.
+
+
+# What happens before `main`
+
+Your application does not start with `main`. For C/C++ applications, `main` may be the main starting point, however there are things happening before and after. 
+
+
+
+
+
+
