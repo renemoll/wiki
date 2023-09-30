@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-27T19:03:40.135Z
+date: 2023-09-30T07:51:08.610Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -219,6 +219,8 @@ target-def.h
 
 Before an application is executed, it may require initialization. Same when it terminates. 
 
+Special ARM sections: aaelf32.pdf
+
 ## background
 
 https://maskray.me/blog/2021-11-07-init-ctors-init-array
@@ -303,6 +305,11 @@ Even better, if you are working on bare-metal applications (like embedded), you 
 From the above, we know:
 * static variables need to be initialized: either zero or with a constant value.
 * static object's constructors are to be executed
+
+## How do we know what to initialize (and with what)?
+
+
+
 
 Unclear:
 * thread-local storage
