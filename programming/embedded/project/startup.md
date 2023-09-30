@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-30T08:06:49.846Z
+date: 2023-09-30T08:18:21.704Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -319,8 +319,30 @@ Meaning:
 * `.data` needs to be copied (from FLASH to RAM)
 
 
-https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter7-1.html#scrolltoc
+https://www.sco.com/developers/gabi/latest/ch4.sheader.html
 
+## Constructors
+
+Now things become a bit messy. For C++, we need to call constructors for any static object. Meaning we needs to find the location of said constructor and call it.
+
+Again, ELF defines special sections for this information:
+* `.preinit_array`: holds an array of function pointers that contributes to a single pre-initialization array for the executable or shared object containing the section.
+* `.init_array`/`.fini_array`: holds an array of function pointers that contributes to a single initialization/termination array for the executable or shared object containing the section.
+
+Meaning: we get a list of functions we need to execute
+
+And that is not all:
+* `.init` / `.fini`: holds initialization/termination code. When a program starts to run, the system arranges to execute the code in this section before calling the main program entry point (called main for C programs). Termination code is executed when the program exits normally.
+
+Meaning: a function to call.
+
+Order [link](https://www.sco.com/developers/gabi/latest/ch5.dynamic.html#init_fini)
+* pre-init
+* init
+* init array
+* main
+* fini array
+* fini
 
 # Unclear
 * thread-local storage
