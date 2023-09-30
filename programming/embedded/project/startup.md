@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-30T07:51:08.610Z
+date: 2023-09-30T08:06:49.846Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -278,11 +278,11 @@ This section holds initialized thread-local data that contributes to the program
 
 # What happens before `main`
 
+(intro: zoom in to MCU/ELF/RAM/FLASH)
+
 Your application does not start with `main`. For C/C++ applications, `main` may be the main starting point, however there are things happening before and after. 
 
 Even better, if you are working on bare-metal applications (like embedded), you don't even have to have a `main`.
-
-
 
 * Working draft [C23](https://open-std.org/JTC1/SC22/WG14/www/docs/n3096.pdf)
   * section 5.1.2:
@@ -308,10 +308,21 @@ From the above, we know:
 
 ## How do we know what to initialize (and with what)?
 
+After compilation and linking, we end up with an ELF file with various sections. A section can contains code, data (such as hard-coded values), debug information, and such. Two sections are of interest for data: `.bss` and `.data`. Both sections represent data used to initialize variables within an application. One for unitialized and one for initialized data.
+
+Important: sections have two addresses:
+* address in flash/on file
+* address in memory
+
+Meaning:
+* `.bss` section needs to be filled with zeros (in RAM)
+* `.data` needs to be copied (from FLASH to RAM)
 
 
+https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter7-1.html#scrolltoc
 
-Unclear:
+
+# Unclear
 * thread-local storage
   * [link](https://maskray.me/blog/2021-02-14-all-about-thread-local-storage)
   * [gcc](https://gcc.gnu.org/onlinedocs/gcc/Thread-Local.html)
