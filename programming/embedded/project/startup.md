@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-09-30T08:18:21.704Z
+date: 2023-10-02T19:48:39.615Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -343,6 +343,17 @@ Order [link](https://www.sco.com/developers/gabi/latest/ch5.dynamic.html#init_fi
 * main
 * fini array
 * fini
+
+
+## Linker 
+
+By default, GCC links any application like so: 
+
+> ld -o output_file crti.o crtbegin.o … -lgcc crtend.o crtn.o
+
+Which provides default initialization code.
+
+* `-nostartfiles` disables the GCC initialization.
 
 # Unclear
 * thread-local storage
