@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-10-02T19:48:39.615Z
+date: 2023-10-02T20:18:18.179Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -354,6 +354,8 @@ By default, GCC links any application like so:
 Which provides default initialization code.
 
 * `-nostartfiles` disables the GCC initialization.
+
+
 
 # Unclear
 * thread-local storage
