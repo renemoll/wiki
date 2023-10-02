@@ -2,7 +2,7 @@
 title: start-up
 description: 
 published: true
-date: 2023-10-02T20:18:18.179Z
+date: 2023-10-02T20:20:41.299Z
 tags: 
 editor: markdown
 dateCreated: 2023-09-18T18:47:56.505Z
@@ -355,6 +355,10 @@ Which provides default initialization code.
 
 * `-nostartfiles` disables the GCC initialization.
 
+## linkerscript
+
+* discard `.fini`, `.fini_array` as we don't need static deconstruction
+* discard exceptions related code
 
 
 # Unclear
