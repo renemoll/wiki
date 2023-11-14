@@ -2,10 +2,10 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2022-03-18T22:22:38.803Z
+date: 2023-11-14T22:01:28.977Z
 tags: 
 editor: markdown
-dateCreated: 2022-02-07T19:28:50.042Z
+dateCreated: 2022-12-14T19:49:02.673Z
 ---
 
 # Compiler flags
@@ -40,6 +40,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | Warn about casts removing a type qualifier. | Both | ? |
 [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about casting to the same type. | GCC | ? |
 [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
+[`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
 [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | Warn about function call is cast to a different type. | Both | ? |
 
 **Classes**
@@ -72,6 +73,8 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about functions marked as `inline` which cannot/will not be inlined. | Both | ? |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
 [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
+[`-Wzero-as-null-pointer-constant`](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about the use of 0 as nullptr | Both | ? |
+`Wstrict-null-sentinel` | Warn about the use of an uncasted NULL as sentinel | GCC | ? |
 
 **String**
 
@@ -90,6 +93,8 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error. | Both | ? |
 `-fstack-usage` | Generate stack usage files for detailed stack analysis. | Both | ? |
+[`-fvisibility`](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html#index-fvisibility) |  Set default symbol visibility to hidden | Both | ? |
+[`-fvisibility-inlines-hidden`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fvisibility-inlines-hidden) | Sets the default symbol visibility to hidden for inline functions | Both | ? |
 [`-x assembler-with-cpp`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-x-language) | Tell the compiler the source language. | Both | ?
 [`fwrapv`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) | Treat signed integer overflow as two’s complement integers. | Both | ?
 
@@ -101,6 +106,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-fvar-tracking-assignments`](https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Debugging-Options.html) | Annotates variables to improve debugging. | GCC | ?
 [`-fdiagnostics-show-template-tree`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fdiagnostics-show-template-tree) | Highlight the differences when diagnosing template type errors. | Both | ?
 
+> why not dwarf-5?
 > fstack-usage link and how to use the output.
 > fomit-frame-pointer (?)
 > 
@@ -119,6 +125,7 @@ Flag | Description | GCC/Clang |
 
 > **Beware**: dropping excpetion handling, unwind tables and RTTI only applies to the libraries/applications you build with these flags. The runtime you use will (very likely) be build with support for these features.
 {.is-warning}
+> `-mcpu`/`-mfpu`/`-mfloat-abi`/`-mabi`
 
 ### Linker
 
@@ -127,6 +134,9 @@ Flag | Description |
 [`--gc-sections`](https://linux.die.net/man/1/ld) | Remove any unused sections |
 [`--cref`](https://linux.die.net/man/1/ld) | Generate a cross reference table to determine declaration and use of symbols |
 `--print-memory-usage` | Print out the memory usage summary after linking |
+
+> `-nostartfiles`, `-nostdlib`, `--specs`
+> `--build-id=uuid`, `--no-warn-rwx-segment`
 
 > These options only apply to `ld`, hence no GCC/Clang/MSVC column.
 {.is-info}
@@ -144,6 +154,14 @@ Flag | Description |
 > -Os / -O1
 
 Note that CMake already provides optimization flags (`-On` and `-g`) depending on the build configuration.
+
+## Omitted
+
+Flag | Description | Reason |
+--- | --- | --- |
+`-fdevirtualize` | Attempt to convert virtual calls to direct calls | Part of O2,O3,Os (GCC)
+`-fstrict-aliasing` | ... | Part of O2, O3, Os (GCC/Clang).
+`-Wstrict-aliasing` | | Part of `-Wall`, active when `-fstrict-aliasing` is active.
 
 # References
 
