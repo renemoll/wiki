@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2023-11-14T22:01:28.977Z
+date: 2023-11-16T21:04:41.987Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:02.673Z
@@ -42,6 +42,9 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
 [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
 [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | Warn about function call is cast to a different type. | Both | ? |
+[-Wstrict-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) |  Warn about optimizations where signed overflow is assumed not to occour. | Both | ? |
+[-Wshift-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | GCC | ? |
+[-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
 
 **Classes**
 
@@ -84,6 +87,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wwrite-strings`](https://clang.llvm.org/docs/DiagnosticsReference.html#wwrite-strings) | Warn about casting string literals. | Both | ? |
 [`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Verify the format string for functions such as `printf`, `scanf`, etc. | Both | ? |
 [`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn calls to format functions (`printf` and such) where the output might be truncated. | GCC | ? |
+[-Wformat-type-confusion]() | Warn when an argument does match the format specified type.  | Clang | ? |
 
 **Code generation**
 
