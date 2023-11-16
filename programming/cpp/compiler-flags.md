@@ -2,7 +2,7 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2023-11-16T21:04:41.987Z
+date: 2023-11-16T21:34:54.551Z
 tags: 
 editor: markdown
 dateCreated: 2022-12-14T19:49:02.673Z
@@ -45,6 +45,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [-Wstrict-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) |  Warn about optimizations where signed overflow is assumed not to occour. | Both | ? |
 [-Wshift-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | GCC | ? |
 [-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
+[-Wzero-as-null-pointer-constant](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about using 0 as a null pointer. | Clang | ? |
 
 **Classes**
 
@@ -54,7 +55,6 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about classes which seemingly cannot be used. | Both | ? |
 [`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) | Warn about methods overwriting a virtual method while not marked with `override`. | Both | ? |
 [`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) | Warn about derived methods hiding a virtual function of the base class. | Both | ? |
-
 
 **Misc**
 
@@ -78,6 +78,9 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
 [`-Wzero-as-null-pointer-constant`](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about the use of 0 as nullptr | Both | ? |
 `Wstrict-null-sentinel` | Warn about the use of an uncasted NULL as sentinel | GCC | ? |
+[-Wconditional-uninitialized](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | Warn about variables which might be uinitialized | Clang | ? |
+[-Wtrivial-auto-var-init](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | Warn about automatic variables which might be unintialized. | GCC | ? |
+[-Wloop-analysis](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | Warn about loop varialbes being manipulated/ignored/.. inside the loop | Clang | ? |
 
 **String**
 
@@ -101,6 +104,7 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-fvisibility-inlines-hidden`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fvisibility-inlines-hidden) | Sets the default symbol visibility to hidden for inline functions | Both | ? |
 [`-x assembler-with-cpp`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-x-language) | Tell the compiler the source language. | Both | ?
 [`fwrapv`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) | Treat signed integer overflow as two’s complement integers. | Both | ?
+[-ftrivial-auto-var-init=zero] | Ensure automatic variables are always initialized. | Both | ? | 
 
 **Debugging**
 
