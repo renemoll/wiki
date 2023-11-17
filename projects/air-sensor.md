@@ -2,7 +2,7 @@
 title: Air sensor
 description: 
 published: true
-date: 2023-11-17T21:30:16.517Z
+date: 2023-11-17T21:52:28.851Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-17T21:17:10.012Z
@@ -44,6 +44,12 @@ Carbon monoxide | CO | 24h | 4 | mg/m3
 * CO2 - carbon dioxide
 * VOC - volatile organic compounds
 * Pb - lead
+* AQI - air quality index
+* https://news.ycombinator.com/item?id=20640114
+* https://news.ycombinator.com/item?id=33025995
+* https://www.hackster.io/news/ikea-vindriktning-air-quality-sensor-mod-adds-sensors-and-indicators-aac85d80c7c9
+* [Ikea Vindriktning Air Quality Sensor Review and Accuracy](https://news.ycombinator.com/item?id=29458404)
+* [AirGradient Open Source Air Quality Monitor for CO2 and PM2.5 Measurements](https://news.ycombinator.com/item?id=34571885)
 
 # Off the shelf products
 
@@ -51,6 +57,10 @@ Carbon monoxide | CO | 24h | 4 | mg/m3
   * [AirGradient Pro Kit Review](https://bubelov.com/blog/2023/06/airgradient-pro-kit-review/)
 * Wynd 
   * [Review: Wynd is a portable air purifier that could benefit from HomeKit integration](https://appleinsider.com/articles/19/04/16/review-wynd-is-a-portable-air-purifier-that-could-benefit-from-homekit-integration)
+
+# Components
+
+ * Sensirion SPS30
 
 # Abbreviations
 
