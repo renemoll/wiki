@@ -2,7 +2,7 @@
 title: Air sensor
 description: 
 published: true
-date: 2023-11-17T21:52:28.851Z
+date: 2023-11-17T21:53:25.442Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-17T21:17:10.012Z
@@ -50,6 +50,7 @@ Carbon monoxide | CO | 24h | 4 | mg/m3
 * https://www.hackster.io/news/ikea-vindriktning-air-quality-sensor-mod-adds-sensors-and-indicators-aac85d80c7c9
 * [Ikea Vindriktning Air Quality Sensor Review and Accuracy](https://news.ycombinator.com/item?id=29458404)
 * [AirGradient Open Source Air Quality Monitor for CO2 and PM2.5 Measurements](https://news.ycombinator.com/item?id=34571885)
+* [Monitoring my home's air quality (CO2, PM2.5, Temp/Humidity) with AirGradient's DIY sensor](https://news.ycombinator.com/item?id=28457135)
 
 # Off the shelf products
 
