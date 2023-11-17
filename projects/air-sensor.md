@@ -2,7 +2,7 @@
 title: Air sensor
 description: 
 published: true
-date: 2023-11-17T21:23:52.554Z
+date: 2023-11-17T21:30:16.517Z
 tags: 
 editor: markdown
 dateCreated: 2023-11-17T21:17:10.012Z
@@ -33,12 +33,17 @@ Nitrogen dioxide | NO2 | 24h | 25 | µg/m3
 Sulfur dioxide | SO2 | 24h | 40 | µg/m3
 Carbon monoxide | CO | 24h | 4 | mg/m3
 
-
 1: Average of daily maximum 8-hour mean O3 concentration in the six consecutive months with the highest six-month running-average O3 concentration.
 
  > REF: WHO global air quality guidelines. Particulate matter (PM2.5 and PM10), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide
  > ISBN 9789240034228 (electronic version)
  > World Health Organization 2021
+
+### Todo
+
+* CO2 - carbon dioxide
+* VOC - volatile organic compounds
+* Pb - lead
 
 # Off the shelf products
 
