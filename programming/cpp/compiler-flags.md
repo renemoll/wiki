@@ -170,6 +170,7 @@ Flag | Description | Reason |
 `-fdevirtualize` | Attempt to convert virtual calls to direct calls | Part of O2,O3,Os (GCC)
 `-fstrict-aliasing` | ... | Part of O2, O3, Os (GCC/Clang).
 `-Wstrict-aliasing` | | Part of `-Wall`, active when `-fstrict-aliasing` is active.
+`-Wsign-compare` | Warn a signed value is converted to and compared to an unsigned value. | Enabledwith `-Wall` and `-Wextra`
 
 # References
 
