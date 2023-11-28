@@ -37,5 +37,9 @@ dateCreated: 2023-07-16T14:00:49.706Z
 
 ## auto-complete
 
+* [How do I support tab completion in a python CLI program?](https://software.codidact.com/posts/284708)
+* [Free shell auto-completion](https://github.com/docopt/docopt/issues/21)
 * [How to make a python, command-line program autocomplete arbitrary things NOT interpreter](https://stackoverflow.com/questions/187621/how-to-make-a-python-command-line-program-autocomplete-arbitrary-things-not-int)
+* [How to make python argcomplete run with PowerShell](https://stackoverflow.com/questions/64970692/how-to-make-python-argcomplete-run-with-powershell)
+* [shtab](https://iterative.ai/blog/shtab-completion-release)
 * 
