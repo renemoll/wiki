@@ -2,7 +2,7 @@
 title: links
 description: 
 published: true
-date: 2023-11-29T20:09:49.952Z
+date: 2023-11-29T20:15:42.458Z
 tags: 
 editor: markdown
 dateCreated: 2023-07-16T14:00:49.706Z
@@ -39,6 +39,15 @@ dateCreated: 2023-07-16T14:00:49.706Z
 * [From Zero to main(): Bare metal C (2019) (memfault.com)](https://news.ycombinator.com/item?id=34459053)
 * [Itanium C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/abi.html#obj-ctor)
 * [The most thoroughly commented linker script (probably)](https://blog.thea.codes/the-most-thoroughly-commented-linker-script/)
+* [ARM Cortex-M Startup code (for C and C++)](https://allthingsembedded.com/post/2019-01-03-arm-cortex-m-startup-code-for-c-and-c/)
+* [Creating a C Library](https://wiki.osdev.org/Creating_a_C_Library#Program_Initialization)
+* [Calling Global Constructors](https://wiki.osdev.org/Calling_Global_Constructors#ARM_.28BPABI.29)
+* [Porting NewLib: crt0](https://stackoverflow.com/questions/3381755/porting-newlib-crt0)
+
+## profiling
+
+* [Profiling memcpy performance on Cortex-M7 (stm32f7)](https://stackoverflow.com/questions/73690767/profiling-memcpy-performance-on-cortex-m7-stm32f7)
+* [Cortex-M7 instruction cycle counts, timings, and dual-issue combinations](https://www.quinapalus.com/cm7cycles.html#conclusions)
 
 # bob
 
