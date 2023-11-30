@@ -24,8 +24,10 @@ dateCreated: 2023-07-16T14:00:49.706Z
 * [What is Type-Level Programming?](https://blog.sulami.xyz/posts/type-level-programming/)
   > concept of using types for specific (hardware) modes. I.e. a GPIO output is a different type then a GPIO input, as it has different capabilities.
 
-
 * [Embedded Logging Case Study: From C to Shining C++ - Luke Valenty -CppNow 2022](https://www.youtube.com/watch?v=Dt0vx-7e_B0)
+
+* [Handling a Family of Hardware Devices with a Single Implementation - Ben Saks - CppCon 2021](https://www.youtube.com/watch?v=EM83l5NZ15c)
+  > also have a look at the [embedded-hal](https://github.com/rust-embedded/embedded-hal)
 
 ## Bootloader
 
@@ -62,6 +64,9 @@ dateCreated: 2023-07-16T14:00:49.706Z
 * [Determine if Python is running inside virtualenv](https://stackoverflow.com/questions/1871549/determine-if-python-is-running-inside-virtualenv)
 
 
+* sealert -a /var/log/audit/audit.log
+  > https://linux.die.net/man/8/sealert
+
 ## auto-complete
 
 * [How do I support tab completion in a python CLI program?](https://software.codidact.com/posts/284708)
@@ -94,3 +99,12 @@ dateCreated: 2023-07-16T14:00:49.706Z
 # Visual design
 
 * [Visual design rules you can safely follow every time](https://anthonyhobday.com/sideprojects/saferules/)
+
+# On writing
+
+* [HN: The Elements of Style](https://news.ycombinator.com/item?id=37289789)
+
+# Automatic Differentiation
+
+* [Understanding Automatic Differentiation in 30 lines of Python](https://vmartin.fr/understanding-automatic-differentiation-in-30-lines-of-python.html) / [HN](https://news.ycombinator.com/item?id=37256903)
+  > interesting example of the concept
