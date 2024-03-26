@@ -2,16 +2,17 @@
 title: Book list
 description: 
 published: true
-date: 2023-05-01T20:29:16.312Z
+date: 2024-03-26T11:48:30.453Z
 tags: 
 editor: markdown
-dateCreated: 2023-05-01T20:15:31.610Z
+dateCreated: 2024-03-26T11:44:07.490Z
 ---
 
 # Reading list
 
 # Reading
 
+* Test-Driven Development for Embedded C
 * C++ Concurrency In Action
 
 # Under consideration
