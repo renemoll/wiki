@@ -2,7 +2,7 @@
 title: SW design
 description: 
 published: true
-date: 2024-05-08T13:25:08.994Z
+date: 2024-05-08T13:25:45.713Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:31.871Z
