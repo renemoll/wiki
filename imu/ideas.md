@@ -2,10 +2,10 @@
 title: IMU ideas
 description: 
 published: true
-date: 2022-12-20T15:49:09.338Z
+date: 2024-05-08T13:28:45.016Z
 tags: 
 editor: markdown
-dateCreated: 2022-12-14T19:48:21.807Z
+dateCreated: 2024-03-26T11:44:19.657Z
 ---
 
 # Ideas & links
@@ -86,3 +86,9 @@ This page is a "link dump" with ideas and potential useful information/framework
 * [Khan Academy](https://www.khanacademy.org/science/physics)
 * [Euler's equations (rigid body dynamics)](https://en.wikipedia.org/wiki/Euler%27s_equations_(rigid_body_dynamics))
 * [oPhysics: Interactive Physics Simulations](https://ophysics.com/k.html)
+
+# Misc
+
+* [spherical_functions](https://moble.github.io/spherical_functions/#euler-angles)
+* [Wigner 𝔇 matrices](https://moble.github.io/spherical_functions/WignerDMatrices.html)
+
