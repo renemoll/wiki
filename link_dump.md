@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:29:13.127Z
+date: 2024-05-08T13:31:04.913Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -78,3 +78,6 @@ Interrupt attributes
 # Misc
 
 * [How does Angel Investing? ](https://zachholman.com/posts/how-does-angel-investing)
+* [Building Effective Embedded Systems in C++: Architectural Best Practices - Gili Kamma - CppCon 2023](https://www.youtube.com/watch?v=xv7jf2jQezI&list=WL&index=2)
+* [Better Code: Exploring Validity in C++ - David Sankel - CppCon 2023](https://www.youtube.com/watch?v=wxzQXj6WW2E)
+* [Better Code: Contracts in C++ - Sean Parent & Dave Abrahams - CppCon 2023](https://www.youtube.com/watch?v=OWsepDEh5lQ)
