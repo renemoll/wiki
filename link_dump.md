@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:32:47.913Z
+date: 2024-05-08T13:33:26.760Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -84,3 +84,4 @@ Interrupt attributes
 * [C++ Weekly - Ep 420 - Moving From C++17 to C++20 (More constexpr!)](https://www.youtube.com/watch?v=s2XWAxbxk9M)
 * [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
 * [Type Erasure - The Implementation Details - Klaus Iglberger - Meeting C++ 2023](https://www.youtube.com/watch?v=7MNyAHp0h7A)
+* [What is ...](https://github.com/higham/what-is?tab=readme-ov-file)
