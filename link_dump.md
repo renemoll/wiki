@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:52:18.412Z
+date: 2024-05-08T13:52:53.744Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -61,7 +61,7 @@ Interrupt attributes
 
 
 # Cmake
-* [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
+* [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html) - [video](https://www.youtube.com/watch?v=UI_QayAb9U0)
 * [CMake Presets](https://blog.feabhas.com/2023/08/cmake-presets/)
 * [Tutorial: Preparing libraries for CMake FetchContent](https://www.foonathan.net/2022/06/cmake-fetchcontent/)
 * [Using a fetched cross-compiler toolchain](https://discourse.cmake.org/t/using-a-fetched-cross-compiler-toolchain/1895)
