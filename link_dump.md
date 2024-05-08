@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:31:04.913Z
+date: 2024-05-08T13:32:47.913Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -81,3 +81,6 @@ Interrupt attributes
 * [Building Effective Embedded Systems in C++: Architectural Best Practices - Gili Kamma - CppCon 2023](https://www.youtube.com/watch?v=xv7jf2jQezI&list=WL&index=2)
 * [Better Code: Exploring Validity in C++ - David Sankel - CppCon 2023](https://www.youtube.com/watch?v=wxzQXj6WW2E)
 * [Better Code: Contracts in C++ - Sean Parent & Dave Abrahams - CppCon 2023](https://www.youtube.com/watch?v=OWsepDEh5lQ)
+* [C++ Weekly - Ep 420 - Moving From C++17 to C++20 (More constexpr!)](https://www.youtube.com/watch?v=s2XWAxbxk9M)
+* [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
+* [Type Erasure - The Implementation Details - Klaus Iglberger - Meeting C++ 2023](https://www.youtube.com/watch?v=7MNyAHp0h7A)
