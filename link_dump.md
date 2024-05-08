@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:52:53.744Z
+date: 2024-05-08T13:54:17.840Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -66,6 +66,7 @@ Interrupt attributes
 * [Tutorial: Preparing libraries for CMake FetchContent](https://www.foonathan.net/2022/06/cmake-fetchcontent/)
 * [Using a fetched cross-compiler toolchain](https://discourse.cmake.org/t/using-a-fetched-cross-compiler-toolchain/1895)
 * [Philips AMP](https://github.com/philips-software/amp-embedded-infra-lib/blob/main/cmake/toolchain-arm-gcc.cmake)
+* [CMake line by line - creating a header-only library](https://dominikberner.ch/cmake-interface-lib/)
 
 # IMU related
 
