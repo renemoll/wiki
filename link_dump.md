@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:54:17.840Z
+date: 2024-05-08T13:54:40.339Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -102,3 +102,4 @@ Interrupt attributes
 * [C++ Weekly - Ep 420 - Moving From C++17 to C++20 (More constexpr!)](https://www.youtube.com/watch?v=s2XWAxbxk9M)
 * [Type Erasure - The Implementation Details - Klaus Iglberger - Meeting C++ 2023](https://www.youtube.com/watch?v=7MNyAHp0h7A)
 * [What is ...](https://github.com/higham/what-is?tab=readme-ov-file)
+* [Embedded Systems Security and TrustZone](https://embeddedsecurity.io/sec-arm-arch-core)
