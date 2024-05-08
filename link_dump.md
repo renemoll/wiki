@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:55:37.565Z
+date: 2024-05-08T13:55:58.695Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -104,5 +104,5 @@ Interrupt attributes
 * [What is ...](https://github.com/higham/what-is?tab=readme-ov-file)
 * [Embedded Systems Security and TrustZone](https://embeddedsecurity.io/sec-arm-arch-core)
 * [Efficient-Embedded-Systems-Design-Education-Kit](https://github.com/arm-university/Efficient-Embedded-Systems-Design-Education-Kit)
-
+* [https://github.com/arm-university/Efficient-Embedded-Systems-Design-Education-Kit](https://metebalci.com/blog/hello-trustzone/)
 
