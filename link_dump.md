@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:33:26.760Z
+date: 2024-05-08T13:41:59.065Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -48,7 +48,11 @@ Interrupt attributes
 
 * [Casey Muratori is wrong about clean code (but he's also right)](https://blog.codef00.com/2023/04/13/casey-muratori-is-wrong-about-clean-code)
 * [C++17’s Useful Features for Embedded Systems](https://interrupt.memfault.com/blog/cpp-17-for-embedded)
+* [Navigating Memory in C++: A Guide to Using std::uintptr_t for Address Handling](https://blog.feabhas.com/2024/02/navigating-memory-in-c-a-guide-to-using-stduintptr_t-for-address-handling/)
 
+# Cmake
+* [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
+* [CMake Presets](https://blog.feabhas.com/2023/08/cmake-presets/)
 
 # IMU related
 
@@ -82,6 +86,5 @@ Interrupt attributes
 * [Better Code: Exploring Validity in C++ - David Sankel - CppCon 2023](https://www.youtube.com/watch?v=wxzQXj6WW2E)
 * [Better Code: Contracts in C++ - Sean Parent & Dave Abrahams - CppCon 2023](https://www.youtube.com/watch?v=OWsepDEh5lQ)
 * [C++ Weekly - Ep 420 - Moving From C++17 to C++20 (More constexpr!)](https://www.youtube.com/watch?v=s2XWAxbxk9M)
-* [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
 * [Type Erasure - The Implementation Details - Klaus Iglberger - Meeting C++ 2023](https://www.youtube.com/watch?v=7MNyAHp0h7A)
 * [What is ...](https://github.com/higham/what-is?tab=readme-ov-file)
