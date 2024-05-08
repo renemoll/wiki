@@ -2,10 +2,10 @@
 title: Link dump
 description: 
 published: true
-date: 2023-07-16T13:12:13.474Z
+date: 2024-05-08T13:29:13.127Z
 tags: 
 editor: markdown
-dateCreated: 2023-06-15T20:41:00.876Z
+dateCreated: 2024-03-26T11:44:14.606Z
 ---
 
 # Links
@@ -74,3 +74,7 @@ Interrupt attributes
 * [Kalman Filters for Nonlinear Systems and Heavy-Tailed Noise](https://www.diva-portal.org/smash/get/diva2:648389/FULLTEXT02)
 
 * [An Introduction to Statistical Learning](https://www.statlearning.com/)
+
+# Misc
+
+* [How does Angel Investing? ](https://zachholman.com/posts/how-does-angel-investing)
