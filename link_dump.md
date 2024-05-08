@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:49:36.583Z
+date: 2024-05-08T13:50:03.835Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -49,6 +49,10 @@ Interrupt attributes
 * [Casey Muratori is wrong about clean code (but he's also right)](https://blog.codef00.com/2023/04/13/casey-muratori-is-wrong-about-clean-code)
 * [C++17’s Useful Features for Embedded Systems](https://interrupt.memfault.com/blog/cpp-17-for-embedded)
 * [Navigating Memory in C++: A Guide to Using std::uintptr_t for Address Handling](https://blog.feabhas.com/2024/02/navigating-memory-in-c-a-guide-to-using-stduintptr_t-for-address-handling/)
+
+## active object
+
+* [Effective Concurrency: Prefer Using Active Objects Instead of Naked Threads](https://herbsutter.com/2010/07/12/effective-concurrency-prefer-using-active-objects-instead-of-naked-threads/)
 
 # Cmake
 * [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
