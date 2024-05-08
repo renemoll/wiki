@@ -2,7 +2,7 @@
 title: Link dump
 description: 
 published: true
-date: 2024-05-08T13:50:03.835Z
+date: 2024-05-08T13:52:18.412Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:14.606Z
@@ -53,10 +53,19 @@ Interrupt attributes
 ## active object
 
 * [Effective Concurrency: Prefer Using Active Objects Instead of Naked Threads](https://herbsutter.com/2010/07/12/effective-concurrency-prefer-using-active-objects-instead-of-naked-threads/)
+* [Effective Concurrency: Know When to Use an Active Object Instead of a Mutex](https://herbsutter.com/2010/09/24/effective-concurrency-know-when-to-use-an-active-object-instead-of-a-mutex/)
+* [Programming embedded systems: event-driven active objects](https://www.embedded.com/programming-embedded-systems-event-driven-active-objects/)
+* [Programming embedded systems: active objects in real-time](https://www.embedded.com/programming-embedded-systems-active-objects-in-real-time/)
+* [Active object](https://www.modernescpp.com/index.php/active-object/)
+* [ActorThread](https://github.com/lightful/syscpp/)
+
 
 # Cmake
 * [Starting a C++ project with CMake in 2024](https://www.meetingcpp.com/blog/items/Starting-a-Cpp-project-with-CMake-in-2024.html)
 * [CMake Presets](https://blog.feabhas.com/2023/08/cmake-presets/)
+* [Tutorial: Preparing libraries for CMake FetchContent](https://www.foonathan.net/2022/06/cmake-fetchcontent/)
+* [Using a fetched cross-compiler toolchain](https://discourse.cmake.org/t/using-a-fetched-cross-compiler-toolchain/1895)
+* [Philips AMP](https://github.com/philips-software/amp-embedded-infra-lib/blob/main/cmake/toolchain-arm-gcc.cmake)
 
 # IMU related
 
