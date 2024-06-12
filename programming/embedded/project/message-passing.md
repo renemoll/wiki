@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-06-12T19:44:33.842Z
+date: 2024-06-12T20:14:59.397Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -62,6 +62,9 @@ Asynchronous message passing: sending and receiving processes are decoupled via 
 Advantages: not waiting for each other
 Disadvantages: queue can be full (drop new ones, wait for space?)
 
+Advantages: decoupled procsses (asynchronous message passing), routing/broadcasting, manipulation (filters, ...)
+Disadvantages: additional components (queue, broker, ...), application needs to fit async behaviour
+
 ## Actor model
 
 ### Implementations
@@ -72,3 +75,13 @@ Disadvantages: queue can be full (drop new ones, wait for space?)
 * [rotor](https://github.com/basiliscos/cpp-rotor)
 * [actor-zeta](https://github.com/duckstax/actor-zeta)
 
+## Publish–subscribe pattern
+
+Related to the `message queue`, publishers publish specific messages (classes/types) without knowing who receives it. Samilarly, subscribers subscribe on specific messages (classes/types) and receive messages without knowing who published the messages.
+
+Advantages:
+* filtering; subscribers only receive messages they are subscribed to
+* decoupled publishers and subscribers
+
+Disadvantages:
+* delivery uncertainty (are subscribers listening?, are messages transmitted?)
