@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-06-12T20:14:59.397Z
+date: 2024-06-12T20:16:28.401Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -18,8 +18,8 @@ dateCreated: 2024-06-12T19:44:33.842Z
 --[#Orange] microkernel
 --[#Orange] nanokernel
 ++ Message queue
-+++[#Orange] Publish–subscribe pattern
-+++[#Orange] Message-oriented middleware
++++ Publish–subscribe pattern
++++[#Red] Message-oriented middleware
 +++[#Orange] MQTT
 +++[#Orange] Event queue/loop
 ++ Message passing
