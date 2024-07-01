@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-06-12T20:29:11.000Z
+date: 2024-07-01T21:35:54.058Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -15,18 +15,25 @@ dateCreated: 2024-06-12T19:44:33.842Z
 ```plantuml
 @startmindmap
 + Inter-process communication
---[#Orange] microkernel
---[#Orange] nanokernel
+--[#Red] Operating system
+--[#Red] Microkernel
+--[#Red] Nanokernel
+++ Techniques
++++ Message passing
+++ Components
++++ Message queue
+
+@endmindmap
+```
 ++ Message queue
 +++ Publish–subscribe pattern
 +++[#Red] Message-oriented middleware
 +++[#Orange] MQTT
-+++[#Orange] Event queue/loop
+++ Event-driven messaging
++++[#Red] Event-driven architecture
 ++ Message passing
 +++[#Orange] Actor model
 +++[#Red] Message Passing Interface
-@endmindmap
-```
 
 Legend:
 1. Red: not of interest
@@ -34,10 +41,54 @@ Legend:
 
 Term | Description
 --- | ---
-Inter-Process Communication (IPC) | Mechanism to share data between processes, various methods are available.
-Message queue (Mailbox) | An IPC component where processes can read/write to a queue without being aware of each other.
-Message passing | An IPC method/technique to invoke behaviour in another process (may be an actor) via a message.
+Inter-process communication (IPC) | Mechanism to share data between processes, various methods are available.
+Message passing | An IPC method/technique to invoke behaviour in another process via a message.
+Message queue (mailbox) | An IPC component where processes can write/read messages to/from without being aware of each other.
+
+### Inter-process communication
+
+Inter-process communication (IPC) is a mechanism to communicate between processes. There are various approaches for implementing a IPC mechanism. Examples include: sockers, signals, message passing, and shared memory.
+
+### Message passing
+
+Messages passing is used to trigger, from one proceess, behaviour in another process via a communication link. 
+
+**Direct vs indirect**
+*Direct*: the sender sends a message to a specific receiver. Implies a one to one link between two processes.
+*Indirect*: the sender places a message into a mailbox/queue and one or more receivers may retrieve it.
+
+**Synchronous vs Asynchronous**
+*Synchronous*: the sending process waits for receiving process to complete processing the message.
+*Asynchronous*: sending and receiving processes do not wait for each other, they are decoupled via a message queue.
+
+### Message queue / mailbox
+
+
+## Take aways
+
+* Message passing
+* Indirect
+  * multiple receivers, all receive the same message
+* Asynchronous
+
+## Sources
+
+1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
+1. [Inter Process Communication (IPC)](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
+
+# Scratchpad 
+
+Term | Description
+--- | ---
 Message Passing Interface | Specification for high performace parallel computing.
+Publish–subscribe pattern | 
+microkernel | 
+nanokernel |
+Message-oriented middleware | 
+MQTT | 
+Actor model | 
+Event-driven messaging | An event messager is used to distribute posted events to intereested subscribers.
+Event-driven architecture | Detection and notification of state changes, which may use messages to do so.
 
 Message queue -> use in GUIs?
 
@@ -52,11 +103,23 @@ Todo:
 * MQTT
 * Message passing
 * actor model
+* Event-driven messaging vs asynchronous message passing
+
+
+```plantuml
+@startmindmap
++ Event-driven messaging
+++ Event queue / loop (?)
+++ Pattern
++++ Observer
++++ Command
+++ Model
++++ Pub-sub
+@endmindmap
+```
 
 ## Message passing
 
-Synchronous message passing: sending process waits for receiver to complete processing the message.
-Asynchronous message passing: sending and receiving processes are decoupled via a message queue.
 
 **Asynchronous message passing**
 Advantages: not waiting for each other
