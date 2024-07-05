@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-01T21:35:54.058Z
+date: 2024-07-05T13:46:10.966Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -18,15 +18,13 @@ dateCreated: 2024-06-12T19:44:33.842Z
 --[#Red] Operating system
 --[#Red] Microkernel
 --[#Red] Nanokernel
-++ Techniques
-+++ Message passing
-++ Components
+++ Message passing
 +++ Message queue
-
++++ Publish–subscribe pattern
 @endmindmap
 ```
+
 ++ Message queue
-+++ Publish–subscribe pattern
 +++[#Red] Message-oriented middleware
 +++[#Orange] MQTT
 ++ Event-driven messaging
@@ -44,6 +42,7 @@ Term | Description
 Inter-process communication (IPC) | Mechanism to share data between processes, various methods are available.
 Message passing | An IPC method/technique to invoke behaviour in another process via a message.
 Message queue (mailbox) | An IPC component where processes can write/read messages to/from without being aware of each other.
+Publish–subscribe pattern | Processes can publish a message and only receive messages they are subscribed to.
 
 ### Inter-process communication
 
@@ -61,8 +60,32 @@ Messages passing is used to trigger, from one proceess, behaviour in another pro
 *Synchronous*: the sending process waits for receiving process to complete processing the message.
 *Asynchronous*: sending and receiving processes do not wait for each other, they are decoupled via a message queue.
 
+> Add Advantages&Disadvantages
+
+### Publish–subscribe pattern
+
+Publishers publish messages and subscribers receive messages. 
+
+Receives can subscribe on:
+* topic: a message can be published on a specific topic;
+* metadata: or, messages can have specific metadata.
+
+**Advantages**
+* Loose coupling
+* Scalability
+
+**Disadvantages**
+* No guaranteed message delivery:
+  * A publisher may send a message no one is interested or ready for;
+  * The system may fail to capture/transfer the message (too many messages queued for example).
+
+> expand on the Advantages&Disadvantages
+
+
 ### Message queue / mailbox
 
+> Add brief info
+> Add Advantages&Disadvantages
 
 ## Take aways
 
