@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-05T13:46:10.966Z
+date: 2024-07-09T19:36:50.024Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -21,6 +21,7 @@ dateCreated: 2024-06-12T19:44:33.842Z
 ++ Message passing
 +++ Message queue
 +++ Publish–subscribe pattern
++++[#Orange] Actor model
 @endmindmap
 ```
 
@@ -30,7 +31,6 @@ dateCreated: 2024-06-12T19:44:33.842Z
 ++ Event-driven messaging
 +++[#Red] Event-driven architecture
 ++ Message passing
-+++[#Orange] Actor model
 +++[#Red] Message Passing Interface
 
 Legend:
@@ -48,6 +48,11 @@ Publish–subscribe pattern | Processes can publish a message and only receive m
 
 Inter-process communication (IPC) is a mechanism to communicate between processes. There are various approaches for implementing a IPC mechanism. Examples include: sockers, signals, message passing, and shared memory.
 
+#### References
+
+1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
+
+
 ### Message passing
 
 Messages passing is used to trigger, from one proceess, behaviour in another process via a communication link. 
@@ -61,6 +66,11 @@ Messages passing is used to trigger, from one proceess, behaviour in another pro
 *Asynchronous*: sending and receiving processes do not wait for each other, they are decoupled via a message queue.
 
 > Add Advantages&Disadvantages
+
+#### References
+
+1. [Message passing](https://en.wikipedia.org/wiki/Message_passing)
+1. [Inter Process Communication (IPC)](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
 
 ### Publish–subscribe pattern
 
@@ -94,10 +104,6 @@ Receives can subscribe on:
   * multiple receivers, all receive the same message
 * Asynchronous
 
-## Sources
-
-1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
-1. [Inter Process Communication (IPC)](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
 
 # Scratchpad 
 
