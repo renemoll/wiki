@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-09T19:38:02.275Z
+date: 2024-07-09T20:18:35.318Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -22,12 +22,11 @@ dateCreated: 2024-06-12T19:44:33.842Z
 +++ Message queue
 +++ Publish–subscribe pattern
 +++[#Orange] Actor model
++++[#Red] Message-oriented middleware
 @endmindmap
 ```
 
 ++ Message queue
-+++[#Red] Message-oriented middleware
-+++[#Orange] MQTT
 ++ Event-driven messaging
 +++[#Red] Event-driven architecture
 ++ Message passing
@@ -53,7 +52,6 @@ Inter-process communication (IPC) is a mechanism to communicate between processe
 
 1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
 
-
 ### Message passing
 
 Messages passing is used to trigger, from one proceess, behaviour in another process via a communication link. 
@@ -75,9 +73,9 @@ Messages passing is used to trigger, from one proceess, behaviour in another pro
 
 ### Publish–subscribe pattern
 
-Publishers publish messages and subscribers receive messages. 
+Publishers publish messages and subscribers receive messages. Gennerally, there is a broker in between the publishers and subscribers to collect and forward messages. 
 
-Receives can subscribe on:
+Receivers can subscribe on:
 * topic: a message can be published on a specific topic;
 * metadata: or, messages can have specific metadata.
 
@@ -93,6 +91,8 @@ Receives can subscribe on:
 > expand on the Advantages&Disadvantages
 
 **References**
+
+1. [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
 
 ### Message queue / mailbox
 
@@ -110,6 +110,7 @@ Receives can subscribe on:
 
 
 # Scratchpad 
+
 
 Term | Description
 --- | ---
