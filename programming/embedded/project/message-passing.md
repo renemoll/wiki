@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-09T19:37:28.670Z
+date: 2024-07-09T19:38:02.275Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -49,7 +49,7 @@ Actor model | ?
 
 Inter-process communication (IPC) is a mechanism to communicate between processes. There are various approaches for implementing a IPC mechanism. Examples include: sockers, signals, message passing, and shared memory.
 
-#### References
+**References**
 
 1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
 
@@ -68,7 +68,7 @@ Messages passing is used to trigger, from one proceess, behaviour in another pro
 
 > Add Advantages&Disadvantages
 
-#### References
+**References**
 
 1. [Message passing](https://en.wikipedia.org/wiki/Message_passing)
 1. [Inter Process Communication (IPC)](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
@@ -92,11 +92,14 @@ Receives can subscribe on:
 
 > expand on the Advantages&Disadvantages
 
+**References**
 
 ### Message queue / mailbox
 
 > Add brief info
 > Add Advantages&Disadvantages
+
+**References**
 
 ## Take aways
 
