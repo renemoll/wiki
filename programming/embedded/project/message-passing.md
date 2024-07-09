@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-09T20:18:35.318Z
+date: 2024-07-09T20:27:24.416Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -23,14 +23,12 @@ dateCreated: 2024-06-12T19:44:33.842Z
 +++ Publish–subscribe pattern
 +++[#Orange] Actor model
 +++[#Red] Message-oriented middleware
++++[#Red] Message Passing Interface
+++[#Orange] Event driven messaging
++++[#Red] Event driven programming
++++[#Red] Event-driven architecture
 @endmindmap
 ```
-
-++ Message queue
-++ Event-driven messaging
-+++[#Red] Event-driven architecture
-++ Message passing
-+++[#Red] Message Passing Interface
 
 Legend:
 1. Red: not of interest
@@ -81,7 +79,9 @@ Receivers can subscribe on:
 
 **Advantages**
 * Loose coupling
+  Publishers and subscribers are unaware of each others existance, location within the system and even time.
 * Scalability
+  Messages are one-to-many, where subscribers can be executed in parallel, sequentially, or a combination of both.
 
 **Disadvantages**
 * No guaranteed message delivery:
