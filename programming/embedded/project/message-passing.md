@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-09T20:27:24.416Z
+date: 2024-07-09T20:30:02.842Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -41,6 +41,9 @@ Message passing | An IPC method/technique to invoke behaviour in another process
 Message queue (mailbox) | An IPC component where processes can write/read messages to/from without being aware of each other.
 Publish–subscribe pattern | Processes can publish a message and only receive messages they are subscribed to.
 Actor model | ?
+
+Topics out of scope:
+* Operating system, microkernel and nanokernel are disgarded as these are systems which gennerally provide IPC methods.
 
 ### Inter-process communication
 
