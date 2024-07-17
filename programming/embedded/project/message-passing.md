@@ -2,15 +2,13 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-17T19:45:53.202Z
+date: 2024-07-17T20:48:05.708Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
 ---
 
-# Message passing
-
-## Landscape
+# Landscape
 
 ```plantuml
 @startmindmap
@@ -50,7 +48,7 @@ Topics out of scope:
 * **Event driven programming** ...
 * **Event-driven architecture** ...
 
-### Inter-process communication
+## Inter-process communication
 
 Inter-process communication (IPC) is a mechanism to communicate between processes. There are various approaches for implementing a IPC mechanism. Examples include: sockers, signals, message passing, and shared memory.
 
@@ -58,7 +56,7 @@ Inter-process communication (IPC) is a mechanism to communicate between processe
 
 1. [Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)
 
-### Message passing
+## Message passing
 
 Messages passing is used to trigger, from one proceess, behaviour in another process via a communication link. 
 
@@ -77,7 +75,7 @@ Messages passing is used to trigger, from one proceess, behaviour in another pro
 1. [Message passing](https://en.wikipedia.org/wiki/Message_passing)
 1. [Inter Process Communication (IPC)](https://www.geeksforgeeks.org/inter-process-communication-ipc/)
 
-### Publish–subscribe pattern
+## Publish–subscribe pattern
 
 Publishers publish messages and subscribers receive messages. Gennerally, there is a broker in between the publishers and subscribers to collect and forward messages. 
 
@@ -102,20 +100,41 @@ Receivers can subscribe on:
 
 1. [Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
 
-### Message queue / mailbox
+## Message queue / mailbox
 
 > Add brief info
 > Add Advantages&Disadvantages
 
 **References**
 
-## Take aways
+## Actor model
+
+With the actor model, an actor is an entity which operates concurrently with respect to other actors. Actors only interact with each other via messages. Upon reception, actors tpyically perform the following actions: update local (private) state, send message, spawn new actors. Updating the local state implies actors may respond differently to the same message.  
+
+Actors send messages to other actors via addresses.
+
+**References**
+1. [Actor model](https://en.wikipedia.org/wiki/Actor_model)
+
+# Take aways
 
 * Message passing
 * Indirect
   * multiple receivers, all receive the same message
 * Asynchronous
 
+# Implementations
+
+## Actor model
+
+* czmq
+* [libagents](http://www.itgroup.ro/WSX/browser.htm?.landingpage=wsx_content/en/libagents/libagents.html#scroll-page)
+* [OOSMOS](https://www.oosmos.com/)
+* [QP/C++](https://www.state-machine.com/products/qp)
+* [SObjectizer](https://github.com/Stiffstream/sobjectizer)
+* [C++ Actor Framework](https://www.actor-framework.org/)
+* [rotor](https://github.com/basiliscos/cpp-rotor)
+* [actor-zeta](https://github.com/duckstax/actor-zeta)
 
 # Scratchpad 
 
@@ -170,15 +189,8 @@ Disadvantages: queue can be full (drop new ones, wait for space?)
 Advantages: decoupled procsses (asynchronous message passing), routing/broadcasting, manipulation (filters, ...)
 Disadvantages: additional components (queue, broker, ...), application needs to fit async behaviour
 
-## Actor model
 
-### Implementations
 
-* [QP/C++](https://www.state-machine.com/products/qp)
-* [SObjectizer](https://github.com/Stiffstream/sobjectizer)
-* [C++ Actor Framework](https://www.actor-framework.org/)
-* [rotor](https://github.com/basiliscos/cpp-rotor)
-* [actor-zeta](https://github.com/duckstax/actor-zeta)
 
 ## Publish–subscribe pattern
 
