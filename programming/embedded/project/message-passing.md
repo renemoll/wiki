@@ -2,7 +2,7 @@
 title: Message passing
 description: 
 published: true
-date: 2024-07-09T20:31:59.436Z
+date: 2024-07-17T19:45:53.202Z
 tags: 
 editor: markdown
 dateCreated: 2024-06-12T19:44:33.842Z
@@ -25,8 +25,8 @@ dateCreated: 2024-06-12T19:44:33.842Z
 +++[#Red] Message-oriented middleware
 +++[#Red] Message Passing Interface
 ++[#Orange] Event driven messaging
-+++[#Red] Event driven programming
-+++[#Red] Event-driven architecture
++++[#Orange] Event driven programming
++++[#Orange] Event-driven architecture
 @endmindmap
 ```
 
