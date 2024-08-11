@@ -2,7 +2,7 @@
 title: Communication protocol
 description: 
 published: true
-date: 2024-08-11T20:35:37.394Z
+date: 2024-08-11T20:36:02.954Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-11T20:35:37.394Z
@@ -47,7 +47,7 @@ For example, a network router only needs to decode as much information to determ
 A **reference** model to provide a common basis for communication protocols.
 
 Layer | PDU | Function
---- | ---
+--- | --- | ---
 Application | Data | Defines the communcation protocol and interface.
 Presentation | Data | Translation of data between application and network.
 Session | Data | Manage a communication session.
