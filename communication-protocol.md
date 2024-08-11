@@ -2,7 +2,7 @@
 title: Communication protocol
 description: 
 published: true
-date: 2024-08-11T20:36:02.954Z
+date: 2024-08-11T20:36:07.175Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-11T20:35:37.394Z
