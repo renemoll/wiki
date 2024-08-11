@@ -2,7 +2,7 @@
 title: Communication protocol
 description: 
 published: true
-date: 2024-08-11T20:36:07.175Z
+date: 2024-08-11T20:38:15.967Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-11T20:35:37.394Z
@@ -115,3 +115,8 @@ Provides the following functionality:
 * Bit synchronisation;
 * Medium access control support;
 * Physical connection methods.
+
+## References
+
+* [Communication protocol](https://en.wikipedia.org/wiki/Communication_protocol)
+* [OSI model](https://en.wikipedia.org/wiki/OSI_model)
