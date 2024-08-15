@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:16:45.910Z
+date: 2024-08-15T19:19:39.095Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -52,6 +52,10 @@ Synchronous serial communication
     * Logical Link Control (LLC)—IEEE 802.2
     * Advanced Data Communication Control Procedures (ADCCP)
 
+Asynchronous serial communication
+* Protocols
+  *  PPP
+
 ### UART & USART
 
 USART: universal synchronous-asynchronous receiver transmitter
@@ -65,4 +69,4 @@ UART: universal asynchronous receiver transmitter
 
 * [USART vs. UART: What's the Difference?](https://resources.pcb.cadence.com/blog/usart-vs-uart-whats-the-difference)
 * [Synchronous serial communication](https://en.wikipedia.org/wiki/Synchronous_serial_communication)
- 
+* [Asynchronous serial communication](https://en.wikipedia.org/wiki/Asynchronous_serial_communication)
