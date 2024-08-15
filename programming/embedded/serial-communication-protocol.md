@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:56:07.393Z
+date: 2024-08-15T19:56:19.764Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -36,11 +36,11 @@ Busses
 * EtherCat
 
 Protocols
-* MODBUS (RS-485 or TCP/IP)
 * [Local Interconnect Network](https://en.wikipedia.org/wiki/Local_Interconnect_Network)
   * Low-cost alternative for CAN
   * UART based
   * Low speed
+* MODBUS (RS-485 or TCP/IP)
 * smartcard protocol (?)
 * IrDA (Infrared Data Association) SIR (?)
 * ENDEC (?)
