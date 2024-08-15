@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:56:19.764Z
+date: 2024-08-15T19:57:29.730Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -37,6 +37,7 @@ Busses
 
 Protocols
 * [Local Interconnect Network](https://en.wikipedia.org/wiki/Local_Interconnect_Network)
+  * Network protocol
   * Low-cost alternative for CAN
   * UART based
   * Low speed
