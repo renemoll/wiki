@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:03:53.879Z
+date: 2024-08-15T19:06:37.521Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -22,6 +22,7 @@ dateCreated: 2024-08-15T19:03:53.879Z
 
 Busses
 * UART/USART
+* RS232/RS485/RS422
 * I2C/I3C
 * SPI
 * CAN
@@ -41,5 +42,9 @@ USART: universal synchronous-asynchronous receiver transmitter
 UART: universal asynchronous receiver transmitter
 * Full-duplex
 * Signal: TX, RX (with optional CTS/RTS/DE - clear to send/request to send/driver enable)
+
+## References
+
+* [USART vs. UART: What's the Difference?](https://resources.pcb.cadence.com/blog/usart-vs-uart-whats-the-difference)
 
  
