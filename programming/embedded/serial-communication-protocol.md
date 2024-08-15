@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:19:39.095Z
+date: 2024-08-15T19:56:07.393Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -24,6 +24,7 @@ dateCreated: 2024-08-15T19:03:53.879Z
 - [ ] Tags
 - [x] Sync prototols
 - [ ] Async prototols
+* [ ] https://en.wikibooks.org/wiki/Serial_Programming/RS-485
 
 Busses
 * UART/USART
@@ -31,13 +32,22 @@ Busses
 * I2C/I3C
 * SPI
 * CAN
+* USB
+* EtherCat
 
 Protocols
-* MODBUS
-* Local Interconnect Network
+* MODBUS (RS-485 or TCP/IP)
+* [Local Interconnect Network](https://en.wikipedia.org/wiki/Local_Interconnect_Network)
+  * Low-cost alternative for CAN
+  * UART based
+  * Low speed
 * smartcard protocol (?)
 * IrDA (Infrared Data Association) SIR (?)
 * ENDEC (?)
+* DMX (RS-485)
+> Too many to list -> https://en.wikipedia.org/wiki/List_of_automation_protocols
+> Examples -> https://electronics.stackexchange.com/questions/69504/good-rs232-based-protocols-for-embedded-to-computer-communication
+
 
 Synchronous serial communication
 * Transmission/reception is synchronised
@@ -64,6 +74,12 @@ USART: universal synchronous-asynchronous receiver transmitter
 UART: universal asynchronous receiver transmitter
 * Full-duplex
 * Signal: TX, RX (with optional CTS/RTS/DE - clear to send/request to send/driver enable)
+
+### Frame format examples
+
+* [PCI Express 4](https://www.fpga4fun.com/PCI-Express4.html)
+* [SATA vx.x?](https://perfectvips.com/datasheet/SATA-Packet-Generator.pdf)
+* [Ethernet](https://www.cbtnuggets.com/blog/technology/networking/what-is-ethernet-frame-format)
 
 ## References
 
