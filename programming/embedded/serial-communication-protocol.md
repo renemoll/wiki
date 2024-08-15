@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:11:49.711Z
+date: 2024-08-15T19:16:45.910Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -19,6 +19,11 @@ dateCreated: 2024-08-15T19:03:53.879Z
 
 
 ## Scratchpad
+
+- [ ] Abbr
+- [ ] Tags
+- [x] Sync prototols
+- [ ] Async prototols
 
 Busses
 * UART/USART
@@ -37,9 +42,15 @@ Protocols
 Synchronous serial communication
 * Transmission/reception is synchronised
 * Protocols
-  * Synchronous transmit-receive (STR)
-  * Binary Synchronous protocol (Bisync)
-  * Digital Data Communications Message Protocol (DDCMP)
+  * Byte-oriented
+    * Synchronous transmit-receive (STR)
+    * Binary Synchronous protocol (Bisync)
+    * Digital Data Communications Message Protocol (DDCMP)
+  * Bit-oriented
+    * Synchronous Data Link Control (SDLC)
+    * High-Level Data Link Control (HDLC)
+    * Logical Link Control (LLC)—IEEE 802.2
+    * Advanced Data Communication Control Procedures (ADCCP)
 
 ### UART & USART
 
@@ -53,5 +64,5 @@ UART: universal asynchronous receiver transmitter
 ## References
 
 * [USART vs. UART: What's the Difference?](https://resources.pcb.cadence.com/blog/usart-vs-uart-whats-the-difference)
-
+* [Synchronous serial communication](https://en.wikipedia.org/wiki/Synchronous_serial_communication)
  
