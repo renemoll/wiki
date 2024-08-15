@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:06:37.521Z
+date: 2024-08-15T19:11:49.711Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -33,6 +33,13 @@ Protocols
 * smartcard protocol (?)
 * IrDA (Infrared Data Association) SIR (?)
 * ENDEC (?)
+
+Synchronous serial communication
+* Transmission/reception is synchronised
+* Protocols
+  * Synchronous transmit-receive (STR)
+  * Binary Synchronous protocol (Bisync)
+  * Digital Data Communications Message Protocol (DDCMP)
 
 ### UART & USART
 
