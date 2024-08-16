@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-16T06:36:29.034Z
+date: 2024-08-16T13:42:06.709Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -25,6 +25,8 @@ dateCreated: 2024-08-15T19:03:53.879Z
 - [x] Sync prototols
 - [ ] Async prototols
 * [ ] https://en.wikibooks.org/wiki/Serial_Programming/RS-485
+* [ ] https://en.wikibooks.org/wiki/Serial_Programming/Forming_Data_Packets
+* [ ] https://commschamp.github.io/comms_protocols_cpp/#transport-stack
 
 Busses
 * UART/USART
@@ -46,9 +48,11 @@ Protocols
 * IrDA (Infrared Data Association) SIR (?)
 * ENDEC (?)
 * DMX (RS-485)
+* NMEA 2000
 > Too many to list -> https://en.wikipedia.org/wiki/List_of_automation_protocols
 > Examples -> https://en.wikipedia.org/wiki/Serial_communication#Examples_of_architectures
 > Examples -> https://electronics.stackexchange.com/questions/69504/good-rs232-based-protocols-for-embedded-to-computer-communication
+> https://datatracker.ietf.org/doc/html/rfc935
 * [rosserial](https://wiki.ros.org/rosserial)
 
 Synchronous serial communication
@@ -66,11 +70,14 @@ Synchronous serial communication
 
 Asynchronous serial communication
 * Protocols
-  *  PPP
   * High-Level Data Link Control (HDLC)
+  * PPP -> HDLC inspired
   * Digital Data Communications Message Protocol (DDCMP)
 * Framing : COBS (https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing)
 > [Overview of different encapsulation technologies](https://www.ieee802.org/3/efm/public/jul02/copper/oksman_copper_1_0702.pdf)
+
+
+
 
 ### UART & USART
 
