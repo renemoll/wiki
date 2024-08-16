@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-16T06:34:43.330Z
+date: 2024-08-16T06:36:29.034Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -69,6 +69,8 @@ Asynchronous serial communication
   *  PPP
   * High-Level Data Link Control (HDLC)
   * Digital Data Communications Message Protocol (DDCMP)
+* Framing : COBS (https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing)
+> [Overview of different encapsulation technologies](https://www.ieee802.org/3/efm/public/jul02/copper/oksman_copper_1_0702.pdf)
 
 ### UART & USART
 
