@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-15T19:57:29.730Z
+date: 2024-08-16T06:08:41.061Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -48,7 +48,7 @@ Protocols
 * DMX (RS-485)
 > Too many to list -> https://en.wikipedia.org/wiki/List_of_automation_protocols
 > Examples -> https://electronics.stackexchange.com/questions/69504/good-rs232-based-protocols-for-embedded-to-computer-communication
-
+* [rosserial](https://wiki.ros.org/rosserial)
 
 Synchronous serial communication
 * Transmission/reception is synchronised
