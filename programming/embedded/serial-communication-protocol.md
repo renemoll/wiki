@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-16T06:08:41.061Z
+date: 2024-08-16T06:25:04.417Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -61,11 +61,12 @@ Synchronous serial communication
     * Synchronous Data Link Control (SDLC)
     * High-Level Data Link Control (HDLC)
     * Logical Link Control (LLC)—IEEE 802.2
-    * Advanced Data Communication Control Procedures (ADCCP)
+    * Advanced Data Communication Control Procedures (ADCCP) -> similar to HDLC.
 
 Asynchronous serial communication
 * Protocols
   *  PPP
+  * High-Level Data Link Control (HDLC)
 
 ### UART & USART
 
@@ -75,6 +76,16 @@ USART: universal synchronous-asynchronous receiver transmitter
 UART: universal asynchronous receiver transmitter
 * Full-duplex
 * Signal: TX, RX (with optional CTS/RTS/DE - clear to send/request to send/driver enable)
+
+
+### High-Level Data Link Control (HDLC)
+
+Can be used in synchronsous (bit-oriented) and asynchronous mode (byte-oriented). This will focus on asynchronous mode.
+* Used for point-to-point communicaiton.
+* 2 control bytes (SOF=EOF & escape)
+* Structure: SOF (1) - ADDR (1+) - CTRL (1 or 2) - DATA (n) - CHCK (2 or 4) - EOF (1) => overhead of 6-9 bytes
+  > Note that ADDR is not optional (even in PPP communication)
+* Control defines 3 types of packets: information (data), supervisory (flow/error control) and unnumbered (link management).
 
 ### Frame format examples
 
