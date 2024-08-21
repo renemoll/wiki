@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-16T13:42:06.709Z
+date: 2024-08-20T19:42:20.383Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -10,12 +10,46 @@ dateCreated: 2024-08-15T19:03:53.879Z
 
 # Serial communication protocol
 
+* What is "serial"
+* Refer to communication protocol
+* What is available?
+  Some protocols define physical/datalink/network/a whole stack
 
 
+## Terminology
 
+Term | Description
+--- | ---
+Network protocol | Defining network, data link and physical layer.
+I<sup>2</sup>C | Inter-Integrated Circuit.
+SPI | Serial Peripheral Interface.
+UART | Universal Asynchronous Receiver Transmitter.
+USART | Universal Synchronous-Asynchronous Receiver Transmitter.
+USB | Universal Serial Bus.
 
+## Synchronous vs asynchronous
 
+In serial communication, the transmission and reception lines/streams can be synchronous or asynchronous. In essense, this means if the two devices synchronise theirs clocks or not.
 
+In synchronsous communication, a clock signal is transmitted along the data to synchronise  transmitter and receiver. Each time the transmitter sends the next bit, a clock pulse is generated to signal the new bit value for the receiver to sample. Example are I<sup>2</sup>C, SPI and USART.
+
+In asynchronsous communication, the transmitter and receiver have to agree beforehand on a common data (clock) rate and some synchronisation methods as they do not share a clock line directly. Instead, the receiver must sample the transmission line at the right time. For synchronisation, UART for example uses a start and stop bit to signal the start and end of a data frame. Examples for asynchronous busses are UART and USB.
+
+## Protocols
+
+* Local Interconnect Network
+  * A network protocol from the automotive industry, positioned as a low-cost alternative to CAN.
+  * Build on top of UART, single wire and low speed (1-20 kbit/s).
+  * No need for bus arbitration nor collision detection.
+  * The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address.
+  * Interesting features: uses a break signal to signal the start of a frame. 
+
+## References
+
+* [Asynchronous Serial Communication: The Basics](https://itp.nyu.edu/physcomp/lessons/serial-communication-the-basics/)
+* [Synchronous Serial Communication: The Basics](https://itp.nyu.edu/physcomp/lessons/synchronous-serial-communication-the-basics/)
+* [Local Interconnect Network](https://en.wikipedia.org/wiki/Local_Interconnect_Network)
+* [LIN Bus Explained - A Simple Intro [2023]](https://www.csselectronics.com/pages/lin-bus-protocol-intro-basics)
 
 
 ## Scratchpad
@@ -28,7 +62,7 @@ dateCreated: 2024-08-15T19:03:53.879Z
 * [ ] https://en.wikibooks.org/wiki/Serial_Programming/Forming_Data_Packets
 * [ ] https://commschamp.github.io/comms_protocols_cpp/#transport-stack
 
-Busses
+Physical busses
 * UART/USART
 * RS232/RS485/RS422
 * I2C/I3C
@@ -38,11 +72,10 @@ Busses
 * EtherCat
 
 Protocols
-* [Local Interconnect Network](https://en.wikipedia.org/wiki/Local_Interconnect_Network)
-  * Network protocol
-  * Low-cost alternative for CAN
-  * UART based
-  * Low speed
+
+* CAN
+  * 1Mbit/s
+
 * MODBUS (RS-485 or TCP/IP)
 * smartcard protocol (?)
 * IrDA (Infrared Data Association) SIR (?)
@@ -73,6 +106,8 @@ Asynchronous serial communication
   * High-Level Data Link Control (HDLC)
   * PPP -> HDLC inspired
   * Digital Data Communications Message Protocol (DDCMP)
+  
+  
 * Framing : COBS (https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing)
 > [Overview of different encapsulation technologies](https://www.ieee802.org/3/efm/public/jul02/copper/oksman_copper_1_0702.pdf)
 
