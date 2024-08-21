@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-20T19:42:20.383Z
+date: 2024-08-21T11:28:46.794Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -65,11 +65,19 @@ In asynchronsous communication, the transmitter and receiver have to agree befor
 Physical busses
 * UART/USART
 * RS232/RS485/RS422
-* I2C/I3C
+* I<sup>2</sup>C
+* I<sup>3</sup>C
+  * Improved Inter Integrated Circuit
+  * Partially (?) backwards compatible
+  * Higher transfer rates
+  * Goal: sensor interface
+  * Interrupt signalling via bus (no seperate wiring)
+  * Dynamic address assignment
 * SPI
 * CAN
 * USB
 * EtherCat
+
 
 Protocols
 
