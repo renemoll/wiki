@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-26T20:47:57.503Z
+date: 2024-08-27T20:58:05.132Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -84,7 +84,10 @@ Protocols
 * CAN
   * 1Mbit/s
 
-* MODBUS (RS-485 or TCP/IP)
+* MODBUS
+  * Defines data access (read/write) on single bit and 16 bit level
+  * Supports pre-defined and user-defined funcions
+  * Supports different data transportation layers (TCP/IP, async serial (common: 232/485), token passing network)
 * smartcard protocol (?)
 * IrDA (Infrared Data Association) SIR (?)
 * ENDEC (?)
