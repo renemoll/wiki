@@ -2,7 +2,7 @@
 title: Digital clock
 description: 
 published: true
-date: 2024-08-26T20:47:55.709Z
+date: 2024-08-27T20:51:12.949Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-26T20:39:35.438Z
@@ -45,3 +45,25 @@ dateCreated: 2024-08-26T20:39:35.438Z
 # Scratchpad
 
 * https://blog.blinkenlight.net/experiments/dcf77/
+
+# 7 segment 
+
+Available part of demo setup
+* SC10-21HWA
+  * 25mm
+  * Common cathode
+  * max 25mA (max peak 150mA for <10us)
+  * forward voltage: 2V, reverse voltage 5V
+* HEF4511B
+  * 8 segments, one digit
+  * max 25mA (per output?)
+  * Given 5V supply, output is typical 4.4V
+* 2N3904
+  * NPN transistor, max 200mA , max 6V Vbe
+
+R = (4.4V - 2V) / 10mA -> 240Ohm
+R = (4.4V - 2V) / 20mA -> 120Ohm
+
+Interesting
+*  MAX7219 (SPI interface)
+  * 8 segments + DP for 8 digits
