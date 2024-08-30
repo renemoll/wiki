@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-30T14:06:54.462Z
+date: 2024-08-30T14:10:33.992Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -75,16 +75,18 @@ Template:
 
 UART
   * Full-duplex, asynchronous
-  * Signals: TX, RX, GND, with optional CTS/RTS/DE (clear to send/request to send/driver enable)
+  * Signals: transmitter (TX), receiver (RX), ground (GND), with optional clear to send (CTS), request to send (RTS) and driver enable (DE).
   * Frames data in configurable number of data/stop bits
   * Combines with TTL, RS-232, RS-485
 USART
   * Half-duplex, synchronous
-  * Signals: TX, RX, CK (clock), GND, with optional XDIR (direction)
+  * Signals: transmitter (TX), receiver (RX), clock (CK), ground (GND), with optional direction (XDIR).
 
 
 * RS232/RS485/RS422
 * I<sup>2</sup>C
+ * synchronous
+ * Signals: data (SDA), clock (SCL), ground (GND)
 * I<sup>3</sup>C
   * Improved Inter Integrated Circuit
   * Partially (?) backwards compatible
@@ -93,6 +95,7 @@ USART
   * Interrupt signalling via bus (no seperate wiring)
   * Dynamic address assignment
 * SPI
+ * synchronous
 * CAN
   * 1Mbit/s
   * asynchronous
