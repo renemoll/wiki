@@ -2,15 +2,26 @@
 title: Designing a serial communication protocol
 description: 
 published: true
-date: 2024-08-29T13:16:45.213Z
+date: 2024-08-30T14:14:36.996Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-29T13:00:17.951Z
 ---
 
-# Header
-Your content here
+# Designing a serial communication protocol
 
+Options:
+* Synchronous
+* Asynchronous
+
+## Synchronous
+
+* Transmitter and receiver are synchronised -> no need for synchronisation
+* Clear start/stop/framing
+
+## Asynchronous
+
+* Transmitter and receiver need to be synchronised
 
 
 # Links
