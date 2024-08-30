@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-27T21:02:32.257Z
+date: 2024-08-30T14:06:54.462Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -27,7 +27,7 @@ UART | Universal Asynchronous Receiver Transmitter.
 USART | Universal Synchronous-Asynchronous Receiver Transmitter.
 USB | Universal Serial Bus.
 
-## Synchronous vs asynchronous
+### Synchronous vs asynchronous
 
 In serial communication, the transmission and reception lines/streams can be synchronous or asynchronous. In essense, this means if the two devices synchronise theirs clocks or not.
 
@@ -39,10 +39,11 @@ In asynchronsous communication, the transmitter and receiver have to agree befor
 
 * Local Interconnect Network
   * A network protocol from the automotive industry, positioned as a low-cost alternative to CAN.
-  * Build on top of UART, single wire and low speed (1-20 kbit/s).
-  * No need for bus arbitration nor collision detection.
-  * The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address.
-  * Interesting features: uses a break signal to signal the start of a frame. 
+  * Commonly used in automotive for low bandwidth systems (1-20 kbit/s).
+  * The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address.  
+  * No need for bus arbitration nor collision detection by utilizing a BREAK signal.
+  * Build on top of UART.
+
 
 ## References
 
@@ -62,8 +63,26 @@ In asynchronsous communication, the transmitter and receiver have to agree befor
 * [ ] https://en.wikibooks.org/wiki/Serial_Programming/Forming_Data_Packets
 * [ ] https://commschamp.github.io/comms_protocols_cpp/#transport-stack
 
-Physical busses
-* UART/USART
+
+### Physical busses
+
+Template:
+ * characteristics
+   * sync/async
+   * wiring
+ * applications
+ * notable features
+
+UART
+  * Full-duplex, asynchronous
+  * Signals: TX, RX, GND, with optional CTS/RTS/DE (clear to send/request to send/driver enable)
+  * Frames data in configurable number of data/stop bits
+  * Combines with TTL, RS-232, RS-485
+USART
+  * Half-duplex, synchronous
+  * Signals: TX, RX, CK (clock), GND, with optional XDIR (direction)
+
+
 * RS232/RS485/RS422
 * I<sup>2</sup>C
 * I<sup>3</sup>C
@@ -75,15 +94,23 @@ Physical busses
   * Dynamic address assignment
 * SPI
 * CAN
+  * 1Mbit/s
+  * asynchronous
 * USB
 * EtherCat
 
 
-Protocols
+### Protocols
 
-* CAN
-  * 1Mbit/s
+Template:
+ * brief description
+ * applications
+ * characteristics
+ * notable features
+ * physical protocol
+ 
 
+ 
 * MODBUS
   * An industry standard in industrial electronics for control and data acquisition systems.
   * Supports different data transportation layers (TCP/IP, async serial (common: 232/485), token passing network)
@@ -126,15 +153,6 @@ Asynchronous serial communication
 
 
 
-
-### UART & USART
-
-USART: universal synchronous-asynchronous receiver transmitter
-* Half-duplex
-* Signals: TX, RX, CK (clock) (with optional XDIR - direction)
-UART: universal asynchronous receiver transmitter
-* Full-duplex
-* Signal: TX, RX (with optional CTS/RTS/DE - clear to send/request to send/driver enable)
 
 
 ### High-Level Data Link Control (HDLC)
