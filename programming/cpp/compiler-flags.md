@@ -2,10 +2,10 @@
 title: C++ compiler flags
 description: 
 published: true
-date: 2023-11-19T20:00:54.085Z
+date: 2024-09-20T09:51:17.358Z
 tags: 
 editor: markdown
-dateCreated: 2022-12-14T19:49:02.673Z
+dateCreated: 2024-03-26T11:45:02.419Z
 ---
 
 # Compiler flags
@@ -153,6 +153,7 @@ Flag | Description |
 > https://interrupt.memfault.com/blog/code-size-optimization-gcc-flags#c-library
 > No stdlib?
 > -spec=nano.spec
+> https://arobenko.github.io/bare_metal_cpp/#_know_your_compiler_output
 
 ## Debugging
 
