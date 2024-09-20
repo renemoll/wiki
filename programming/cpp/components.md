@@ -2,7 +2,7 @@
 title: Components
 description: 
 published: true
-date: 2024-09-20T10:34:12.327Z
+date: 2024-09-20T12:32:30.301Z
 tags: 
 editor: markdown
 dateCreated: 2024-09-20T09:17:57.463Z
@@ -43,3 +43,17 @@ Related to: reentrancy.
 
 * [Critical section](https://en.wikipedia.org/wiki/Critical_section)
 * [EnterCritical() and ExitCritical(): Why Things are Failing Badly](https://mcuoneclipse.com/2014/01/26/entercritical-and-exitcritical-why-things-are-failing-badly/)
+
+## Debouncing
+
+### Options
+
+* Digital logic ;)
+* Hardwware filter
+* Periodically (via a timer) read the input and once stable for X time, indicate input is present.
+
+### References
+
+* [A Guide to Debouncing, or, How to Debounce a Contact in Two Easy Pages, by Jack Ganssle](https://www.ganssle.com/debouncing.htm)
+* [A Guide to Debouncing - Part 2, or, How to Debounce a Contact in Two Easy Pages, by Jack Ganssle](https://www.ganssle.com/debouncing-pt2.htm)
+
