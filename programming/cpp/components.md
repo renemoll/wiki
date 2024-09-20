@@ -2,7 +2,7 @@
 title: Components
 description: 
 published: true
-date: 2024-09-20T09:27:00.868Z
+date: 2024-09-20T09:37:32.603Z
 tags: 
 editor: markdown
 dateCreated: 2024-09-20T09:17:57.463Z
@@ -33,7 +33,7 @@ Related to: reentrancy.
 * Allow nesting
   * Ensure entering a critical section wihtin a critical section is possible and the exit behaviour is as expected.
   * Use the RAII pattern to capture the current state and restore that state when exiting the critical section.
-* Use `PRIMASK`
+* Use `PRIMASK`/`BASEPRI`
 
 ### Limitations
 
