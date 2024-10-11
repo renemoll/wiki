@@ -2,7 +2,7 @@
 title: Automation
 description: 
 published: true
-date: 2024-10-11T08:38:41.079Z
+date: 2024-10-11T08:42:29.437Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-11T08:34:58.027Z
@@ -20,12 +20,20 @@ dateCreated: 2024-10-11T08:34:58.027Z
 * Control
   * Lights
   * Heating
+* App on mobile
 
 ## Already installed
 
 * HomeWizard P1 meter for energy & gas usage monitoring
 * Philips Hue for light control
 * Tado for temperature sensing & heating
+
+### Future options
+
+* Climate sensors
+* Presence detection
+* Socket monitoring / control
+* IKEA devices
 
 ## Options
 
@@ -34,12 +42,12 @@ dateCreated: 2024-10-11T08:34:58.027Z
   * [Philips Hue](https://www.home-assistant.io/integrations/hue/)
   * [Tado](https://www.home-assistant.io/integrations/tado/)
 
-Functionality | Home Automation
---- | ---
-Monitoring - energy & gas | ✅
-Monitoring - temperature  | ✅
-Light control             | ✅
-Heating                   | ✅
+Functionality | Device | Home Automation
+--- | --- | ---
+Monitoring - energy & gas | HomeWizard P1 | ✅
+Monitoring - temperature  | Tado          | ✅
+Light control             | Philips Hue   | ✅
+Heating                   | Tado          | ✅
 
 Legend:
 * OK: ✅
