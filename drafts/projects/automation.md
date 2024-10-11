@@ -2,7 +2,7 @@
 title: Automation
 description: 
 published: true
-date: 2024-10-11T08:42:29.437Z
+date: 2024-10-11T08:43:10.687Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-11T08:34:58.027Z
@@ -21,6 +21,9 @@ dateCreated: 2024-10-11T08:34:58.027Z
   * Lights
   * Heating
 * App on mobile
+
+> Data storage?
+> Camera?
 
 ## Already installed
 
