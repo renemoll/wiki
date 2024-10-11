@@ -2,7 +2,7 @@
 title: Automation
 description: 
 published: true
-date: 2024-10-11T08:43:56.730Z
+date: 2024-10-11T13:24:42.295Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-11T08:34:58.027Z
@@ -46,6 +46,10 @@ dateCreated: 2024-10-11T08:34:58.027Z
   * [HomeWizard Energy](https://www.home-assistant.io/integrations/homewizard/)
   * [Philips Hue](https://www.home-assistant.io/integrations/hue/)
   * [Tado](https://www.home-assistant.io/integrations/tado/)
+* Homebridge (HomeKit)
+* NodeRed
+* OpenHAB
+* Domoticz
 
 Functionality | Device | Home Automation
 --- | --- | ---
