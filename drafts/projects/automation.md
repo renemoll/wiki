@@ -2,7 +2,7 @@
 title: Automation
 description: 
 published: true
-date: 2024-10-11T08:43:10.687Z
+date: 2024-10-11T08:43:56.730Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-11T08:34:58.027Z
@@ -37,6 +37,8 @@ dateCreated: 2024-10-11T08:34:58.027Z
 * Presence detection
 * Socket monitoring / control
 * IKEA devices
+* Outdoor lights
+* Heating (hybrid pump (tado?), airco?)
 
 ## Options
 
