@@ -2,7 +2,7 @@
 title: Automation
 description: 
 published: true
-date: 2024-10-11T08:34:58.027Z
+date: 2024-10-11T08:38:41.079Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-11T08:34:58.027Z
@@ -13,16 +13,19 @@ dateCreated: 2024-10-11T08:34:58.027Z
 
 ## Needs
 
-* record energy data
-* record water data
-* control lights
-* control heating
+* Monitoring
+  * record energy usage
+  * record gas usage
+  * record water usage
+* Control
+  * Lights
+  * Heating
 
 ## Already installed
 
-* Energy & gas: P1 readout via HomeWizard P1 meter
-* Light control: Philips Hue
-* Heating: Tado
+* HomeWizard P1 meter for energy & gas usage monitoring
+* Philips Hue for light control
+* Tado for temperature sensing & heating
 
 ## Options
 
