@@ -2,7 +2,7 @@
 title: Coroutines
 description: 
 published: true
-date: 2024-10-18T09:03:05.689Z
+date: 2024-10-19T12:01:37.760Z
 tags: 
 editor: markdown
 dateCreated: 2024-10-18T09:03:05.689Z
@@ -29,12 +29,24 @@ An implementation has at least the following features:
   - In such a case the coroutine is a stackful coroutine;
   - On the other hand, stackless coroutines must be explicitly marked as a coroutine.
 
-
 ## Related technologies
 
 * Threads
 * Fibers
+* Protothreads?
+
+## Coroutines in C++
+
+* Supported from C++20
+* stackless (data not stored on the stack (i.e. on the heap)
+* a function becomes a coroutine if it contains any of the following: `co_await`, `co_yield`, `co_return`.
+
+## Coroutines on MCU
+
+
+
 
 ## References
 
 * [Coroutine](https://en.wikipedia.org/wiki/Coroutine)
+* [Coroutines (C++20)](https://en.cppreference.com/w/cpp/language/coroutines)
