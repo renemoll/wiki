@@ -2,7 +2,7 @@
 title: Message broker
 description: 
 published: true
-date: 2025-01-11T18:08:54.904Z
+date: 2025-01-11T18:17:38.625Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-11T18:08:54.904Z
@@ -19,14 +19,23 @@ msg broker
      2. Send all messages to all subscribers
      3. Send 1 message (may be a different message) to all subscribers
 
-Broker : run()
+```plantuml
+autoactivate on
+
+participant Context
+participant Broker
+participant Actor
+
+Context -> Broker : run()
   loop for each message as m
     loop for each subscriber of m
+      Broker -> Actor: handle_message(msg)
+      return
     end
   end
+```
 
-
-@startuml
+```plantuml
 autoactivate on
 
 participant Context
@@ -56,6 +65,4 @@ Context -> Broker : run()
   Broker -> Actor1: handle_message(greeting)
   return
 return
-
-
-@enduml
+```
