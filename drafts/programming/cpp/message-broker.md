@@ -2,7 +2,7 @@
 title: Message broker
 description: 
 published: true
-date: 2025-01-11T18:17:38.625Z
+date: 2025-01-11T18:21:00.116Z
 tags: 
 editor: markdown
 dateCreated: 2025-01-11T18:08:54.904Z
@@ -66,3 +66,18 @@ Context -> Broker : run()
   return
 return
 ```
+
+
+## Details
+
+* Message encapsulates the actual data structure representing the content (data)
+  * The data structure is allocated on a pool
+  * The message acts as a reference counter and will release the data to the pool when not in use anymore
+  * Messages can only be written opon creation, after that they are read-only
+  
+
+
+## Open questions
+
+* agent registration at compile time?
+  * message subscription at compile time?
