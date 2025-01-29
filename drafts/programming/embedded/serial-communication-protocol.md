@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2024-08-30T14:10:33.992Z
+date: 2025-01-29T21:38:44.419Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -16,6 +16,7 @@ dateCreated: 2024-08-15T19:03:53.879Z
   Some protocols define physical/datalink/network/a whole stack
 
 
+
 ## Terminology
 
 Term | Description
@@ -26,6 +27,7 @@ SPI | Serial Peripheral Interface.
 UART | Universal Asynchronous Receiver Transmitter.
 USART | Universal Synchronous-Asynchronous Receiver Transmitter.
 USB | Universal Serial Bus.
+Multidrop bus | A bus able to connect three or more devices, including arbitration. 
 
 ### Synchronous vs asynchronous
 
@@ -54,6 +56,23 @@ In asynchronsous communication, the transmitter and receiver have to agree befor
 
 
 ## Scratchpad
+
+Serial communication busses: I2C, SPI, CAN
+
+* I2C, SPI: transmit + receive
+* UART, CAN, RS-485: read / write
+
+Protocol | Timing | Duplex | Topology | Control | Max nodes
+--- | --- | --- | ---
+CAN | Asynchronous | Half | Multi-drop | Multi-master | ?
+I2C | Synchronous | Half | Multi-drop | Multi-master | 127/1023
+SMBus | Synchronous | Half | Multi-drop | Multi-master | 127
+SPI | Synchronous | Full, simplex | Multi-drop | Single-master | n/a
+RS-485 | Asynchronous | Half | Multi-drop | Multi-master | ?
+RS-232 / UART | Asynchronous | Full, simplex | Point to point | ? | 2
+
+> Open: ETH, USB?, LIN
+
 
 - [ ] Abbr
 - [ ] Tags
