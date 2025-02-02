@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2025-02-02T21:06:38.522Z
+date: 2025-02-02T21:43:42.918Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -23,6 +23,7 @@ Term | Description
 --- | ---
 Network protocol | Defining network, data link and physical layer.
 I<sup>2</sup>C | Inter-Integrated Circuit.
+LIN | Local Interconnect Network.
 SPI | Serial Peripheral Interface.
 UART | Universal Asynchronous Receiver Transmitter.
 USART | Universal Synchronous-Asynchronous Receiver Transmitter.
@@ -47,10 +48,10 @@ LIN | Synchronous | Half | Multi-drop | Single master
 SMBus | Synchronous | Half | Multi-drop | Multi-master
 SPI | Synchronous | Full, simplex | Multi-drop | Single-master
 RS-485 | Asynchronous | Half | Multi-drop | Multi-master
-RS-232 / UART | Asynchronous | Full, simplex | Point to point | ?
+RS-232 | Asynchronous | Full, simplex | Point to point | ?
+UART | Asynchronous | RS-232/485/TTL | RS-232/485/TTL | ?
 
-
-### Local Interconnect Network
+### Local Interconnect Network (LIN)
 
 A network protocol from the automotive industry, positioned as a low-cost alternative to CAN. Commonly used in automotive for low bandwidth systems (1-20 kbit/s). A network is formed by a nodes connected to a single bus, with a single master node initiating communication.
 
@@ -69,13 +70,18 @@ The master initiates data transfers by quering a connected device. Only the devi
 
 ## Scratchpad
 
-Serial communication busses: I2C, SPI, CAN
+- [ ] CAN
+- [ ] USB
+- [ ] I2C
+- [ ] SMBus
+- [ ] SPI
+- [ ] UART
+- [ ] RS-485
 
-* I2C, SPI: transmit + receive
-* UART, CAN, RS-485: read / write
-
-> Open: ETH, USB?, LIN
-
+- [ ] Which layers/functions are defined by the protocol?
+ * CAN: DLL
+ * LIN: PHY + DLL
+ * UART: DLL over RS-232/RS-485 as PHY
 
 - [ ] Abbr
 - [ ] Tags
@@ -95,28 +101,32 @@ Template:
  * applications
  * notable features
 
-UART
-  * Full-duplex, asynchronous
-  * Signals: transmitter (TX), receiver (RX), ground (GND), with optional clear to send (CTS), request to send (RTS) and driver enable (DE).
-  * Frames data in configurable number of data/stop bits
-  * Combines with TTL, RS-232, RS-485
-USART
-  * Half-duplex, synchronous
-  * Signals: transmitter (TX), receiver (RX), clock (CK), ground (GND), with optional direction (XDIR).
+### Universal Asynchronous Receiver-Transmitter (UART)
+
+Generic serial communication protocol widely available, from computer (modules) to microcontrollers, from home appliances to RADIO modules. UART provides asynchronous communication between two nodes. Communication may be simplex, half-duplex or full-duples, depending on utilized the physical layer.
+
+UART is highly configurable, from baudrate to data frame, with numer of data/stop/parity bits, and flow control. Note that flow control can be hardware based, with two additional signals, or software based, by sending specific characters.
+
+### Universal Synchronous and Asynchronous Receiver-Transmitter (USART)
+
+A protocol which can be synchronous or asynchronous, depending on the configurarion. Asynchronous is descrived under UART, the remainder of this section focusees on the synchronous aspect.
+
+In synchonous mode, the communication is half-duplex. 
 
 
 * RS232/RS485/RS422
-* I<sup>2</sup>C
+
+### * I<sup>2</sup>C
  * synchronous
  * Signals: data (SDA), clock (SCL), ground (GND)
-* I<sup>3</sup>C
+### I<sup>3</sup>C
   * Improved Inter Integrated Circuit
   * Partially (?) backwards compatible
   * Higher transfer rates
   * Goal: sensor interface
   * Interrupt signalling via bus (no seperate wiring)
   * Dynamic address assignment
-* SPI
+### SPI
  * synchronous
 * CAN
   * 1Mbit/s
