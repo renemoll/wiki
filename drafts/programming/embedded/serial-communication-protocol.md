@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2025-02-02T21:44:24.159Z
+date: 2025-02-02T21:44:57.484Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -48,8 +48,8 @@ LIN | Synchronous | Half | Multi-drop | Single master
 SMBus | Synchronous | Half | Multi-drop | Multi-master
 SPI | Synchronous | Full, simplex | Multi-drop | Single-master
 RS-485 | Asynchronous | Half | Multi-drop | Multi-master
-RS-232 | Asynchronous | Full, simplex | Point to point | ?
-UART | Asynchronous | RS-232/485/TTL | RS-232/485/TTL | ?
+RS-232 | Asynchronous | Full, simplex | Point to point | SW defined
+UART | Asynchronous | RS-232/485/TTL | RS-232/485/TTL | SW defined
 
 ### Local Interconnect Network (LIN)
 
