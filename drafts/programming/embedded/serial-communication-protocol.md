@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2025-02-02T21:43:42.918Z
+date: 2025-02-02T21:44:24.159Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -57,6 +57,12 @@ A network protocol from the automotive industry, positioned as a low-cost altern
 
 The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address. There is no need for bus arbitration nor collision detection by utilizing a BREAK signal for synchronization. Data transfer is based on UART.
 
+### Universal Asynchronous Receiver-Transmitter (UART)
+
+Generic serial communication protocol widely available, from computer (modules) to microcontrollers, from home appliances to RADIO modules. UART provides asynchronous communication between two nodes. Communication may be simplex, half-duplex or full-duples, depending on utilized the physical layer.
+
+UART is highly configurable, from baudrate to data frame, with numer of data/stop/parity bits, and flow control. Note that flow control can be hardware based, with two additional signals, or software based, by sending specific characters.
+
 
 
 
@@ -75,7 +81,6 @@ The master initiates data transfers by quering a connected device. Only the devi
 - [ ] I2C
 - [ ] SMBus
 - [ ] SPI
-- [ ] UART
 - [ ] RS-485
 
 - [ ] Which layers/functions are defined by the protocol?
@@ -100,12 +105,6 @@ Template:
    * wiring
  * applications
  * notable features
-
-### Universal Asynchronous Receiver-Transmitter (UART)
-
-Generic serial communication protocol widely available, from computer (modules) to microcontrollers, from home appliances to RADIO modules. UART provides asynchronous communication between two nodes. Communication may be simplex, half-duplex or full-duples, depending on utilized the physical layer.
-
-UART is highly configurable, from baudrate to data frame, with numer of data/stop/parity bits, and flow control. Note that flow control can be hardware based, with two additional signals, or software based, by sending specific characters.
 
 ### Universal Synchronous and Asynchronous Receiver-Transmitter (USART)
 
