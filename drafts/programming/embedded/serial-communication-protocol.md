@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2025-01-29T21:38:44.419Z
+date: 2025-02-02T20:46:28.490Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
