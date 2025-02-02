@@ -2,7 +2,7 @@
 title: Serial communication protocol
 description: 
 published: true
-date: 2025-02-02T20:46:28.490Z
+date: 2025-02-02T21:06:38.522Z
 tags: 
 editor: markdown
 dateCreated: 2024-08-15T19:03:53.879Z
@@ -39,12 +39,24 @@ In asynchronsous communication, the transmitter and receiver have to agree befor
 
 ## Protocols
 
-* Local Interconnect Network
-  * A network protocol from the automotive industry, positioned as a low-cost alternative to CAN.
-  * Commonly used in automotive for low bandwidth systems (1-20 kbit/s).
-  * The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address.  
-  * No need for bus arbitration nor collision detection by utilizing a BREAK signal.
-  * Build on top of UART.
+Protocol | Timing | Duplex | Topology | Control
+--- | --- | --- | --- | ---
+CAN | Asynchronous | Half | Multi-drop | Multi-master
+I2C | Synchronous | Half | Multi-drop | Multi-master
+LIN | Synchronous | Half | Multi-drop | Single master
+SMBus | Synchronous | Half | Multi-drop | Multi-master
+SPI | Synchronous | Full, simplex | Multi-drop | Single-master
+RS-485 | Asynchronous | Half | Multi-drop | Multi-master
+RS-232 / UART | Asynchronous | Full, simplex | Point to point | ?
+
+
+### Local Interconnect Network
+
+A network protocol from the automotive industry, positioned as a low-cost alternative to CAN. Commonly used in automotive for low bandwidth systems (1-20 kbit/s). A network is formed by a nodes connected to a single bus, with a single master node initiating communication.
+
+The master initiates data transfers by quering a connected device. Only the device for which the address is a match responds. Once the transfer completes, the master continues on to the next address. There is no need for bus arbitration nor collision detection by utilizing a BREAK signal for synchronization. Data transfer is based on UART.
+
+
 
 
 ## References
@@ -61,15 +73,6 @@ Serial communication busses: I2C, SPI, CAN
 
 * I2C, SPI: transmit + receive
 * UART, CAN, RS-485: read / write
-
-Protocol | Timing | Duplex | Topology | Control | Max nodes
---- | --- | --- | ---
-CAN | Asynchronous | Half | Multi-drop | Multi-master | ?
-I2C | Synchronous | Half | Multi-drop | Multi-master | 127/1023
-SMBus | Synchronous | Half | Multi-drop | Multi-master | 127
-SPI | Synchronous | Full, simplex | Multi-drop | Single-master | n/a
-RS-485 | Asynchronous | Half | Multi-drop | Multi-master | ?
-RS-232 / UART | Asynchronous | Full, simplex | Point to point | ? | 2
 
 > Open: ETH, USB?, LIN
 
