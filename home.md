@@ -2,7 +2,7 @@
 title: Wiki
 description: 
 published: true
-date: 2025-03-28T16:53:10.270Z
+date: 2025-03-28T19:42:22.894Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:10.044Z
@@ -25,3 +25,16 @@ if (CCACHE_PROGRAM)
 	set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
 ```
+
+
+1. precompiled headers
+ * useful for :
+   * commonly use headers from within your project
+   * "expensive" 3rd party headers
+   * common STL headers
+ * useful when:
+   * the project has a lot of source files
+ * which headers to include?
+   * use `include-what-you-use` (frequently used) and ClangBuildAnalyzer (expensive)
+ * one pre-compiled header per target
+
