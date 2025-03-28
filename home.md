@@ -2,7 +2,7 @@
 title: Wiki
 description: 
 published: true
-date: 2025-03-28T19:42:22.894Z
+date: 2025-03-28T19:42:32.456Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:10.044Z
@@ -37,4 +37,31 @@ endif()
  * which headers to include?
    * use `include-what-you-use` (frequently used) and ClangBuildAnalyzer (expensive)
  * one pre-compiled header per target
+
+1. unity builds
+ * CMake combines multiple sources files into one
+  * Shared headers/templates/libraries will be compiled once per unity build
+  * less work for the linker
+  * less object files, less disk IO
+ * 
+
+```cmake
+-DCMAKE_UNITY_BUILD=ON
+```
+
+```cmake
+set_target_properties(<target> PROPERTIES UNITY_BUILD ON)
+```
+
+ * not useful when:
+  * internal linkage (anonymus namespace symbol clashes)
+  * `using namespace` in one file may influence another file
+  * one define influences another source
+  * masks missing header(s)
+ * recommended to have a non unity build next to this...
+ * useful to:
+  * find ODR violations and missing header guards
+> This one seems risky but could be interesting
+
+
 
