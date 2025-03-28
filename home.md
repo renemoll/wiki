@@ -2,7 +2,7 @@
 title: Wiki
 description: 
 published: true
-date: 2025-03-28T19:42:32.456Z
+date: 2025-03-28T19:43:06.143Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:10.044Z
@@ -11,6 +11,7 @@ dateCreated: 2024-03-26T11:44:10.044Z
 # Notes on
 
 [Improving C++ Compilation Times: Tools & Techniques - Vittorio Romeo - ACCU 2023](https://www.youtube.com/watch?v=PfHD3BsVsAM)
+[Slides](https://accu.org/conf-docs/PDFs_2023/XImprovingCompilationTimesToolsandTechniques.pdf)
 
 1. Use Ninja [check]
 1. Use lld [todo]
