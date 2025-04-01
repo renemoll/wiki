@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-01T14:44:00.763Z
+date: 2025-04-01T14:44:30.791Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -17,7 +17,7 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 | Goal | GCC/Clang | MSVC | MSVC |
 | --- | --- | --- |
-| Enable warnings for common coding mistakes or potential errors. | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall)  | `/Wall` | `/W4`
+| Enable warnings for common coding mistakes or potential errors. | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | `/Wall` | `/W4`
 |  | [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra)
 | Have the compiler treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | `/WX` | `/WX`
 
