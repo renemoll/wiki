@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-02T14:23:43.718Z
+date: 2025-04-02T15:01:05.693Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -17,10 +17,14 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-| Enable warnings for common coding mistakes and/or potential errors. | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | `/W4` \
-|  | [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra) |  [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra)
-| Have the compiler treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | `/WX`
-| Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | `/permissive-`
+| Enable warnings for common coding mistakes and/or potential errors. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) \ | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | `/W4` \
+|  | [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) |  [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra)
+| Have the compiler treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX`
+| Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) | `/permissive-`
+| Warn about local variables shadowing/hiding another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
+| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
+
+
 
 ### Type conversion
 
@@ -30,6 +34,13 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 
 ### OOP
+
+| Goal | GCC | Clang | MSVC |
+| --- | --- | --- |--- |
+| Warn about base classes without virtual destructors. | `-Wnon-virtual-dtor` | [`-Wnon-virtual-dtor`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnon-virtual-dtor) | [`/w14265`](https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4265?view=msvc-170) |
+| Warn about classes which seemingly cannot be used as their constructor/destructors are private. | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://clang.llvm.org/docs/DiagnosticsReference.html#wctor-dtor-privacy) | ? |
+| Warn about methods overwriting a virtual method while not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) | `/analyze` |
+| Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
 
 ### Optional
 
@@ -68,21 +79,11 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
 [-Wzero-as-null-pointer-constant](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about using 0 as a null pointer. | Clang | ? |
 
-**Classes**
-
-Flag | Description | GCC/Clang | MSVC equivelant |
---- | --- | --- | --- |
-[`-Wnon-virtual-dtor`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnon-virtual-dtor) | Warn about base classes without virtual destructors. | Both | ? |
-[`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about classes which seemingly cannot be used. | Both | ? |
-[`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) | Warn about methods overwriting a virtual method while not marked with `override`. | Both | ? |
-[`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) | Warn about derived methods hiding a virtual function of the base class. | Both | ? |
 
 **Misc**
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | Warn about variables with the same name, shadowing the one(s) in a broader scope. | Both | ? |
-[`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | Additional shadowing checks | Clang | ? |
 [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about identifcal branches in if-else expressions. | GCC | ? |
 [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about duplicated conditions in if-else expressions. | GCC | ? |
 [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about multiple declarations within the same scope. | GCC | ? |
