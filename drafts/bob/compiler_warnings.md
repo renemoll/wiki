@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-01T15:03:51.989Z
+date: 2025-04-02T14:23:43.718Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -24,11 +24,20 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 ### Type conversion
 
+
+| Goal | GCC | Clang | MSVC |
+| --- | --- | --- |--- |
+
+
+### OOP
+
 ### Optional
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
 | Enable all warnings |  | `-Weverything` | `/Wall` |
+
+
 
 # TODO
 
