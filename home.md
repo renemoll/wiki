@@ -2,7 +2,7 @@
 title: Wiki
 description: 
 published: true
-date: 2025-03-28T21:08:05.990Z
+date: 2025-04-04T13:52:51.664Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:10.044Z
@@ -63,6 +63,23 @@ set_target_properties(<target> PROPERTIES UNITY_BUILD ON)
  * useful to:
   * find ODR violations and missing header guards
 > This one seems risky but could be interesting
+
+It’s Not As Simple As “Use A Memory Safe Language"
+- https://www.youtube.com/watch?v=iQ-eTaW6-cM
+
+C++ lets you do the wrong thing easily (by default)
+
+
+Quality markers -> Tools used?
+ - static analysis
+ - undefined behavior interpreter
+ - model checking
+ - property testing
+ - fuzzing
+ - dynamic analysis
+ - isolated execution
+ - resource limits
+
 
 
 
