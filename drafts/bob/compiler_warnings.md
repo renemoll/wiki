@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-02T15:01:05.693Z
+date: 2025-04-07T14:40:43.742Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -31,6 +31,13 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
+| Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/W4` \ 
+| | | | `/w14242` \
+| | | | `/w14254` |
+
+ 
+[`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | Warn about implicit sign conversions. | Both | ? |
+[`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about implicit type conversions with arithmitic operations. | GCC | ? |
 
 
 ### OOP
@@ -62,11 +69,8 @@ Based on [1], [3], [4] and [6] [9]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | Warn about implicit type conversions which (may) change or not fit the value. | Both | ? |
-[`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | Warn about implicit sign conversions. | Both | ? |
 [`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | Warn about floats being implictly converted to doubles. | Both | ? |
 [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | Warn about floating point values used in equality tests. | Both | ? |
-[`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about implicit type conversions with arithmitic operations. | GCC | ? |
 [`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | Warn when sizeof(void) is used (directly or indirectly). | Both | ? |
 [`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | Warn about C-style casts. | Both | ? |
 [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | Warn about casts removing a type qualifier. | Both | ? |
