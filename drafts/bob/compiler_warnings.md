@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-07T14:40:43.742Z
+date: 2025-04-07T15:09:00.107Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -10,7 +10,9 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 # Compiler warnings
 
-
+GCC version X
+Clang version X
+Visual Studio 2022
 
 
 ### General
@@ -31,16 +33,23 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
-| Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/W4` \ 
-| | | | `/w14242` \
+| Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/w14242` \
 | | | | `/w14254` |
+| Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | `/w14365` \
+|||| `/w14826`|
+| Warn about implicit type conversions with arithmitic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warith-conversion) | `-Warith-conversion` | `/w14388` \
+|||| `/w14287` |
+ | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
+ | Warn about single-precision values being implictly converted to double-precision values . | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | n/a |
+ 
+ 
+
 
  
-[`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | Warn about implicit sign conversions. | Both | ? |
-[`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about implicit type conversions with arithmitic operations. | GCC | ? |
+ [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | Warn about function call is cast to a different type. | Both | `/w14191` |
 
 
-### OOP
+### Classes
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
@@ -69,15 +78,13 @@ Based on [1], [3], [4] and [6] [9]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | Warn about floats being implictly converted to doubles. | Both | ? |
-[`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | Warn about floating point values used in equality tests. | Both | ? |
 [`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | Warn when sizeof(void) is used (directly or indirectly). | Both | ? |
 [`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | Warn about C-style casts. | Both | ? |
 [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | Warn about casts removing a type qualifier. | Both | ? |
 [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about casting to the same type. | GCC | ? |
 [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
 [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
-[`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | Warn about function call is cast to a different type. | Both | ? |
+
 [-Wstrict-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) |  Warn about optimizations where signed overflow is assumed not to occour. | Both | ? |
 [-Wshift-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | GCC | ? |
 [-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
