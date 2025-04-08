@@ -2,13 +2,14 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-07T15:09:00.107Z
+date: 2025-04-08T07:57:10.824Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
 ---
 
 # Compiler warnings
+
 
 GCC version X
 Clang version X
@@ -41,12 +42,14 @@ Visual Studio 2022
 |||| `/w14287` |
  | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
  | Warn about single-precision values being implictly converted to double-precision values . | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | n/a |
- 
- 
+  | Warn about function call is cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | `/w14191` |
+| Warn about aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-aliasing) | [`-Wstrict-aliasing`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-aliasing) | ? \
+| | [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing) | [`-fstrict-aliasing`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) | ? |
 
 
+-fsanitize=address
  
- [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | Warn about function call is cast to a different type. | Both | `/w14191` |
+[`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | Warn about C-style casts. | Both | ? |
 
 
 ### Classes
@@ -64,6 +67,9 @@ Visual Studio 2022
 | --- | --- | --- |--- |
 | Enable all warnings |  | `-Weverything` | `/Wall` |
 
+# References
+
+* [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 
 
 # TODO
@@ -79,16 +85,15 @@ Based on [1], [3], [4] and [6] [9]
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | Warn when sizeof(void) is used (directly or indirectly). | Both | ? |
-[`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | Warn about C-style casts. | Both | ? |
 [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | Warn about casts removing a type qualifier. | Both | ? |
 [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about casting to the same type. | GCC | ? |
-[`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
-[`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
-
 [-Wstrict-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) |  Warn about optimizations where signed overflow is assumed not to occour. | Both | ? |
 [-Wshift-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | GCC | ? |
 [-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
 [-Wzero-as-null-pointer-constant](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about using 0 as a null pointer. | Clang | ? |
+
+[`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
+[`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
 
 
 **Misc**
