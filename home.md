@@ -2,7 +2,7 @@
 title: Wiki
 description: 
 published: true
-date: 2025-04-13T21:46:26.872Z
+date: 2025-04-13T21:46:43.131Z
 tags: 
 editor: markdown
 dateCreated: 2024-03-26T11:44:10.044Z
@@ -146,4 +146,5 @@ embedded
 cyber
 * https://blog.google/technology/safety-security/tackling-cybersecurity-vulnerabilities-through-secure-by-design/
 * https://berthub.eu/articles/posts/cyber-security-pre-war-reality-check/
+* https://keyurramoliya.com/posts/Integrating-Cybersecurity-into-Product-Development-A-Step-by-Step-Approach/
 
