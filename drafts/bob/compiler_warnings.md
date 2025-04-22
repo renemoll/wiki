@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-08T08:02:15.832Z
+date: 2025-04-22T13:30:00.764Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -16,7 +16,7 @@ Clang version X
 Visual Studio 2022
 
 
-### General
+## General
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
@@ -24,33 +24,38 @@ Visual Studio 2022
 |  | [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) |  [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra)
 | Have the compiler treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX`
 | Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) | `/permissive-`
-| Warn about local variables shadowing/hiding another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
-| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
 
+## Modernisation
 
+| Goal | GCC | Clang | MSVC | 
+| --- | --- | --- |--- |
+| Warn about using C-style casts. | [`-Wold-style-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast) | [`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | ? |
+| Warn about using 0 as a `null` pointer. | [`-Wzero-as-null-pointer-constant`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wzero-as-null-pointer-constant) | [`-Wzero-as-null-pointer-constant`](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | ? |
 
-### Type conversion
-
+## Type conversion
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
 | Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/w14242` \
 | | | | `/w14254` |
-| Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | `/w14365` \
-|||| `/w14826`|
 | Warn about implicit type conversions with arithmitic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warith-conversion) | `-Warith-conversion` | `/w14388` \
 |||| `/w14287` |
+Warn about casts which remove type qualifiers | [`-Wcast-qual`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-qual) | [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | ? |
+Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | n/a | ? |
+| Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | `/w14191` |
+| Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | `/w14365` \
+|||| `/w14826`|
  | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
- | Warn about single-precision values being implictly converted to double-precision values . | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | n/a |
-  | Warn about function call is cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | `/w14191` |
+ | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wdouble-promotion) | n/a |
+
+## Aliassing
+
+| Goal | GCC | Clang | MSVC |
+| --- | --- | --- |--- |
 | Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-aliasing) | [`-Wstrict-aliasing`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-aliasing) | n/a? \
 | | [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing) | [`-fstrict-aliasing`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) |  |
-
-
--fsanitize=address
- 
-[`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | Warn about C-style casts. | Both | ? |
-
+| Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align) | [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | ? |
+| Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | n/a | ? |
 
 ### Classes
 
@@ -67,6 +72,25 @@ Visual Studio 2022
 | --- | --- | --- |--- |
 | Enable all warnings |  | `-Weverything` | `/Wall` |
 
+
+## Misc
+
+| Goal | GCC | Clang | MSVC | 
+| --- | --- | --- |--- |
+| Warn about invalid pointer usage. | [`-Wpointer-arith`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith) | [`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | ? |
+|  Warn about optimizations where signed overflow is assumed not to occour. | [`-Wstrict-overflow=4`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) | [`-Wstrict-overflow=4`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-overflow) | ? |
+| Warn about shifting into the sign bit of a signed number | [`-Wshift-overflow=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | [`-Wshift-overflow=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-overflow) | ? |\
+||| [`-Wshift-sign-overflow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | |
+| Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
+| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
+| Warn about identifcal branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+
+## Todo
+
+* `-fsanitize=address`
+
 # References
 
 * [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
@@ -80,29 +104,12 @@ Visual Studio 2022
 
 Based on [1], [3], [4] and [6] [9]
 
-**Type conversion**
-
-Flag | Description | GCC/Clang | MSVC equivelant |
---- | --- | --- | --- |
-[`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | Warn when sizeof(void) is used (directly or indirectly). | Both | ? |
-[`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | Warn about casts removing a type qualifier. | Both | ? |
-[`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | Warn about casting to the same type. | GCC | ? |
-[-Wstrict-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) |  Warn about optimizations where signed overflow is assumed not to occour. | Both | ? |
-[-Wshift-overflow=2](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | GCC | ? |
-[-Wshift-sign-overflow](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | See above | Clang | ? |
-[-Wzero-as-null-pointer-constant](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about using 0 as a null pointer. | Clang | ? |
-
-[`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | Warn when casting a pointer changes the alignment of the pointee. | Both | ? |
-[`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | Stricter version | GCC | ? |
-
-
+ 
 **Misc**
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about identifcal branches in if-else expressions. | GCC | ? |
-[`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about duplicated conditions in if-else expressions. | GCC | ? |
-[`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about multiple declarations within the same scope. | GCC | ? |
+
 [`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
 [`-Wimplicit-fallthrough`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough) | Warn about implicit, un-annotated, fallthroughs. | Both | ? |
 [`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) | Warn about possible null pointer dereference. | Both | ? |
@@ -114,7 +121,6 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about functions marked as `inline` which cannot/will not be inlined. | Both | ? |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
 [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
-[`-Wzero-as-null-pointer-constant`](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | Warn about the use of 0 as nullptr | Both | ? |
 `Wstrict-null-sentinel` | Warn about the use of an uncasted NULL as sentinel | GCC | ? |
 [-Wconditional-uninitialized](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | Warn about variables which might be uinitialized | Clang | ? |
 [-Wtrivial-auto-var-init](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | Warn about automatic variables which might be unintialized. | GCC | ? |
