@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-22T15:22:07.559Z
+date: 2025-04-22T15:27:58.184Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -63,7 +63,7 @@ Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onl
 | Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align) | [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | ? |
 | Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | n/a | ? |
 
-### Classes
+## Classes
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
@@ -88,8 +88,9 @@ Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onl
 | Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | [`-Warray-bounds`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | ? |\
 ||| [`-Warray-bounds-pointer-arithmetic`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) ||
 | Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
+| Warn about loop varialbes being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | ? |
 
-### Optional
+## Optional
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
@@ -133,7 +134,7 @@ Based on [1], [3], [4] and [6] [9]
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
-[-Wloop-analysis](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | Warn about loop varialbes being manipulated/ignored/.. inside the loop | Clang | ? |
+
 
 **String**
 
