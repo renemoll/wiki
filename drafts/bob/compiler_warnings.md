@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-22T13:30:00.764Z
+date: 2025-04-22T15:22:07.559Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -15,6 +15,8 @@ GCC version X
 Clang version X
 Visual Studio 2022
 
+Note: if part of `-Wall`, `-Wextra`, or `/W4`, the flag is omitted.
+> Check Wall/Wextra/W4. Or mention it is part of it...
 
 ## General
 
@@ -31,6 +33,10 @@ Visual Studio 2022
 | --- | --- | --- |--- |
 | Warn about using C-style casts. | [`-Wold-style-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast) | [`-Wold-style-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wold-style-cast) | ? |
 | Warn about using 0 as a `null` pointer. | [`-Wzero-as-null-pointer-constant`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wzero-as-null-pointer-constant) | [`-Wzero-as-null-pointer-constant`](https://clang.llvm.org/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | ? |
+| Warn about the use of `NULL`. | [`-Wstrict-null-sentinel`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast) | n/a | ? |
+| Warn about implict fallthroughs | [`-Wimplicit-fallthrough=5`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-fallthrough) | [`-Wimplicit-fallthrough`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough) | ? | \
+||| [`-Wimplicit-fallthrough-per-function`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough-per-function) | |
+| Warm about incomplete function declaration/definitions. | [`-Wstrict-prototypes`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-prototypes) | [`-Wstrict-prototypes`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-prototypes) | ? | 
 
 ## Type conversion
 
@@ -66,12 +72,28 @@ Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onl
 | Warn about methods overwriting a virtual method while not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) | `/analyze` |
 | Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
 
+## Common coding mistakes
+
+| Goal | GCC | Clang | MSVC | 
+| --- | --- | --- |--- |
+| Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
+| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
+| Warn about identifcal branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | ? |
+| Warn about possible null pointer dereferencing. | [`-Wnull-dereference`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnull-dereference) | [`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) | ? |
+| Warn about the use of undefined identifiers (which implicitly convert to 0.) | [`-Wundef`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wundef) | [`-Wundef`](https://clang.llvm.org/docs/DiagnosticsReference.html#wundef) | ? |
+| Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | [`-Warray-bounds`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | ? |\
+||| [`-Warray-bounds-pointer-arithmetic`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) ||
+| Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
+
 ### Optional
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
 | Enable all warnings |  | `-Weverything` | `/Wall` |
-
 
 ## Misc
 
@@ -81,15 +103,16 @@ Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onl
 |  Warn about optimizations where signed overflow is assumed not to occour. | [`-Wstrict-overflow=4`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) | [`-Wstrict-overflow=4`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-overflow) | ? |
 | Warn about shifting into the sign bit of a signed number | [`-Wshift-overflow=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | [`-Wshift-overflow=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-overflow) | ? |\
 ||| [`-Wshift-sign-overflow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | |
-| Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
-| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
-| Warn about identifcal branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about any unused parameter, function, variable, ... | [`-Wunused`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused) | [`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | ? |
+| Warn about indentation giving the impression of scope. | [`-Wmisleading-indentation`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation) | [`-Wmisleading-indentation`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmisleading-indentation) | ? |
+| Warn about functions marked as `inline` which cannot or will not be inlined. | [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | [`-Winline`](https://clang.llvm.org/docs/DiagnosticsReference.html#winline) | ? |
 
 ## Todo
 
 * `-fsanitize=address`
+* `-fhardened`
+* `-Whardened`
+* `-ftrivial-auto-var-init`
 
 # References
 
@@ -109,21 +132,7 @@ Based on [1], [3], [4] and [6] [9]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-
-[`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | Warn about switch statements not using all possible enum values (default not being considered). | Both | ? |
-[`-Wimplicit-fallthrough`](https://clang.llvm.org/docs/DiagnosticsReference.html#wimplicit-fallthrough) | Warn about implicit, un-annotated, fallthroughs. | Both | ? |
-[`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) | Warn about possible null pointer dereference. | Both | ? |
-[`-Wundef`](https://clang.llvm.org/docs/DiagnosticsReference.html#wundef) | Warn about the use of undefined macros (which implicitly convert to 0.) | Both | ? |
-[`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about potential errors with logical operations. | GCC | ? |
-[`-Wstrict-prototypes`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-prototypes) | Warn about function declarations misses argument types. | Both | ? |
-[`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | Warn about any unused parameter/function/variable/etc. | Both | ? |
-[`-Wmisleading-indentation`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmisleading-indentation) | Warn about indentation giving the impression of scope. | Both | ? |
-[`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about functions marked as `inline` which cannot/will not be inlined. | Both | ? |
 [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
-[`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | Warns about invalid array indices | Both (on by default/`-Wall`, level is GCC specific) | ? |
-`Wstrict-null-sentinel` | Warn about the use of an uncasted NULL as sentinel | GCC | ? |
-[-Wconditional-uninitialized](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | Warn about variables which might be uinitialized | Clang | ? |
-[-Wtrivial-auto-var-init](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | Warn about automatic variables which might be unintialized. | GCC | ? |
 [-Wloop-analysis](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | Warn about loop varialbes being manipulated/ignored/.. inside the loop | Clang | ? |
 
 **String**
