@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-23T15:12:28.916Z
+date: 2025-04-24T13:53:31.401Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -66,6 +66,9 @@ Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onl
 
 Add
 -  [`-Wcast-function-type`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-function-type)
+
+Todo:
+- move Wdouble-promotion to firmware section
 
 ## Aliassing
 
