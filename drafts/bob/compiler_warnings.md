@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-25T14:34:11.859Z
+date: 2025-04-25T14:36:59.324Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -42,18 +42,13 @@ Visual Studio 2022
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
-| Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/w14242` \
-| | | | `/w14254` |
-| Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) (via conversion) | `/w14365` \
-|||| `/w14826` |
-| Warn about implicit type conversions with arithmitic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warith-conversion) | n/a | `/w14388` \
-|||| `/w14287` |
+| Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/w14242` <br> `/w14254` |
+| Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | `/w14365` <br> `/w14826` |
+| Warn about implicit type conversions with arithmitic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Warith-conversion) | n/a | `/w14388` <br> `/w14287` |
 | Warn about casts which remove type qualifiers | [`-Wcast-qual`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-qual) | [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | ? |
 | Warn about casting to the same type | [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html) | n/a | ? |
-| Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) | `/w14191` \
-|||[`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict)||
+| Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://clang.llvm.org/docs/DiagnosticsReference.html#wbad-function-cast) <br> [`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict) | `/w14191` |
 
- 
 ## Aliassing
 
 | Goal | GCC | Clang | MSVC |
