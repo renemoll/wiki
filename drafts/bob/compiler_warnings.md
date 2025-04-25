@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-25T14:36:59.324Z
+date: 2025-04-25T15:01:22.037Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -23,9 +23,32 @@ Visual Studio 2022
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-| Enable warnings for common coding mistakes/defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) <br> [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) <br> [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra) | `/W4` |
 | Treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX` |
 | Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) <br> [`-Wgcc-compat`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgcc-compat) <br> [`-Wgnu`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgnu) <br> [`-Wmicrosoft`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmicrosoft) <br> [`-Wreserved-identifier`](https://clang.llvm.org/docs/DiagnosticsReference.html#wreserved-identifier)| `/permissive-` |
+
+## Common coding defects
+
+| Goal | GCC | Clang | MSVC | 
+| --- | --- | --- |--- |
+| Enable warnings for common coding mistakes/defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) <br> [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) <br> [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra) | `/W4` |
+| Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) <br> [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | `/analyze` |
+| Warn about identifcal branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | ? |
+| Warn about possible null pointer dereferencing. | [`-Wnull-dereference`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnull-dereference) | [`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) | ? |
+| Warn about the use of undefined identifiers, which implicitly convert to 0. | [`-Wundef`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wundef) | [`-Wundef`](https://clang.llvm.org/docs/DiagnosticsReference.html#wundef) | ? |
+| Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
+| Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | [`-Warray-bounds`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | ? |\
+||| [`-Warray-bounds-pointer-arithmetic`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) ||
+| Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |\
+|| `-ftrivial-auto-var-init` ||
+| Warn about loop varialbes being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | ? |
+ | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
+ 
+Add:
+- [`-Wheader-hygiene`](https://clang.llvm.org/docs/DiagnosticsReference.html#wheader-hygiene)
+- [`-Wtautological-constant-in-range-compare`](https://clang.llvm.org/docs/DiagnosticsReference.html#wtautological-constant-in-range-compare)
 
 ## Modernisation
 
@@ -55,8 +78,7 @@ Visual Studio 2022
 | --- | --- | --- |--- |
 | Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-aliasing) (with Wall) | [`-Wstrict-aliasing`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-aliasing) (compat only) | n/a? \
 | | [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing) | [`-fstrict-aliasing`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) |  |
-| Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align) | [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | ? | \
-|  | [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | |  |
+| Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align) <br> [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | ? |
 
 ## Classes
 
@@ -64,35 +86,8 @@ Visual Studio 2022
 | --- | --- | --- |--- |
 | Warn about base classes without virtual destructors. | `-Wnon-virtual-dtor` | [`-Wnon-virtual-dtor`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnon-virtual-dtor) | [`/w14265`](https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4265?view=msvc-170) |
 | Warn about classes which seemingly cannot be used as their constructor/destructors are private. | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://clang.llvm.org/docs/DiagnosticsReference.html#wctor-dtor-privacy) (compat) | ? |
-| Warn about methods overwriting a virtual method while not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) | `/analyze` |
+| Warn about methods overwriting a virtual method while not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-override) <br> [`-Wsuggest-destructor-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-destructor-override) | `/analyze` |
 | Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://clang.llvm.org/docs/DiagnosticsReference.html#woverloaded-virtual) (via most) | `/w14263` |
-
-Add:
-- [`-Wsuggest-destructor-override`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsuggest-destructor-override)
-
-## Common coding mistakes
-
-| Goal | GCC | Clang | MSVC | 
-| --- | --- | --- |--- |
-| Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow) | `/analyze` \
-| | | [`-Wshadow-all`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshadow-all) | |
-| Warn about identifcal branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://clang.llvm.org/docs/DiagnosticsReference.html#wswitch-enum) | ? |
-| Warn about possible null pointer dereferencing. | [`-Wnull-dereference`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wnull-dereference) | [`-Wnull-dereference`](https://clang.llvm.org/docs/DiagnosticsReference.html#wnull-dereference) [d] | ? |
-| Warn about the use of undefined identifiers (which implicitly convert to 0.) | [`-Wundef`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wundef) | [`-Wundef`](https://clang.llvm.org/docs/DiagnosticsReference.html#wundef) | ? |
-| Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
-| Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | [`-Warray-bounds`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | ? |\
-||| [`-Warray-bounds-pointer-arithmetic`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) ||
-| Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |\
-|| `-ftrivial-auto-var-init` ||
-| Warn about loop varialbes being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | ? |
- | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://clang.llvm.org/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
- 
-Add:
-- [`-Wheader-hygiene`](https://clang.llvm.org/docs/DiagnosticsReference.html#wheader-hygiene)
-- [`-Wtautological-constant-in-range-compare`](https://clang.llvm.org/docs/DiagnosticsReference.html#wtautological-constant-in-range-compare)
 
 ## Optional
 
