@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-24T13:53:31.401Z
+date: 2025-04-25T14:08:30.174Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -23,16 +23,14 @@ Visual Studio 2022
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-| Enable warnings for common coding mistakes and/or potential errors. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) \ | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | `/W4` \
+| Enable warnings for common coding mistakes/defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) \ | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) \ | `/W4` \
 |  | [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) |  [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra)
-| Have the compiler treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX`
-| Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) | `/permissive-`
-
-Add (portability?):
- - [`-Wgnu`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgnu)
- - [`-Wmicrosoft`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmicrosoft)
- - [`-Wreserved-identifier`](https://clang.llvm.org/docs/DiagnosticsReference.html#wreserved-identifier)
- - [`-Wgcc-compat`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgcc-compat)
+| Treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX`
+| Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) | `/permissive-` \
+|||[`-Wgnu`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgnu)| \
+|||[`-Wmicrosoft`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmicrosoft)| \
+|||[`-Wgcc-compat`](https://clang.llvm.org/docs/DiagnosticsReference.html#wgcc-compat)| \
+|||[`-Wreserved-identifier`](https://clang.llvm.org/docs/DiagnosticsReference.html#wreserved-identifier)||
 
 ## Modernisation
 
@@ -74,7 +72,7 @@ Todo:
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- |--- |
-| Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-aliasing) | [`-Wstrict-aliasing`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-aliasing) (compat only) | n/a? \
+| Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-aliasing) (with Wall) | [`-Wstrict-aliasing`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-aliasing) (compat only) | n/a? \
 | | [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html#index-fstrict-aliasing) | [`-fstrict-aliasing`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) |  |
 | Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align) | [`-Wcast-align`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-align) | ? | \
 |  | [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcast-align_003dstrict) | |  |
@@ -106,7 +104,8 @@ Add:
 | Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | n/a | ? |
 | Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | [`-Warray-bounds`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds) | ? |\
 ||| [`-Warray-bounds-pointer-arithmetic`](https://clang.llvm.org/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) ||
-| Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
+| Warn about (potential) use of uninitializaed variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |\
+|| `-ftrivial-auto-var-init` ||
 | Warn about loop varialbes being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://clang.llvm.org/docs/DiagnosticsReference.html#wloop-analysis) | ? |
 
 Add:
@@ -131,7 +130,8 @@ Add:
 |  Warn about optimizations where signed overflow is assumed not to occour. | [`-Wstrict-overflow=4`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) | [`-Wstrict-overflow=4`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-overflow) (compat) | ? |
 | Warn about shifting into the sign bit of a signed number | [`-Wshift-overflow=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | [`-Wshift-overflow=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-overflow) [d] | ? |\
 ||| [`-Wshift-sign-overflow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | |
-| Warn about any unused parameter, function, variable, ... | [`-Wunused`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused) | [`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | ? |
+| Warn about any unused parameter, function, variable, ... | [`-Wunused`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused) | [`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | ? |\
+|| `-Wunused-const-variable` ||
 | Warn about indentation giving the impression of scope. | [`-Wmisleading-indentation`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation) | [`-Wmisleading-indentation`](https://clang.llvm.org/docs/DiagnosticsReference.html#wmisleading-indentation) | ? |
 | Warn about functions marked as `inline` which cannot or will not be inlined. | [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | [`-Winline`](https://clang.llvm.org/docs/DiagnosticsReference.html#winline) (compat) | ? |
 
@@ -148,6 +148,14 @@ Add:
 Add:
 - [`-Wformat-non-iso`](https://clang.llvm.org/docs/DiagnosticsReference.html#wformat-non-iso)
 - [`-Wformat-type-confusion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wformat-type-confusion)
+- `-Wformat-overflow=2`
+- `Wformat-signedness `
+
+## Hardening
+
+
+
+## Embedded
 
 ## Todo
 
