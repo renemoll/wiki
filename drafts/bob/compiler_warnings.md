@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-25T14:22:33.519Z
+date: 2025-04-25T14:28:19.333Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -21,9 +21,15 @@ Visual Studio 2022
 
 ## General
 
+<table>
+  <tr>
+    <td>Foo</td>
+  </tr>
+</table>
+
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-| Enable warnings for common coding mistakes/defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) | `/W4` \
+| Enable warnings for common coding mistakes/defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wall) <br> alt | [`-Wall`](https://clang.llvm.org/docs/DiagnosticsReference.html#wall) | `/W4` \
 |  | [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-W) |  [`-Wextra`](https://clang.llvm.org/docs/DiagnosticsReference.html#wextra) |
 | Treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-Werror) | `/WX` |
 | Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-pedantic-1) | [`-Wpedantic`](https://clang.llvm.org/docs/UsersManual.html#cmdoption-pedantic) | `/permissive-` \
