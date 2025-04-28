@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-28T11:25:55.025Z
+date: 2025-04-28T11:26:19.330Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -46,10 +46,9 @@ Written for the following compilers:
 
 # Embedded/firmware specific
 
-
-| Category | Goal | GCC | Clang | MSVC | 
-| --- | --- | --- | --- |--- |
-| Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) | n/a |
+| Category | Goal | GCC | Clang |  
+| --- | --- | --- | --- |
+| Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
 
 ---
