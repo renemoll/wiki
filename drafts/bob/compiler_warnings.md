@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-28T11:26:30.810Z
+date: 2025-04-28T11:37:29.778Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -42,7 +42,12 @@ Written for the following compilers:
 | Common defects | Warn about (potential) use of uninitialized variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) <br> [`-ftrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ftrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
 | Common defects | Warn about loop variables being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wloop-analysis) | ? |
 | Common defects | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
-
+| Type conversion | Warn about (implicit) type conversions which may change the value. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wconversion) | [`-Wconversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wconversion) | `/w14242` <br> `/w14254` |
+| Type conversion | Warn about implicit sign conversions. | [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wsign-conversion) | [`-Wsign-conversion`](https://clang.llvm.org/docs/DiagnosticsReference.html#wsign-conversion) | `/w14365` <br> `/w14826` |
+| Type conversion | Warn about implicit type conversions with arithmetic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Warith-conversion) | n/a | `/w14388` <br> `/w14287` |
+| Type conversion | Warn about casts which remove type qualifiers. | [`-Wcast-qual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-qual) | [`-Wcast-qual`](https://clang.llvm.org/docs/DiagnosticsReference.html#wcast-qual) | ? |
+| Type conversion | Warn about casting to the same type. | [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wuseless-cast) | n/a | ? |
+| Type conversion | Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wbad-function-cast) <br> [`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict) | `/w14191` |
 
 # Microcontroller specific
 
