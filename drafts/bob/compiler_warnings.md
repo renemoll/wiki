@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-28T11:26:19.330Z
+date: 2025-04-28T11:26:30.810Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -44,7 +44,7 @@ Written for the following compilers:
 | Common defects | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
 
 
-# Embedded/firmware specific
+# Microcontroller specific
 
 | Category | Goal | GCC | Clang |  
 | --- | --- | --- | --- |
