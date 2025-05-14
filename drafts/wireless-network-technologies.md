@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-14T13:16:25.126Z
+date: 2025-05-14T13:43:13.531Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -20,7 +20,9 @@ Topics of interest
 * data rate
 * power consumption indication
 * number of nodes per network
-* security?
+* security
+* Reliability / QoS
+* license
 
 Note:
 * physical layer
@@ -28,6 +30,10 @@ Note:
 * media access
 * ... (what do different technolgies provide?)
 
+Use-cases
+* gather information (sensors, monitoring)
+* signal user/machine (trigger actions, alarms)
+* firmware update (OTA updates)
 
 ### [Low-Power Wide-Area Networks: A Broad Overview of Its Different Aspects](https://ieeexplore.ieee.org/abstract/document/9848798)
 * Low-power wide-area networks (LPWANs)
