@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-14T14:20:48.662Z
+date: 2025-05-14T15:13:57.542Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -55,15 +55,50 @@ Mixed IoT:
 * Nodes connect to base station
 * Gateways may be used to translate protocols or transport one protocol over another.
 
+### local (?) area network
 
-
-| Technology | LTE-M | NB-IoT | EC-GSM |
+| Technology | Zigbee | 
 | --- | --- | --- | --- |
-| Frequency band | Licenced | Licenced | Licenced |
+| Range | 10m - 100m | 
+| Industry | Medical, Industry | 
+
+* BLE / BLE mesh
+* LiFi
+* WiFi
+* 6LoWPAN
+
+> Matter, Thread
+
+Omitted:
+* ANT: discontinued
+* MiWi: Microchip only
+* NFC: due to limited range
+* RFID
+* WirelessHART: for (industrial) control applications
+* Z-Wave: focusses only on home automation
+
+### medium (?) area network
+
+* LTE-advanced
+* 5G
+* LoRa
+* DASH7
+
+### LPWAN (low-power wide area network)
+
+| Technology | LTE-M | NB-IoT | LoRaWAN | D7AP | NB-Fi | Telensa | IEEE 802.15.4k | IEEE 802.15.4g | Weightless(-P) | 
+| --- | --- | --- | --- |
+| Frequency band | Licenced | Licenced | Unlicenced | Unlicenced | Unlicenced | Unlicenced | Unlicenced | Unlicenced | Unlicenced |
+
+
+> Qowisio, mIoTy, RPW?
+
 
 Omitted:
 * EC-GSM: due to relative high power requirements
+* Ingenu: due to relative high power requirements
 * Sigfox: due to limited message size and messages per day (12 bytes upload, 8 bytes download, 140 messages per day [Qualification](https://build.sigfox.com/study))
+* Weightless-N/W: do not seem to be available
 
 ### [Low-Power Wide-Area Networks: A Broad Overview of Its Different Aspects](https://ieeexplore.ieee.org/abstract/document/9848798)
 * Low-power wide-area networks (LPWANs)
