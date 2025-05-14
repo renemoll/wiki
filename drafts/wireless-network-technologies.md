@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-14T13:05:30.088Z
+date: 2025-05-14T13:16:25.126Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -11,12 +11,29 @@ dateCreated: 2025-05-14T13:05:30.088Z
 # Wireless Network Technologies
 
 
+## Scratchpad
 
-[Low-Power Wide-Area Networks: A Broad Overview of Its Different Aspects](https://ieeexplore.ieee.org/abstract/document/9848798)
+Goal: overview of wireless communication technologies
+
+Topics of interest
+* range (LOS, NLOS)
+* data rate
+* power consumption indication
+* number of nodes per network
+* security?
+
+Note:
+* physical layer
+* data link
+* media access
+* ... (what do different technolgies provide?)
+
+
+### [Low-Power Wide-Area Networks: A Broad Overview of Its Different Aspects](https://ieeexplore.ieee.org/abstract/document/9848798)
 * Low-power wide-area networks (LPWANs)
 
 
-One usefull grouping is in data rate vs range
+**One usefull grouping is in data rate vs range**
 ![Overview](https://ieeexplore.ieee.org/mediastore/IEEE/content/media/6287639/9668973/9848798/cenke2-3196182-small.gif)
 
 Low data rate & short range
@@ -37,8 +54,35 @@ Low data rate & long range
 * Sigfox
 * LTE-M
 * NB-IOT
+* Z-wave
+* 6LoWPAN
 
+> TODO: , DECT NR, Zigbee mesh, BLE mesh ?
 
+**Grouping by energy efficiency**
+
+Energy efficiency (from high to low)
+* LPWAN
+  * Long Range (LoRa)
+  * SigFox
+  * Narrowband-IoT (NB-IoT)
+  * Long Term Evolution for Machines (LTE-M)
+  * Ingenu
+  * Telensa
+  * DASH7
+  * Extended Coverage Global System for Mobile Communication (EC-GSM)
+  * Weightless-N
+  * Weightless-P
+  * Weightless-W
+  * IEEE 802.15.4k
+  * IEEE 802.15.4g
+* WSN
+  * Zigbee
+  * 6LowPAN
+* Short range communication
+  * Bluetooth
+  * WiFi
+* Cellular
 
 
 
