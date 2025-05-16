@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-16T14:04:22.085Z
+date: 2025-05-16T14:22:18.811Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -120,7 +120,12 @@ sanitizer?
 1. https://andreasfertig.com/blog/2025/03/the-correct-way-to-do-type-punning-in-cpp/
 1. https://andreasfertig.com/blog/2025/04/the-correct-way-to-do-type-punning-in-cpp-the-second-act/
 1. https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing
+1. https://en.cppreference.com/w/cpp/language/object#Strict_aliasing
 
 # TODO
 
 1. https://stackoverflow.com/questions/72511754/safely-type-punning-pod-like-structures-in-place-in-c20
+1. https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Ru-pun
+1. https://accu.org/journals/overload/28/160/anonymous/
+   https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8
+   
