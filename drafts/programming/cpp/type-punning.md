@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-16T14:22:18.811Z
+date: 2025-05-16T14:53:43.598Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -47,16 +47,16 @@ Methods in C and C++:
 * placement new?
 
 ```C++
-#include <format>
+// #include <format>
 #include <iostream>
 #include <string>
 #include <string_view>
+#include <array>
 
 #include <bit>
 #include <cinttypes>
 
-int main()
-{
+void example1() {
     float pi = 3.14f;
     std::cout << "pi: " << pi << std::endl;
 
@@ -82,6 +82,34 @@ int main()
     uint32_t bit_casted = std::bit_cast<uint32_t>(pi);
     std::cout << "bit_cast: " << bit_casted << ", return: " << std::bit_cast<float>(bit_casted) << std::endl;
 }
+
+void example2() {
+    std::array<uint8_t, 6> bytes = {0xAF, 0xC3, 0xF5, 0x48, 0x40, 0xFA};
+
+    float pointer_cast = *(float *)&bytes[1];
+    std::cout << "pointer_cast: " << pointer_cast << std::endl;
+
+    float reinterpretted = *reinterpret_cast<float*>(&bytes[1]);
+    std::cout << "reinterpret_cast: " << reinterpretted << std::endl;
+
+    // union conv {
+    //     float value;
+    //     uint32_t bits;
+    // };
+
+    // conv t;
+    // t.bits = bytes[1] | (bytes[2] << 8) | (bytes[3] << 16) | (bytes[4] << 24);
+    // std::cout << "union: " << t.value << std::endl;
+
+}
+
+int main()
+{
+    example1();
+    example2();
+    return 0;
+}
+
 ```
 
 ```C++
@@ -91,6 +119,8 @@ pointer_cast: 4048f5c3
 reinterpret_cast: 4048f5c3
 union: 4048f5c3
 bit_cast: 4048f5c3, return: 3.14
+pointer_cast: 3.14
+reinterpret_cast: 3.14
 ```
 ## Background
 
