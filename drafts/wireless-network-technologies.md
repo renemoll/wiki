@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-19T10:49:35.577Z
+date: 2025-05-19T10:50:12.895Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
