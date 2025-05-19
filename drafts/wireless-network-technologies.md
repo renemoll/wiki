@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-19T09:42:23.544Z
+date: 2025-05-19T09:44:43.957Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -70,7 +70,7 @@ Technology | Physical | MAC | Network | Transport | Application |
 | TCP / UDP | N | N | N | Y | N |
 | Matter | N | N | N | N | Y |
 
-> ISA100.11a?
+> ISA100.11a: 802.15.4 + 6LoWPAN
 
 ### local (?) area network
 
