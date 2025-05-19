@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-19T08:35:12.454Z
+date: 2025-05-19T09:42:23.544Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -55,16 +55,35 @@ Mixed IoT:
 * Nodes connect to base station
 * Gateways may be used to translate protocols or transport one protocol over another.
 
+[Comparative analysis of ZigBee, LoRa, and NB-IoT in a smart building: advantages, limitations, and integration possibilities](https://www.researchgate.net/publication/387423926_Comparative_analysis_of_ZigBee_LoRa_and_NB-IoT_in_a_smart_building_advantages_limitations_and_integration_possibilities)
+
+
+Technology | Physical | MAC | Network | Transport | Application |
+| --- | --- | --- |
+| BLE (802.15.1) | Y | Y | Y | Y | Y |
+| IEEE 802.15.4 | Y | Y | N | N | N |
+| WiFi | Y | Y | N | N | N |
+| Zigbee | N | N | Y | Y | Y |
+| Z-Wave | N | N | Y | Y | Y |
+| IPv6 | N | N | Y | N | N |
+| Thread | N | N | Y | N | N |
+| TCP / UDP | N | N | N | Y | N |
+| Matter | N | N | N | N | Y |
+
+> ISA100.11a?
+
 ### local (?) area network
 
-| Technology | 6LoWPAN | BLE / BLE mesh | WiFi | Zigbee |
+| Technology | BLE (802.15.1) | WiFi | IEEE 802.15.4 / Zigbee | Z-Wave
 | --- | --- | --- | --- |
-| Range | | | | 10m - 100m | 
-| Industry | | | | Medical, Industry | 
+| Range | <100m | | 10m - 100m | 100m - 800m |
+| Industry | | | Medical, Industry | Home automation |
+| Frequency band | 2.4GHz | 2.4GHz, 5GHz, 6GHz | 800MHz - 900MHz,<br>2.4GHz | 800MHz - 900MHz |
+| Transmission rate | 125 kbit/s - 2Mbit/s | 400kbit/s - 22Gbit/s | 250 kbit/s | 100 kbit/s |
 
- 
+ 6LoWPAN: IPv6 over a low power network
 
-> Matter, Thread
+
 
 Omitted:
 * ANT: discontinued
@@ -73,7 +92,6 @@ Omitted:
 * NFC: due to limited range
 * RFID
 * WirelessHART: for (industrial) control applications
-* Z-Wave: focusses only on home automation
 
 ### medium (?) area network
 
