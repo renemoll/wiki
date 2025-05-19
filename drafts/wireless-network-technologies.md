@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-14T15:13:57.542Z
+date: 2025-05-19T08:35:12.454Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -57,20 +57,18 @@ Mixed IoT:
 
 ### local (?) area network
 
-| Technology | Zigbee | 
+| Technology | 6LoWPAN | BLE / BLE mesh | WiFi | Zigbee |
 | --- | --- | --- | --- |
-| Range | 10m - 100m | 
-| Industry | Medical, Industry | 
+| Range | | | | 10m - 100m | 
+| Industry | | | | Medical, Industry | 
 
-* BLE / BLE mesh
-* LiFi
-* WiFi
-* 6LoWPAN
+ 
 
 > Matter, Thread
 
 Omitted:
 * ANT: discontinued
+* LiFi: requires line of sight
 * MiWi: Microchip only
 * NFC: due to limited range
 * RFID
