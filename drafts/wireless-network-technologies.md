@@ -2,7 +2,7 @@
 title: Wireless Network Technologies
 description: 
 published: true
-date: 2025-05-19T09:44:43.957Z
+date: 2025-05-19T10:49:35.577Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-14T13:05:30.088Z
@@ -71,6 +71,8 @@ Technology | Physical | MAC | Network | Transport | Application |
 | Matter | N | N | N | N | Y |
 
 > ISA100.11a: 802.15.4 + 6LoWPAN
+> EnOcean?
+> https://en.wikipedia.org/wiki/DASH7?
 
 ### local (?) area network
 
