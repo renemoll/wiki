@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-26T13:05:53.447Z
+date: 2025-05-26T13:26:41.287Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -98,13 +98,17 @@ The following assumptions are taken into account:
 | Hardening | Strictly follow the size specification of the array size. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) 
 
 
-
 ### Microcontroller specific
 
-| Category | Goal | GCC | Clang |  
+| Category | Goal | GCC | Clang |
 | --- | --- | --- | --- |
+| ARM Cortex-M | Generate Thumb instructions | [`-mthumb`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-marm) | [`-mthumb`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-mthumb) |
+| ARM Cortex-M | Use 'ARM Architecture Procedure Calling Standard' ABI. | [`-mabi=aapcs`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mabi-1) | [`-mabi=aapcs`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-mabi)
+| ARM Cortex-M | Specify the target processor. [`-mcpu=<name>`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mcpu-2) | [`-mcpu=<name>`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang1-mcpu)
 | Optimization | Place each function/data element into its own section | [`-fdata-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) <br> [`-ffunction-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) | [`-fdata-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) <br> [`-ffunction-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) |
 | Optimization | Do not remove `NULL` pointer checks as the assumptions likely do not hold. | [`-fno-delete-null-pointer-check`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fdelete-null-pointer-checks) | [`-fno-delete-null-pointer-check`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdelete-null-pointer-checks)
+
+
 
 
 ## References
