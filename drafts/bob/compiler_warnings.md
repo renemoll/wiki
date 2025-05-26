@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-26T12:35:05.148Z
+date: 2025-05-26T13:05:53.447Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -89,6 +89,15 @@ The following assumptions are taken into account:
 | Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
 ## Code generation
+
+### Hardening
+
+| Category | Goal | GCC | Clang | MSVC |
+| --- | --- | --- | --- |--- |
+| Hardening | Zero initialize any automatic variables (on the stack.) | [`-ftrivial-auto-var-init=zero`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ftrivial-auto-var-init) | [`-ftrivial-auto-var-init=zero`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ftrivial-auto-var-init) | ? |
+| Hardening | Strictly follow the size specification of the array size. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) 
+
+
 
 ### Microcontroller specific
 
