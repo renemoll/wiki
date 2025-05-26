@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-04-30T14:28:43.819Z
+date: 2025-05-26T12:26:18.486Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -88,6 +88,13 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |
 | Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
+## Code generation
+
+### Microcontroller specific
+
+| Category | Goal | GCC | Clang |  
+| --- | --- | --- | --- |
+| Optimization | Place each function/data element into its own section | [`-fdata-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) <br> [`-ffunction-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) | [`-fdata-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) <br> [`-ffunction-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) |
 
 ## References
 
@@ -98,6 +105,10 @@ The following assumptions are taken into account:
 
 
 ---
+
+
+# Warnings (TODO)
+
 
 ## Hardening
 
@@ -248,8 +259,6 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 
 Flag | Description | GCC/Clang |
 --- | --- | --- |
-[`-ffunction-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) | Place each function into its own section | Both |
-[`-fdata-sections`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) | Place each data element into its own section | Both |
 [`-fno-exceptions`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fexceptions) | Disable support for exceptions | Both |
 [`-fno-unwind-tables`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-funwind-tables) | Disable generation of unwind tables (for backtraces) | Both |
 [`-fno-rtti`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-frtti) | Disable run-time type information | Both |
