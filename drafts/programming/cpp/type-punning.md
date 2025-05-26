@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-26T14:36:41.359Z
+date: 2025-05-26T14:38:35.846Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -48,6 +48,7 @@ Enable:
 
 Sanitizer:
 * Address sanitizer: `-fsanitize=address`
+* Type sanitizer: `-fsanitize=type` (experimental)
 
 # References
 
