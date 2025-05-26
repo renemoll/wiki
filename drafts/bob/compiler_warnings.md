@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-26T14:50:10.392Z
+date: 2025-05-26T15:06:37.129Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -96,6 +96,8 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |--- |
 | Common defects | Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
 | Common defects | Check for stack smashing | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
+| ? | | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
+| ? | | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
 
 > Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
 
@@ -108,6 +110,16 @@ The following assumptions are taken into account:
 | ARM Cortex-M | Specify the target processor. | [`-mcpu=<name>`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mcpu-2) | [`-mcpu=<name>`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang1-mcpu)
 | Optimization | Place each function/data element into its own section | [`-fdata-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) <br> [`-ffunction-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) | [`-fdata-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) <br> [`-ffunction-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) |
 | Optimization | Do not remove `NULL` pointer checks as the assumptions likely do not hold. | [`-fno-delete-null-pointer-check`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fdelete-null-pointer-checks) | [`-fno-delete-null-pointer-check`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdelete-null-pointer-checks)
+
+
+### Library specific
+
+| Library | Option | Goal |
+| --- | --- | --- | 
+| glibc, newlib | `_FORTIFY_SOURCE=3` | Enable input and buffer overflow checks for C library calls. |
+| libstdc++ | `_GLIBCXX_ASSERTIONS` | Check preconditions for C++ library calls. |
+
+> TODO: links
 
 ## Omitted
 
@@ -151,21 +163,16 @@ https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Gu
 | Category | Goal | GCC | Clang |  
 | --- | --- | --- | --- |
 | ? | Warn about executing code from the stack. | [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` | ? | ? |
-| ?  | glibc (use with O2) | `-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3` | ? | ? |
-| ?  | libstdc++  | `-D_GLIBCXX_ASSERTIONS` | ? | ? |
-| ? | ... | `-fno-delete-null-pointer-checks` | ? | ? |
 
 Todo:
-* `-fstack-clash-protection` & `-param stack-clash-protection-guard-size=<gap size>`
 * newlib / picolibc?
 * PAC?
 * arm cortex-m specifics?
-* `-fcf-protection=none -fcf-protection=full`, `-fcf-protection=check`?, `-mbranch-protection=standard`
+* `-mbranch-protection=standard`
 * `-Wl,-z,relro`, `-Wl,-z,now`
  * `-fPIE -pie` (executable), `-fPIC -shared` (library)
 * `-fno-strict-overflow` (`-fwrapv` + `-fwrapv-pointer`)
-* `-fno-strict-aliasing` > check
-* `-Whardened`, `-fhardened`
+* `-Whardened`
 * `-Wl,--as-needed`, `-Wl,--no-copy-dt-needed-entries`
 
 ## Sanitizers
@@ -215,8 +222,6 @@ Add:
 ## Todo
 
 * `-fsanitize=address`
-* `-fhardened`
-* `-Whardened`
 * `ffreestanding`?
 * update links to specific versions
 
