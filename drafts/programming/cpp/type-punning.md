@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-27T08:09:08.496Z
+date: 2025-05-27T08:31:48.459Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -47,11 +47,17 @@ Method | Valid C | Valid C++
 | `std::bit_cast` | n/a | Y (from C++20) |
 | placement `new` | n/a | Y |
 | C style casts | Conditionally | N |
-| `reinterpret_cast` | n/a | Conditioanlly |
+| `reinterpret_cast` | n/a | Conditionally |
 | `unions` | Conditionally | N |
+| `std::start_lifetime_as` |
 
 * Using `std::memcpy` is fine, in theory it starts a new object and copies the underlaying bytes. Note that the compiler tends remove the actual copy during optimization. Be aware that you need to manually take into account if the sizes/alignment/... match.
-* Using `std::bit_cast` is better as it ofloads several checks to the compiler and can be `constexpr`.
+* Using `std::bit_cast` is better as it offloads several checks to the compiler and can be `constexpr`.
+* Use placement `new` when converting a byte storage to an object. Beware you have to ensure the storage is properly aligned for the object type.
+* C style casts are only valid if the cast is compatible with the effective type of the object pointed to, a qualified pointer, a signed/unsigned type related to the effective type or a `char` type.
+* `reinterpret_cast`
+* unions
+* `std::start_lifetime_as`
 
 ## How can the compiler help?
 
@@ -63,6 +69,42 @@ Enable:
 Sanitizer:
 * Address sanitizer: `-fsanitize=address`
 * Type sanitizer: `-fsanitize=type` (experimental)
+
+## Examples
+
+`std::bit_cast`:
+```C++
+[[nodiscard]] constexpr float int_to_float_bit_cast(int x) noexcept
+{
+    return std::bit_cast<float>(x);
+}
+```
+
+`std::memcpy`:
+```C++
+[[nodiscard]] float int_to_float_memcpy(int x) noexcept
+{
+    float destination;
+    std::memcpy(&destination, &x, sizeof(x));
+    return destination;
+}
+```
+
+placement `new`:
+```C++
+[[nodiscard]] float int_to_float_placement(int x) noexcept
+{
+    new(&x) float;
+    return *std::launder(reinterpret_cast<float*>(&x));
+}
+```
+
+> Aligned storage (needs fixing)
+```
+std::aligned_storage_t<sizeof(X), alignof(X)> storage;
+X* p - new (&storage) X;
+```
+
 
 # References
 
@@ -87,8 +129,6 @@ OK methods:
   trival constructors
 
 NOK Methods in C and C++:
-* Pointer type conversion -> UB
-  The standard specifies an object of a certain type may only be pointed to by a pointer of the same type. Having a pointer of a different type pointing to the object is seen as invalid and can be optimized away by the compiler.
 * unions -> conditionally ok in C, UB in C++
   Invalid in C++
   Valic in C as long as the type used to read is not larger then the type used to write to
