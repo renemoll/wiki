@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-27T09:58:37.051Z
+date: 2025-05-27T10:38:34.725Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -119,6 +119,7 @@ Converting bytes to an object with `std::start_lifetime_as`:
 # References
 
 * C++ reference - [Type aliasing](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing)
+* [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8) ([alternative](https://accu.org/journals/overload/28/160/anonymous/))
 * [Type punning in modern C++ - Timur Doumler - CppCon 2019](https://www.youtube.com/watch?v=_qzMpk-22cc)
 * [The correct way to do type punning in C++](https://andreasfertig.com/blog/2025/03/the-correct-way-to-do-type-punning-in-cpp/)
 * [The correct way to do type punning in C++ - The second act](https://andreasfertig.com/blog/2025/04/the-correct-way-to-do-type-punning-in-cpp-the-second-act/)
@@ -151,11 +152,5 @@ X* p - new (&storage) X;
 https://www.youtube.com/watch?v=pbkQG09grFw
 * storage and lifetime are decoupled.
 
-# TODO
-
-1. https://stackoverflow.com/questions/72511754/safely-type-punning-pod-like-structures-in-place-in-c20
-
-1. https://accu.org/journals/overload/28/160/anonymous/
-   https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8
  
  
