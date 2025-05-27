@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-26T14:38:35.846Z
+date: 2025-05-27T08:09:08.496Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -37,7 +37,21 @@ Is that a problem? Maybe, it depends on what you want to achieve.
 > See [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 
 
-# The correct way
+# How to type pun
+
+In C11 and C++17 and forwards:
+
+Method | Valid C | Valid C++
+| --- | --- | --- |
+| `std::memcpy` | Y | Y |
+| `std::bit_cast` | n/a | Y (from C++20) |
+| placement `new` | n/a | Y |
+| C style casts | Conditionally | N |
+| `reinterpret_cast` | n/a | Conditioanlly |
+| `unions` | Conditionally | N |
+
+* Using `std::memcpy` is fine, in theory it starts a new object and copies the underlaying bytes. Note that the compiler tends remove the actual copy during optimization. Be aware that you need to manually take into account if the sizes/alignment/... match.
+* Using `std::bit_cast` is better as it ofloads several checks to the compiler and can be `constexpr`.
 
 ## How can the compiler help?
 
@@ -53,9 +67,10 @@ Sanitizer:
 # References
 
 * [Type aliasing](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing)
+* [Type punning in modern C++ - Timur Doumler - CppCon 2019](https://www.youtube.com/watch?v=_qzMpk-22cc)
 
 
-# Scratchpad 
+# Scratchpad
 
 
 
@@ -64,16 +79,12 @@ Sanitizer:
 https://stackoverflow.com/questions/67636231/what-is-the-modern-correct-way-to-do-type-punning-in-c
 
 OK methods:
-* `memcpy` -> OK
-  Starts a new object, copies the underlaying data byte array
-* `bit_cast` -> OK
-  Samilar to `memcpy`, can be `constexpr`
+
 * `std::start_lifetime_as` -> ok
   Does not copy the data, kind of like placement new without calling the constructor.
 * placement new + aligned storage...
 * std::start_lifetime_as
   trival constructors
-
 
 NOK Methods in C and C++:
 * Pointer type conversion -> UB
@@ -84,82 +95,6 @@ NOK Methods in C and C++:
 * `reinterpret_cast`, conditionally ok in C++
   Ok if converting a type from/to a byte reprentation (`char`, `unsigned char` or `std::byte`) (type accessability)
 
-```C++
-// #include <format>
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <array>
-
-#include <bit>
-#include <cinttypes>
-
-void example1() {
-    float pi = 3.14f;
-    std::cout << "pi: " << pi << std::endl;
-
-    uint32_t direct_cast = static_cast<uint32_t>(pi);
-    std::cout << "direct_cast: " << direct_cast << std::endl;
-
-    uint32_t pointer_cast = *(uint32_t *)&pi;
-    std::cout << "pointer_cast: " << std::hex << pointer_cast << std::endl;
-
-    uint32_t reinterpretted = *reinterpret_cast<uint32_t*>(&pi); // UB, why not detected?
-    std::cout << "reinterpret_cast: " << std::hex << reinterpretted << std::endl;
-
-    union conv {
-        float value;
-        uint32_t bits;
-    };
-
-    conv t;
-    t.value = pi;
-    std::cout << "union: " << std::hex << t.bits << std::endl;
-
-    // Note: bit-cast basically performs a memcpy, which is already a preffered method...
-    uint32_t bit_casted = std::bit_cast<uint32_t>(pi);
-    std::cout << "bit_cast: " << bit_casted << ", return: " << std::bit_cast<float>(bit_casted) << std::endl;
-}
-
-void example2() {
-    std::array<uint8_t, 6> bytes = {0xAF, 0xC3, 0xF5, 0x48, 0x40, 0xFA};
-
-    float pointer_cast = *(float *)&bytes[1];
-    std::cout << "pointer_cast: " << pointer_cast << std::endl;
-
-    float reinterpretted = *reinterpret_cast<float*>(&bytes[1]);
-    std::cout << "reinterpret_cast: " << reinterpretted << std::endl;
-
-    // union conv {
-    //     float value;
-    //     uint32_t bits;
-    // };
-
-    // conv t;
-    // t.bits = bytes[1] | (bytes[2] << 8) | (bytes[3] << 16) | (bytes[4] << 24);
-    // std::cout << "union: " << t.value << std::endl;
-
-}
-
-int main()
-{
-    example1();
-    example2();
-    return 0;
-}
-
-```
-
-```C++
-pi: 3.14
-direct_cast: 3
-pointer_cast: 4048f5c3
-reinterpret_cast: 4048f5c3
-union: 4048f5c3
-bit_cast: 4048f5c3, return: 3.14
-pointer_cast: 3.14
-reinterpret_cast: 3.14
-```
 ## Background
 
 C++ operates on objects, objects can be created, destroyed, manipulated and accessed. Note that an object in this sense is not an instance of a class. More something that is stored in memory (variables, class instances, ...).
