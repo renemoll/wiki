@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-27T08:31:48.459Z
+date: 2025-05-27T09:20:43.433Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -39,25 +39,49 @@ Is that a problem? Maybe, it depends on what you want to achieve.
 
 # How to type pun
 
+## Use-case: interpret data of one type as another
+
 In C11 and C++17 and forwards:
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
 | `std::memcpy` | Y | Y |
 | `std::bit_cast` | n/a | Y (from C++20) |
+| C style casts | Conditionally | N |
+| `unions` | Conditionally | N |
+
+* Using `std::memcpy` is fine, in theory it starts a new object and copies the underlaying bytes. Note that the compiler tends remove the actual copy during optimization. Be aware that you need to manually take into account if the size and alignment match and the type is  trivially copyable.
+* Using `std::bit_cast` is better as it offloads several checks to the compiler and can be `constexpr`. Does require the types to be trivially copyable and same size.
+* C style casts are only valid if the cast is compatible with the effective type of the object pointed to, a qualified pointer, a signed/unsigned type related to the effective type or a `char` type.
+
+
+## Use-case: convert an object to an array of bytes or vice versa
+
+In C11 and C++17 and forwards:
+
+Method | Valid C | Valid C++
+| --- | --- | --- |
+| `std::start_lifetime_as` | N | Y (from C++23)
 | placement `new` | n/a | Y |
 | C style casts | Conditionally | N |
-| `reinterpret_cast` | n/a | Conditionally |
-| `unions` | Conditionally | N |
-| `std::start_lifetime_as` |
+| `reinterpret_cast` | n/a | N |
 
-* Using `std::memcpy` is fine, in theory it starts a new object and copies the underlaying bytes. Note that the compiler tends remove the actual copy during optimization. Be aware that you need to manually take into account if the sizes/alignment/... match.
-* Using `std::bit_cast` is better as it offloads several checks to the compiler and can be `constexpr`.
-* Use placement `new` when converting a byte storage to an object. Beware you have to ensure the storage is properly aligned for the object type.
+* `std::start_lifetime_as`, trivial constructor, does not call constructor
 * C style casts are only valid if the cast is compatible with the effective type of the object pointed to, a qualified pointer, a signed/unsigned type related to the effective type or a `char` type.
-* `reinterpret_cast`
+* `reinterpret_cast` is valid when casting to a byte representation, however using the byte representation is undefined (for now?).
+  > Accessing object representations
+
+
+## TODO
+
+
+In C11 and C++17 and forwards:
+
+Method | Valid C | Valid C++
+| --- | --- | --- |
+
+* Use placement `new` when converting a byte storage to an object. Beware you have to ensure the storage is properly aligned for the object type.
 * unions
-* `std::start_lifetime_as`
 
 ## How can the compiler help?
 
@@ -72,7 +96,7 @@ Sanitizer:
 
 ## Examples
 
-`std::bit_cast`:
+Converting between two types with `std::bit_cast`:
 ```C++
 [[nodiscard]] constexpr float int_to_float_bit_cast(int x) noexcept
 {
@@ -80,7 +104,7 @@ Sanitizer:
 }
 ```
 
-`std::memcpy`:
+Converting between two types with `std::memcpy`:
 ```C++
 [[nodiscard]] float int_to_float_memcpy(int x) noexcept
 {
@@ -89,6 +113,29 @@ Sanitizer:
     return destination;
 }
 ```
+
+Converting bytes to an object with placement `new`:
+```C++ 
+```
+
+Converting bytes to an object with `std::start_lifetime_as`:
+```C++
+
+```
+
+
+
+
+# References
+
+* [Type aliasing](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing)
+* [Type punning in modern C++ - Timur Doumler - CppCon 2019](https://www.youtube.com/watch?v=_qzMpk-22cc)
+* [The correct way to do type punning in C++](https://andreasfertig.com/blog/2025/03/the-correct-way-to-do-type-punning-in-cpp/)
+* [The correct way to do type punning in C++ - The second act](https://andreasfertig.com/blog/2025/04/the-correct-way-to-do-type-punning-in-cpp-the-second-act/)
+
+
+# Scratchpad
+
 
 placement `new`:
 ```C++
@@ -106,17 +153,6 @@ X* p - new (&storage) X;
 ```
 
 
-# References
-
-* [Type aliasing](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing)
-* [Type punning in modern C++ - Timur Doumler - CppCon 2019](https://www.youtube.com/watch?v=_qzMpk-22cc)
-
-
-# Scratchpad
-
-
-
-
 ## How to use it
 https://stackoverflow.com/questions/67636231/what-is-the-modern-correct-way-to-do-type-punning-in-c
 
@@ -124,7 +160,6 @@ OK methods:
 
 * `std::start_lifetime_as` -> ok
   Does not copy the data, kind of like placement new without calling the constructor.
-* placement new + aligned storage...
 * std::start_lifetime_as
   trival constructors
 
@@ -166,8 +201,6 @@ Anthing else -> UB
 
 # Resources
 
-1. https://andreasfertig.com/blog/2025/03/the-correct-way-to-do-type-punning-in-cpp/
-1. https://andreasfertig.com/blog/2025/04/the-correct-way-to-do-type-punning-in-cpp-the-second-act/
 1. https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing
 1. https://en.cppreference.com/w/cpp/language/object#Strict_aliasing
 
