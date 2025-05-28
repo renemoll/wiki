@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-26T15:06:37.129Z
+date: 2025-05-28T12:54:19.829Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -16,8 +16,7 @@ This list is compiled by going through the compiler documentation and domain spe
 
 The following assumptions are taken into account:
 * Language: C17, C++17 or newer;
-* Flags enabled via other flags are not explicitly mention unless to aling different compilers.
-
+* Flags enabled via other flags are not explicitly mentioned unless to align different compilers.
 
 ## Compilers
 
@@ -28,11 +27,11 @@ The following assumptions are taken into account:
 
 > TODO: update for Visual Studio 2022
 
-## Warnings
+## Settings
 
 | Category | Goal | GCC | Clang | MSVC | 
-| --- | --- | --- | --- |--- |
-| Aliasing | Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-aliasing) <br> [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fstrict-aliasing)  | [`-Wstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-aliasing) <br> [`-fstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) | n/a? |
+| --- | --- | --- | --- | --- |
+| Aliasing | Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-aliasing) <br> [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fstrict-aliasing) <br> [`-Wold-style-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast)  | [`-Wstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-aliasing) <br> [`-fstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) <br> [`-Wold-style-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wold-style-cast) | n/a? |
 | Aliasing | Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-align) <br> [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-align_003dstrict) | [`-Wcast-align`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-align) | ? |
 | Common defects | Enable warnings for common defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wall) <br> [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-W) | [`-Wall`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wall) <br> [`-Wextra`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wextra) | `/W4` |
 | Common defects | Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow) <br> [`-Wshadow-all`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow-all) | `/analyze` |
@@ -47,7 +46,8 @@ The following assumptions are taken into account:
 | Common defects | Warn about (potential) use of uninitialized variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) <br> [`-ftrivial-auto-var-init=zero`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ftrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
 | Common defects | Warn about loop variables being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wloop-analysis) | ? |
 | Common defects | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
-| Modernisation | Warn about implicit fall throughs. | [`-Wimplicit-fallthrough=5`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wimplicit-fallthrough) | [`-Wimplicit-fallthrough`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wimplicit-fallthrough) | ? |
+| Common defects | Ensure global variables are not merged into a single element, causing a multiple declaration error | `-fno-common` | `-fno-common` | ? |
+| Modernisation | Warn about implicit fall throughs. | [`-Wimplicit-fallthrough=5`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wimplicit-fallthrough) | [`-Wimplicit-fallthrough`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wimplicit-fallthrough) | ? |
 | Portability | Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-pedantic-1) | [`-Wpedantic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#cmdoption-pedantic) <br> [`-Wgcc-compat`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wgcc-compat) <br> [`-Wgnu`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wgnu) <br> [`-Wmicrosoft`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wmicrosoft) <br> [`-Wreserved-identifier`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wreserved-identifier)| `/permissive-` |
 | String format | Warn about arguments not matching with a format string. | [`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wformat) | [`-Wformat=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-2) | ? |
 | String format | Warn about format functions (potentially) truncating the output. | [`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wformat-truncation) | [`-Wformat-truncation=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-truncation) | ? |
@@ -59,20 +59,24 @@ The following assumptions are taken into account:
 ### C specific
 | Category | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- | --- |--- |
-| Modernisation | Warn about incomplete function declaration/definitions. | [`-Wstrict-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-prototypes) | [`-Wstrict-prototypes`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-prototypes)  | ? | 
+| Modernisation | Warn about missing and/or incomplete function declaration/definitions. | [`-Wmissing-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-prototypes) <br> [`-Wmissing-declarations`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-declarations) <br> [`-Wstrict-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-prototypes) | [`-Wstrict-prototypes`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-prototypes)  | ? | 
 | Type conversion | Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wbad-function-cast) <br> [`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict) | `/w14191` |
+
+
+
 
 ### C++ specific
 | Category | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- | --- |--- |
 | Modernisation | Warn about deprecated constructs. | [`-Wdeprecated`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wno-deprecated) | [`-Wdeprecated`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdeprecated) | ? |
-| Modernisation | Warn about using C-style casts. | [`-Wold-style-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast) | [`-Wold-style-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wold-style-cast) | ? |
 | Modernisation | Warn about using 0 as a `null` pointer. | [`-Wzero-as-null-pointer-constant`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wzero-as-null-pointer-constant) | [`-Wzero-as-null-pointer-constant`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | ? |
-| Modernisation | Warn about the use of `NULL` (instead of `nullptr`.) | [`-Wstrict-null-sentinel`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast) | n/a | ? |
+| Modernisation | Warn about the use of `NULL` (instead of `nullptr`.) | [`-Wstrict-null-sentinel`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wstrict-null-sentinel) | n/a | ? |
 | OOP | Warn about base classes without virtual destructors. | [`-Wnon-virtual-dtor`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wnon-virtual-dtor) | [`-Wnon-virtual-dtor`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wnon-virtual-dtor) | [`/w14265`](https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4265?view=msvc-170) |
 | OOP | Warn about classes which seemingly cannot be used (private constructor/destructors.) | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wctor-dtor-privacy) | ? |
 | OOP | Warn about methods overwriting virtual methods not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-override) <br> [`-Wsuggest-destructor-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-destructor-override) | `/analyze` |
 | OOP | Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
+
+`-Wsign-promo`
 
 ### Options
 
@@ -90,16 +94,22 @@ The following assumptions are taken into account:
 
 ## Code generation
 
+
+
+
 ### Hardening
 
 | Category | Goal | GCC | Clang | MSVC |
 | --- | --- | --- | --- |--- |
 | Common defects | Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
-| Common defects | Check for stack smashing | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
+| Common defects | Stack Smashing Protector | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
 | ? | | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
 | ? | | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
+| ? | Don't allow executing code from the stack. | [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` <br> `-Wl,-z,noexecheap` | ? | ? |
+
 
 > Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
+> -fstack-protector-all?
 
 ### Microcontroller specific
 
@@ -152,6 +162,24 @@ The following assumptions are taken into account:
 
 * fdiagnostics-color
 
+Debug
+ - set flags: -O0 -g3 -ggdb -fno-omit-frame-pointer
+              /Od
+ - define (-D): DEBUG
+ - do not define (-U): NDEBUG
+
+Release
+ - set flags: -On -g2
+              /Ox, /O2
+ - define: NDEBUG
+ - do not define DEBUG
+
+
+Note:
+ -g3 adds debug information, does not hit performance. That comes from not optimizing
+
+https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.htm
+
 # Hardening
 
 - general
@@ -160,9 +188,6 @@ The following assumptions are taken into account:
  
 https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
 
-| Category | Goal | GCC | Clang |  
-| --- | --- | --- | --- |
-| ? | Warn about executing code from the stack. | [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` | ? | ? |
 
 Todo:
 * newlib / picolibc?
@@ -174,6 +199,8 @@ Todo:
 * `-fno-strict-overflow` (`-fwrapv` + `-fwrapv-pointer`)
 * `-Whardened`
 * `-Wl,--as-needed`, `-Wl,--no-copy-dt-needed-entries`
+* linker: `nodump`, `nodlopen`
+
 
 ## Sanitizers
 
@@ -182,7 +209,8 @@ Todo:
 * leak
 * undefined (+ `-O1 -g`)
 * more useful options?
-
+  -fsanitize=integer and -fsanitize=shift
+  
 ## General
 
 | Category | Goal | GCC | Clang | MSVC | 
@@ -217,10 +245,12 @@ Add:
 - `-Wformat-overflow=2`
 - `Wformat-signedness `
 
+
 ## Hardening
 
 ## Todo
 
+* -fstack-check
 * `-fsanitize=address`
 * `ffreestanding`?
 * update links to specific versions
@@ -238,13 +268,6 @@ Add:
 Based on [1], [3], [4] and [6] [9]
 
  
-**Misc**
-
-Flag | Description | GCC/Clang | MSVC equivelant |
---- | --- | --- | --- |
-[`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | Warn about code to jump to a function, requiring an executable stack | GCC | ? |
-
-
 **String**
 
 Flag | Description | GCC/Clang | MSVC equivelant |
@@ -259,7 +282,6 @@ Based on [2], [5] and [8]
 
 Flag | Description | GCC/Clang | MSVC equivelant |
 --- | --- | --- | --- |
-[`-fno-common`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fcommon) | Ensures uninitialized variables are not merged into a single unit, causing a multiple declaration error. | Both | ? |
 `-fstack-usage` | Generate stack usage files for detailed stack analysis. | Both | ? |
 [`-fvisibility`](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html#index-fvisibility) |  Set default symbol visibility to hidden | Both | ? |
 [`-fvisibility-inlines-hidden`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fvisibility-inlines-hidden) | Sets the default symbol visibility to hidden for inline functions | Both | ? |
@@ -320,8 +342,7 @@ Note that CMake already provides optimization flags (`-On` and `-g`) depending o
 Flag | Description | Reason |
 --- | --- | --- |
 `-fdevirtualize` | Attempt to convert virtual calls to direct calls | Part of O2,O3,Os (GCC)
-`-fstrict-aliasing` | ... | Part of O2, O3, Os (GCC/Clang).
-`-Wstrict-aliasing` | | Part of `-Wall`, active when `-fstrict-aliasing` is active.
+
 
 # References
 
@@ -335,3 +356,11 @@ Flag | Description | Reason |
 8. [Three GCC Flags for Analyzing Memory Usage](https://embeddedartistry.com/blog/2020/08/17/three-gcc-flags-for-analyzing-memory-usage/)
 9. [The Best and Worst GCC Compiler Flags For Embedded](https://interrupt.memfault.com/blog/best-and-worst-gcc-clang-compiler-flags)
 
+https://wiki.debian.org/Hardening
+https://wiki.debian.org/HardeningWalkthrough
+https://wiki.gentoo.org/wiki/Hardened/Toolchain
+
+x86
+
+`-mfunction-return=thunk` and `-mindirect-branch=thunk`
+ 
