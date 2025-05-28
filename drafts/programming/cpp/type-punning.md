@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-27T15:06:42.442Z
+date: 2025-05-28T07:04:26.316Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -10,36 +10,34 @@ dateCreated: 2025-05-16T14:04:22.085Z
 
 # Type punning
 
+## Introduction
 
-# Introduction
+### What is it
 
-## What is it
+Type punning is a programming technique using an object of a specific type as if it is another type Also see [Wikipedia](https://en.wikipedia.org/wiki/Type_punning). Another way to look at it is to change the view of the underlying data of an object.
 
-Type punning is a programming technique to use an object of a certain type as if is another type. Also see [Wikipedia](https://en.wikipedia.org/wiki/Type_punning).
+### Why use it
 
-## Why use it
-
-Type punning is commonly used for:
+Type punning can be used for:
 * Manual optimizations, i.e. fast(er) computations;
 * Serialization/deserialization of data structures;
 * Low-level communication handling.
 
 By taking the original object and representing it as something else, i.e. floats as integers or bytes and vice versa.
 
-## What is the problem?
+### What is the problem?
 
-There are several methods to perform type punning, more then the standard specifies. This means there is good chance you get to deal with undefined behaviour, or non-portable code.
+There are several methods to perform type punning, more than the standard specifies. This means there is a good chance you have to deal with undefined behaviour or non-portable code.
 
-Is that a problem? Maybe, it depends on what you want to achieve.
+Is that a problem? That depends on what you want to achieve.
 
-# The problem
+## The problem
 
-> See [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
+The problems are explained very well by others, so I will refer to this article: [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 
+## How to type pun
 
-# How to type pun
-
-## Use-case: convert between two types
+### Use-case: convert between two types
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
@@ -48,8 +46,8 @@ Method | Valid C | Valid C++
 | C style casts | Conditionally | N |
 | `unions` | Conditionally | N |
 
-* Using `std::bit_cast` is an improved variant of using `std::memcpy` as it will perform the convervsion, performs several checks at compile time and can be `constexpr`.
-* Using `std::memcpy` is fine as it starts a new object and copies the underlaying bytes. Note that the compiler tends remove the actual copy during optimization. Be aware that you need to manually ensure the size and alignment match and the type is trivially copyable.
+* Using `std::bit_cast` is an improved variant of using `std::memcpy` as it will perform the conversion, performs several checks at compile time and can be `constexpr`.
+* Using `std::memcpy` is fine as it starts a new object and copies the underlying bytes. Note that the compiler tends to remove the actual copy during optimization. Be aware that you need to manually verify that the size and alignment match and the type is trivially copyable.
 * C style casts are only valid if the cast is compatible with the effective type of the object pointed to, a qualified pointer, a signed/unsigned type related to the effective type or a `char` type.
 * In C, unions can be used to convert between two types, given they are compatible.
 
@@ -71,7 +69,7 @@ Converting between two types with `std::memcpy`:
 }
 ```
 
-## Use-case: convert an object to an array of bytes
+### Use-case: convert an object to an array of bytes
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
@@ -79,7 +77,7 @@ Method | Valid C | Valid C++
 | `std::memcpy` | Y | Y |
 | `reinterpret_cast` | n/a | N* |
 
-* `reinterpret_cast` is valid when casting to a byte representation, however using that byte representation is undefined (for now).
+* `reinterpret_cast` is valid when casting to a byte representation. Using that byte representation is undefined behaviour for now.
 
 Converting an object in bytes using `std::bit_cast`:
 ```C++
@@ -99,7 +97,7 @@ Converting an object in bytes using `std::memcpy`:
 }
 ```
 
-## Use-case: convert an array of bytes to an object
+### Use-case: convert an array of bytes to an object
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
@@ -108,8 +106,8 @@ Method | Valid C | Valid C++
 | placement `new` | n/a | Y |
 | `std::memcpy` | Y | Y |
 
-* `std::start_lifetime_as` can be used to start a new object given an array of bytes. Of course the storage must be aligned for the desired type and the type must be trivial copyable. Note that `std::start_lifetime_as` this does not call any constructor.
-* Use placement `new` to construct an object on a given storage and call the constructor. Beware you have to ensure the storage is properly aligned for the object type.
+* `std::start_lifetime_as` can be used to start a new object given an array of bytes. Of course, the storage must be aligned for the desired type, and the type must be trivially copyable. Note that `std::start_lifetime_as` does not call any constructor.
+* Use placement `new` to construct an object on a given storage and call the constructor. Again, beware that the storage is properly aligned for the object type.
 
 ```C++
 [[nodiscard]] int bytes_to_int_bit_cast(std::array<std::byte, 4> x) noexcept
@@ -137,7 +135,7 @@ Sanitizer:
 * Undefined Behavior sanitizer: `-fsanitize=undefined`
 * Type sanitizer: `-fsanitize=type` (experimental)
 
-# References
+## References
 
 * C++ reference - [Type aliasing](https://en.cppreference.com/w/cpp/language/reinterpret_cast#Type_aliasing)
 * [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8) ([alternative](https://accu.org/journals/overload/28/160/anonymous/))
