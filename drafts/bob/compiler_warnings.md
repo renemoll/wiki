@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-28T12:54:19.829Z
+date: 2025-05-28T13:03:48.921Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -188,6 +188,8 @@ https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat
  
 https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
 
+* stripping symbols?
+https://github.com/zephyrproject-rtos/zephyr/blob/main/scripts/kconfig/hardened.csv
 
 Todo:
 * newlib / picolibc?
