@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-02T12:42:48.760Z
+date: 2025-06-02T13:02:39.892Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -13,6 +13,8 @@ dateCreated: 2025-06-02T11:15:05.792Z
 * Visual Studio 2022
 * latest GCC
 * latest clang
+* Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
+
 
 # Compiler settings
 
@@ -45,13 +47,18 @@ The following assumptions are taken into account:
 | Warn about casting to the same type. | [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wuseless-cast) | n/a | ? |
 | Warn about (potential) use of uninitialized variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) <br> [`-ftrivial-auto-var-init=zero`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ftrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wconditional-uninitialized) <br> [`-ftrivial-auto-var-init=zero`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ftrivial-auto-var-init) | ? |
 | Warn about potential null pointer dereferencing. | [`-Wnull-dereference`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wnull-dereference) | [`-Wnull-dereference`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wnull-dereference) | ? |
+| Keep `NULL` pointer checks as the elemination assumptions likely do not hold. | [`-fno-delete-null-pointer-check`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fdelete-null-pointer-checks) | [`-fno-delete-null-pointer-check`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdelete-null-pointer-checks)
 | Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-array-bounds) | [`-Warray-bounds`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#warray-bounds) <br> [`-Warray-bounds-pointer-arithmetic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) | ? |
 | Warn about shadowing (hiding) variables. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow) <br> [`-Wshadow-all`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow-all) | `/analyze` |
+| Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wswitch-enum) | ? |
+| Warn about implicit fall throughs. | [`-Wimplicit-fallthrough=5`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wimplicit-fallthrough) | [`-Wimplicit-fallthrough`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wimplicit-fallthrough) | ? |
+| Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wlogical-op) | n/a | ? |
 | Warn about arguments not matching with a format string. | [`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wformat) | [`-Wformat=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-2) | ? |
 | Warn about format functions (potentially) truncating the output. | [`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wformat-truncation) | [`-Wformat-truncation=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-truncation) | ? |
 | Warn about duplicated code. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-duplicated-cond) <br> [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-duplicated-branches) <br> [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wredundant-decls) | [`-Wredundant-decls`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wredundant-decls) | ? |
 | Warn about loop variables being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wloop-analysis) | ? |
 | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
+| Warn about the use of undefined identifiers, which implicitly convert to `0`. | [`-Wundef`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wundef) | [`-Wundef`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wundef) | ? |
 
 ### C specific settings
 
@@ -76,8 +83,32 @@ The following assumptions are taken into account:
 
 | Goal | GCC | Clang |  
 | --- | --- | --- | --- |
- Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
+| Specify the target processor. | [`-mcpu=<name>`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mcpu-2) | [`-mcpu=<name>`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang1-mcpu)
+| Place each function/data element into its own section to allow analysis and dead code removal. | [`-fdata-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) <br> [`-ffunction-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) | [`-fdata-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) <br> [`-ffunction-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) |
 
+| Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
+
+### ARM Cortex-M specific
+
+| Goal | GCC | Clang |
+| --- | --- | --- |
+| Generate Thumb instructions | [`-mthumb`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-marm) | [`-mthumb`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-mthumb) |
+| Use 'ARM Architecture Procedure Calling Standard' ABI. | [`-mabi=aapcs`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mabi-1) | [`-mabi=aapcs`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-mabi)
+
+### Hardening
+
+| Goal | GCC | Clang | MSVC |
+| --- | --- | --- |--- |
+| Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
+| Enable Stack Smashing Protector | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
+| Prevent stack clash attacks by limited stack allocation size. | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
+| Prevent code execution on the stack. | [`-fno-trampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-ftrampolines) <br> [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` <br> `-Wl,-z,noexecheap` | `-Wl,-z,noexecstack` <br> `-Wl,-z,noexecheap` | ? |
+
+### x86
+
+| Category | Goal | GCC | Clang |
+| --- | --- | --- | --- |
+| Verify target addresses of control-flow transfer instructions are valid. | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
 
 ### Options
 
@@ -86,3 +117,17 @@ The following assumptions are taken into account:
 | Enable all warnings. | n/a | [`-Weverything`](https://releases.llvm.org/20.1.0/tools/clang/docs/UsersManual.html#cmdoption-Weverything) | `/Wall` |
 | Treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Werror) | [`-Werror`](https://releases.llvm.org/20.1.0/tools/clang/docs/UsersManual.html#cmdoption-Werror) | `/WX` |
 | Warn about code and documentation mismatches. | n/a | [`-Wdocumentation`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdocumentation) <br> [`-Wdocumentation-pedantic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdocumentation-pedantic) | ? |
+
+## Omitted
+
+* Omitting `-fstack-check` in favor of `-fstack-clash-protection` ([Stack clash mitigation in GCC, Part 3](https://developers.redhat.com/blog/2020/05/22/stack-clash-mitigation-in-gcc-part-3))
+
+## References
+
+1. [Diagnostic flags in Clang](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html)
+1. [Clang command line argument reference](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html)
+1. GCC - [Options to Request or Suppress Warnings](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html)
+1. GCC - [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html)
+1. [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
+1. [Compiler Options Hardening Guide for C and C++](https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html)
+1. [-fstack-protector, -fstack-protector-all, -fstack-protector-strong, -fno-stack-protector](https://developer.arm.com/documentation/dui0774/l/Compiler-Command-line-Options/-fstack-protector---fstack-protector-all---fstack-protector-strong---fno-stack-protector)
