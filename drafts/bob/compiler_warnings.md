@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-02T13:21:10.717Z
+date: 2025-06-02T13:55:02.441Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -30,6 +30,11 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 ## Build targets
 
+
+> -g3
+> -Os / -O1
+
+Note that CMake already provides optimization flags (`-On` and `-g`) depending on the build configuration.
 
 Debugging
 
@@ -77,11 +82,9 @@ Todo:
 * PAC?
 * arm cortex-m specifics?
 * `-mbranch-protection=standard`
-* `-Wl,-z,relro`, `-Wl,-z,now`
  * `-fPIE -pie` (executable), `-fPIC -shared` (library)
 * `-fno-strict-overflow` (`-fwrapv` + `-fwrapv-pointer`)
 * `-Whardened`
-* `-Wl,--as-needed`, `-Wl,--no-copy-dt-needed-entries`
 * linker: `nodump`, `nodlopen`
 
 ## General
@@ -149,10 +152,8 @@ Flag | Description | GCC/Clang |
 
 Flag | Description |
 --- | --- | --- |
-[`--gc-sections`](https://linux.die.net/man/1/ld) | Remove any unused sections |
 [`--cref`](https://linux.die.net/man/1/ld) | Generate a cross reference table to determine declaration and use of symbols |
 `--print-memory-usage` | Print out the memory usage summary after linking |
-
 > `-nostartfiles`, `-nostdlib`, `--specs`
 > `--build-id=uuid`, `--no-warn-rwx-segment`
 
@@ -168,11 +169,6 @@ Flag | Description |
 ## Debugging
 
 [9]
-
-> -g3
-> -Os / -O1
-
-Note that CMake already provides optimization flags (`-On` and `-g`) depending on the build configuration.
 
 ## Omitted
 
