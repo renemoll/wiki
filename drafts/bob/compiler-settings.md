@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-02T11:49:37.942Z
+date: 2025-06-02T12:42:48.760Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -22,7 +22,8 @@ This list is compiled by going through the compiler documentation and domain spe
 
 The following assumptions are taken into account:
 * Language: C17, C++17 or newer;
-* Flags enabled via other flags are not explicitly mentioned unless to align different compilers.
+* Flags enabled via other flags are not explicitly mentioned unless to align different compilers;
+* Flags which have no effect are still listed to avoid exceptions.
 
 ## Compiler support
 
@@ -63,9 +64,13 @@ The following assumptions are taken into account:
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- | --- |
+| Warn about implicit sign conversions during overload resolution. | [`-Wsign-promo`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsign-promo) | [`-Wsign-promo`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsign-promo) | ? |
 | Warn about using `0` or `NULL` instead of `nullptr`. | [`-Wzero-as-null-pointer-constant`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wzero-as-null-pointer-constant) <br> [`-Wstrict-null-sentinel`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wstrict-null-sentinel) | [`-Wzero-as-null-pointer-constant`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | ? |
 | Warn about deprecated constructs. | n/a | [`-Wdeprecated`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdeprecated) | ? |
-
+| Warn about methods overwriting virtual methods not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-override) <br> [`-Wsuggest-destructor-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-destructor-override) | `/analyze` |
+| Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
+| Warn about base classes without virtual destructors. | [`-Wnon-virtual-dtor`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wnon-virtual-dtor) | [`-Wnon-virtual-dtor`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wnon-virtual-dtor) | [`/w14265`](https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4265?view=msvc-170) |
+| Warn about classes which seemingly cannot be used (private constructor/destructors.) | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wctor-dtor-privacy) | ? |
 
 ### Microcontroller specific
 
