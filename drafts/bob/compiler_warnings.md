@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-05-28T13:03:48.921Z
+date: 2025-06-02T11:06:53.224Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -62,9 +62,6 @@ The following assumptions are taken into account:
 | Modernisation | Warn about missing and/or incomplete function declaration/definitions. | [`-Wmissing-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-prototypes) <br> [`-Wmissing-declarations`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-declarations) <br> [`-Wstrict-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-prototypes) | [`-Wstrict-prototypes`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-prototypes)  | ? | 
 | Type conversion | Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wbad-function-cast) <br> [`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict) | `/w14191` |
 
-
-
-
 ### C++ specific
 | Category | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- | --- |--- |
@@ -75,8 +72,7 @@ The following assumptions are taken into account:
 | OOP | Warn about classes which seemingly cannot be used (private constructor/destructors.) | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wctor-dtor-privacy) | ? |
 | OOP | Warn about methods overwriting virtual methods not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-override) <br> [`-Wsuggest-destructor-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-destructor-override) | `/analyze` |
 | OOP | Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
-
-`-Wsign-promo`
+| | Warn about (implicit) sign conversions. | [`-Wsign-promo`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsign-promo) | ? | ? |
 
 ### Options
 
@@ -92,10 +88,6 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |
 | Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
-## Code generation
-
-
-
 
 ### Hardening
 
@@ -103,13 +95,19 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |--- |
 | Common defects | Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
 | Common defects | Stack Smashing Protector | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
-| ? | | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
-| ? | | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
-| ? | Don't allow executing code from the stack. | [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` <br> `-Wl,-z,noexecheap` | ? | ? |
+|  | Prevent stack clash attacks by limited stack allocation size. | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
+| ? | Don't allow executing code from the stack. | `-fno-trampolines` <br> [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> `-Wl,-z,noexecstack` <br> `-Wl,-z,noexecheap` | ? | ? |
 
 
 > Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
 > -fstack-protector-all?
+
+### x86
+
+| Category | Goal | GCC | Clang |
+| --- | --- | --- | --- |
+| x86  |  Verify target addresses of control-flow transfer instructions are valid. | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
+
 
 ### Microcontroller specific
 
@@ -131,9 +129,10 @@ The following assumptions are taken into account:
 
 > TODO: links
 
+
 ## Omitted
 
-* `-fno-trampolines`: desired on i.e. embedded systems to avoid code execution from stack however disabling has no effect.
+* `-fstack-check` in favor of `-fstack-clash-protection` ([Stack clash mitigation in GCC, Part 3](https://developers.redhat.com/blog/2020/05/22/stack-clash-mitigation-in-gcc-part-3))
 
 
 ## References
@@ -159,8 +158,7 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |
 | Debugging | Produce debug information | [`-g3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Debugging-Options.html#index-g) <br> [`-ggdb3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Debugging-Options.html#index-ggdb) <br> [`-gdwarf-5`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Debugging-Options.html#index-gdwarf) | [`-g3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-g) <br> [`-ggdb3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ggdb3) <br> [`-gdwarf-5`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-gdwarf-5) | ? |
 | Debugging | Format C++ template diagnostics in a tree structure. | [`-fdiagnostics-show-template-tree`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fdiagnostics-show-template-tree) | [`-fdiagnostics-show-template-tree`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdiagnostics-show-template-tree) |  ? |
-
-* fdiagnostics-color
+| | Output coloured text in the terminal. [`-fdiagnostics-color`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fdiagnostics-color) | ? |
 
 Debug
  - set flags: -O0 -g3 -ggdb -fno-omit-frame-pointer
@@ -228,13 +226,11 @@ Add common:
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-| Warn about invalid pointer usage. | [`-Wpointer-arith`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith) | [`-Wpointer-arith`](https://clang.llvm.org/docs/DiagnosticsReference.html#wpointer-arith) | ? |
 |  Warn about optimizations where signed overflow is assumed not to occour. | [`-Wstrict-overflow=4`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) | [`-Wstrict-overflow=4`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-overflow) (compat) | ? |
 | Warn about shifting into the sign bit of a signed number | [`-Wshift-overflow=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | [`-Wshift-overflow=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-overflow) [d] | ? |\
 ||| [`-Wshift-sign-overflow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | |
-| Warn about any unused parameter, function, variable, ... | [`-Wunused`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused) | [`-Wunused`](https://clang.llvm.org/docs/DiagnosticsReference.html#wunused) | ? |\
-|| `-Wunused-const-variable` ||
-| Warn about functions marked as `inline` which cannot or will not be inlined. | [`-Winline`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html) | [`-Winline`](https://clang.llvm.org/docs/DiagnosticsReference.html#winline) (compat) | ? |
+
+
 
 Add:
 - [`Walloca`](https://clang.llvm.org/docs/DiagnosticsReference.html#walloca)
