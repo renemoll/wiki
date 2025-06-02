@@ -2,91 +2,31 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-02T11:06:53.224Z
+date: 2025-06-02T11:49:36.861Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
 ---
 
-# Compiler settings
 
-This document lists the compiler settings used by *Bob the developer*, with the goal to have the compiler check for as many potential mistakes as early on as possible.
-
-This list is compiled by going through the compiler documentation and domain specific sources (listed in the references). 
-
-The following assumptions are taken into account:
-* Language: C17, C++17 or newer;
-* Flags enabled via other flags are not explicitly mentioned unless to align different compilers.
-
-## Compilers
-
-| Compiler | Version |
-| --- | --- |
-| Clang | 20 |
-| GCC | 14 |
-
-> TODO: update for Visual Studio 2022
 
 ## Settings
 
 | Category | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- | --- | --- |
-| Aliasing | Warn about (strict) aliasing violations. | [`-Wstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-aliasing) <br> [`-fstrict-aliasing`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-fstrict-aliasing) <br> [`-Wold-style-cast`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-Wold-style-cast)  | [`-Wstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-aliasing) <br> [`-fstrict-aliasing`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-aliasing) <br> [`-Wold-style-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wold-style-cast) | n/a? |
-| Aliasing | Warn whenever casting a pointer changes the alignment of the pointee. | [`-Wcast-align`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-align) <br> [`-Wcast-align=strict`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-align_003dstrict) | [`-Wcast-align`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-align) | ? |
-| Common defects | Enable warnings for common defects. | [`-Wall`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wall) <br> [`-Wextra`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-W) | [`-Wall`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wall) <br> [`-Wextra`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wextra) | `/W4` |
-| Common defects | Warn about local variables shadowing (hiding) another variable. | [`-Wshadow`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wshadow) | [`-Wshadow`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow) <br> [`-Wshadow-all`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wshadow-all) | `/analyze` |
-| Common defects | Warn about duplicated conditions in `if-else` expressions. | [`-Wduplicated-cond`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-duplicated-cond) | n/a | ? |
-| Common defects | Warn about identical branches in `if-else` expressions. | [`-Wduplicated-branches`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-duplicated-branches) | n/a | ? |
-| Common defects | Warn about duplicated declarations within the same scope. | [`-Wredundant-decls`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wredundant-decls) | n/a | ? |
-| Common defects | Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wswitch-enum) | ? |
-| Common defects | Warn about possible null pointer dereferencing. | [`-Wnull-dereference`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wnull-dereference) | [`-Wnull-dereference`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wnull-dereference) | ? |
 | Common defects | Warn about the use of undefined identifiers, which implicitly convert to 0. | [`-Wundef`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wundef) | [`-Wundef`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wundef) | ? |
 | Common defects | Warn about potential mistakes with logical operators. | [`-Wlogical-op`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wlogical-op) | n/a | ? |
-| Common defects | Warn about out of bound array subscripts. | [`-Warray-bounds=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-array-bounds) | [`-Warray-bounds`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#warray-bounds) <br> [`-Warray-bounds-pointer-arithmetic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#warray-bounds-pointer-arithmetic) | ? |
-| Common defects | Warn about (potential) use of uninitialized variables. | [`-Wtrivial-auto-var-init`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrivial-auto-var-init) <br> [`-ftrivial-auto-var-init=zero`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ftrivial-auto-var-init) | [`-Wconditional-uninitialized`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wconditional-uninitialized) | ? |
-| Common defects | Warn about loop variables being manipulated inside the loop or unused. | n/a | [`-Wloop-analysis`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wloop-analysis) | ? |
-| Common defects | Warn about floating-point values used in equality tests. | [`-Wfloat-equal`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wfloat-equal) | [`-Wfloat-equal`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wfloat-equal) | n/a |
-| Common defects | Ensure global variables are not merged into a single element, causing a multiple declaration error | `-fno-common` | `-fno-common` | ? |
+| Common defects | Warn about `switch` cases not covering all possible enum values. | [`-Wswitch-enum`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wswitch-enum) | [`-Wswitch-enum`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wswitch-enum) | ? |
 | Modernisation | Warn about implicit fall throughs. | [`-Wimplicit-fallthrough=5`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wimplicit-fallthrough) | [`-Wimplicit-fallthrough`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wimplicit-fallthrough) | ? |
-| Portability | Enforce standard ISO C/C++ constructions. | [`-Wpedantic`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-pedantic-1) | [`-Wpedantic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#cmdoption-pedantic) <br> [`-Wgcc-compat`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wgcc-compat) <br> [`-Wgnu`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wgnu) <br> [`-Wmicrosoft`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wmicrosoft) <br> [`-Wreserved-identifier`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wreserved-identifier)| `/permissive-` |
-| String format | Warn about arguments not matching with a format string. | [`-Wformat=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wformat) | [`-Wformat=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-2) | ? |
-| String format | Warn about format functions (potentially) truncating the output. | [`-Wformat-truncation=2`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wformat-truncation) | [`-Wformat-truncation=2`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wformat-truncation) | ? |
-| Type conversion | Warn about (implicit) type conversions. | [`-Wconversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wconversion) <br>  [`-Wsign-conversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wsign-conversion) | [`-Wconversion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wconversion) <br>  [`-Wsign-conversion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsign-conversion) | `/w14242` <br> `/w14254` <br> `/w14365` <br> `/w14826` |
-| Type conversion | Warn about implicit type conversions with arithmetic operations. | [`-Warith-conversion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Warith-conversion) | n/a | `/w14388` <br> `/w14287` |
-| Type conversion | Warn about casts which remove type qualifiers. | [`-Wcast-qual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wcast-qual) | [`-Wcast-qual`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-qual) | ? |
-| Type conversion | Warn about casting to the same type. | [`-Wuseless-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wuseless-cast) | n/a | ? |
-
-### C specific
-| Category | Goal | GCC | Clang | MSVC | 
-| --- | --- | --- | --- |--- |
-| Modernisation | Warn about missing and/or incomplete function declaration/definitions. | [`-Wmissing-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-prototypes) <br> [`-Wmissing-declarations`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wmissing-declarations) <br> [`-Wstrict-prototypes`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wstrict-prototypes) | [`-Wstrict-prototypes`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wstrict-prototypes)  | ? | 
-| Type conversion | Warn about function calls cast to a different type. | [`-Wbad-function-cast`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wbad-function-cast) | [`-Wbad-function-cast`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wbad-function-cast) <br> [`-Wcast-function-type-strict`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wcast-function-type-strict) | `/w14191` |
 
 ### C++ specific
 | Category | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- | --- |--- |
-| Modernisation | Warn about deprecated constructs. | [`-Wdeprecated`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wno-deprecated) | [`-Wdeprecated`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdeprecated) | ? |
-| Modernisation | Warn about using 0 as a `null` pointer. | [`-Wzero-as-null-pointer-constant`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Wzero-as-null-pointer-constant) | [`-Wzero-as-null-pointer-constant`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wzero-as-null-pointer-constant) | ? |
-| Modernisation | Warn about the use of `NULL` (instead of `nullptr`.) | [`-Wstrict-null-sentinel`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wstrict-null-sentinel) | n/a | ? |
 | OOP | Warn about base classes without virtual destructors. | [`-Wnon-virtual-dtor`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wnon-virtual-dtor) | [`-Wnon-virtual-dtor`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wnon-virtual-dtor) | [`/w14265`](https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/compiler-warning-level-3-c4265?view=msvc-170) |
 | OOP | Warn about classes which seemingly cannot be used (private constructor/destructors.) | [`-Wctor-dtor-privacy`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wctor-dtor-privacy) | [`-Wctor-dtor-privacy`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wctor-dtor-privacy) | ? |
 | OOP | Warn about methods overwriting virtual methods not marked with `override`. | [`-Wsuggest-override`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsuggest-override) | [`-Wsuggest-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-override) <br> [`-Wsuggest-destructor-override`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wsuggest-destructor-override) | `/analyze` |
 | OOP | Warn about methods in a derived class hiding virtual functions of the base class. | [`-Woverloaded-virtual`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Woverloaded-virtual) | [`-Woverloaded-virtual`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#woverloaded-virtual) | `/w14263` |
 | | Warn about (implicit) sign conversions. | [`-Wsign-promo`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html#index-Wsign-promo) | ? | ? |
-
-### Options
-
-| Category | Goal | GCC | Clang | MSVC |
-| --- | --- | --- | --- | --- |
-| Documentation | Warn about code and documentation mismatches. | n/a | [`-Wdocumentation`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdocumentation) <br> [`-Wdocumentation-pedantic`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdocumentation-pedantic) | ? |
-| Misc | Enable all warnings. | n/a | [`-Weverything`](https://releases.llvm.org/20.1.0/tools/clang/docs/UsersManual.html#cmdoption-Weverything) | `/Wall` |
-| Misc | Treat warnings as errors. | [`-Werror`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-Werror) | [`-Werror`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#cmdoption-Werror) | `/WX` |
-
-### Microcontroller specific
-
-| Category | Goal | GCC | Clang |  
-| --- | --- | --- | --- |
-| Type conversion | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
 
 ### Hardening
