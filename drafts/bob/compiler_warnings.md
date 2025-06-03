@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-03T13:15:05.482Z
+date: 2025-06-03T14:02:34.653Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -13,9 +13,36 @@ dateCreated: 2025-04-01T14:44:00.763Z
 ## Sanitizers
 
 * address (+ `-O1 -g -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-common`)
+```
+ASAN_OPTIONS=strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1 ./instrumented-executable
+ASAN_SYMBOLIZER_PATH=/usr/local/bin/llvm-symbolizer ./a.out
+```
+https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
+Cannot be combined with -fsanitize=thread 
+`-fsanitize-address-use-after-scope`?
+
 * thread (+ `-O2 -g`)
+Cannot be combined with -fsanitize=address, -fsanitize=leak
+
 * leak
+```
+ASAN_OPTIONS=detect_leaks=1
+```
+Part of ASAN
+
 * undefined (+ `-O1 -g`)
+```
+-fsanitize=float-divide-by-zero,undefined,vptr -g  -fno-omit-frame-pointer -fno-sanitize-merge and
+UBSAN_OPTIONS=print_stacktrace=1 
+```
+
+* memory
+`-fsanitize=memory -fno-omit-frame-pointer -g -O1 -fno-optimize-sibling-calls`
+`-fsanitize-memory-track-origins=2`?
+```
+MSAN_SYMBOLIZER_PATH=/usr/local/bin/llvm-symbolizer ./a.out
+```
+
 * more useful options?
   -fsanitize=integer and -fsanitize=shift
   -fsanitize=signed-integer-overflow
@@ -73,14 +100,16 @@ https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat
 ## Hardening
  
 * stripping symbols?
-https://github.com/zephyrproject-rtos/zephyr/blob/main/scripts/kconfig/hardened.csv
+  * https://github.com/zephyrproject-rtos/zephyr/blob/main/scripts/kconfig/hardened.csv
+  * https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html#maintaining-debug-information-in-separate-files
+
 
 Todo:
 * newlib / picolibc?
 * PAC?
 * arm cortex-m specifics?
 * `-mbranch-protection=standard`
-* `-Whardened`
+* `-fhardened` and `-Whardened`
 * linker: `nodump`, `nodlopen`
 
 ## General
