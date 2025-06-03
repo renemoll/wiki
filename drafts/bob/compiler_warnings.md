@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-02T13:55:02.441Z
+date: 2025-06-03T13:15:05.482Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -18,6 +18,7 @@ dateCreated: 2025-04-01T14:44:00.763Z
 * undefined (+ `-O1 -g`)
 * more useful options?
   -fsanitize=integer and -fsanitize=shift
+  -fsanitize=signed-integer-overflow
 
 ## Library specific
 
@@ -62,6 +63,7 @@ Note:
 
 https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.htm
 
+-fverbose-asm
 
 # TODO
 
@@ -69,10 +71,6 @@ https://cheatsheetseries.owasp.org/cheatsheets/C-Based_Toolchain_Hardening_Cheat
 
 
 ## Hardening
-
-- general
-- PC
-- MCU?
  
 * stripping symbols?
 https://github.com/zephyrproject-rtos/zephyr/blob/main/scripts/kconfig/hardened.csv
@@ -82,8 +80,6 @@ Todo:
 * PAC?
 * arm cortex-m specifics?
 * `-mbranch-protection=standard`
- * `-fPIE -pie` (executable), `-fPIC -shared` (library)
-* `-fno-strict-overflow` (`-fwrapv` + `-fwrapv-pointer`)
 * `-Whardened`
 * linker: `nodump`, `nodlopen`
 
@@ -97,7 +93,6 @@ Add common:
 
 | Goal | GCC | Clang | MSVC | 
 | --- | --- | --- |--- |
-|  Warn about optimizations where signed overflow is assumed not to occour. | [`-Wstrict-overflow=4`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstrict-overflow) | [`-Wstrict-overflow=4`](https://clang.llvm.org/docs/DiagnosticsReference.html#wstrict-overflow) (compat) | ? |
 | Warn about shifting into the sign bit of a signed number | [`-Wshift-overflow=2`](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wshift-overflow) | [`-Wshift-overflow=2`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-overflow) [d] | ? |\
 ||| [`-Wshift-sign-overflow`](https://clang.llvm.org/docs/DiagnosticsReference.html#wshift-sign-overflow) | |
 
@@ -127,7 +122,8 @@ Flag | Description | GCC/Clang | MSVC equivelant |
 [`-fvisibility`](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html#index-fvisibility) |  Set default symbol visibility to hidden | Both | ? |
 [`-fvisibility-inlines-hidden`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fvisibility-inlines-hidden) | Sets the default symbol visibility to hidden for inline functions | Both | ? |
 [`-x assembler-with-cpp`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-x-language) | Tell the compiler the source language. | Both | ?
-[`fwrapv`](https://clang.llvm.org/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) | Treat signed integer overflow as two’s complement integers. | Both | ?
+
+fvisibility -> https://gcc.gnu.org/wiki/Visibility
 
 **Debugging**
 
@@ -181,7 +177,6 @@ Flag | Description | Reason |
 
 5. GCC [Options for Code Generation Conventions](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
 6. [C++ Best Practices - Use The Tools Available](https://lefticus.gitbooks.io/cpp-best-practices/content/02-Use_the_Tools_Available.html)
-7. [ld](https://linux.die.net/man/1/ld)
 8. [Three GCC Flags for Analyzing Memory Usage](https://embeddedartistry.com/blog/2020/08/17/three-gcc-flags-for-analyzing-memory-usage/)
 9. [The Best and Worst GCC Compiler Flags For Embedded](https://interrupt.memfault.com/blog/best-and-worst-gcc-clang-compiler-flags)
 
