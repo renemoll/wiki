@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-02T13:55:01.872Z
+date: 2025-06-03T13:08:43.108Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -14,7 +14,7 @@ dateCreated: 2025-06-02T11:15:05.792Z
 * latest GCC
 * latest clang
 * Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
-
+* test
 
 # Compiler settings
 
@@ -88,6 +88,8 @@ The following assumptions are taken into account:
 | Remove any unused sections. | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld)  | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld) |
 | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
+> Note: position independent code is [possible](https://mcuoneclipse.com/2021/06/05/position-independent-code-with-gcc-for-arm-cortex-m/), but likely only desireable is select use-cases and hence not listed here.
+
 ### ARM Cortex-M specific
 
 | Goal | GCC | Clang |
@@ -99,6 +101,7 @@ The following assumptions are taken into account:
 
 | Goal | GCC | Clang | MSVC |
 | --- | --- | --- | --- |
+| Assume signed integer arithmatics overflow, instead of being undefined behaviour. | [`-fwrapv`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-fwrapv) <br> [`-fwrapv-pointer`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-fwrapv-pointer) | [`-fwrapv`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv) <br> [`-fwrapv-pointer`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fwrapv-pointer) | ? |
 | Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
 | Enable Stack Smashing Protector | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
 | Prevent stack clash attacks by limited stack allocation size. | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
@@ -108,9 +111,11 @@ The following assumptions are taken into account:
 
 ### x86
 
-| Category | Goal | GCC | Clang |
+| Goal | GCC | Clang | MSVC |
 | --- | --- | --- | --- |
 | Verify target addresses of control-flow transfer instructions are valid. | [`-fcf-protection=full`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fcf-protection) | [`-fcf-protection=full`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fcf-protection) | ? |
+| Enable position indepedent code (executable.) | [`-fPIE`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-fpie) <br> [`-pie`](https://linux.die.net/man/1/ld) | [`-fPIE`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fPIE) <br> [`-pie`](https://linux.die.net/man/1/ld) | ? |
+| Enable position indepedent code (shared library.) | [`-fPIC`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-fPIC) <br> [`-shared`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Link-Options.html#index-shared) | [`-fPIC`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fPIC) <br> [`-shared`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-shared) | ? |
 
 ### Options
 
