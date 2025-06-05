@@ -2,7 +2,7 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-05T15:03:04.644Z
+date: 2025-06-05T15:07:53.081Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
@@ -11,6 +11,8 @@ dateCreated: 2025-04-01T14:44:00.763Z
 
 ## Leveraging Your Toolchain to Improve Security
 [Leveraging Your Toolchain to Improve Security](https://embeddedartistry.com/blog/2023/09/20/leveraging-your-toolchain-to-improve-security/)
+[](https://github.com/embeddedartistry/meson-buildsystem/blob/main/compiler/meson.build)
+
 
 To include 3rd party code:
 * mark include folders as "system" (`-isystem`, `target_include_directories` with `SYSTEM`)
@@ -27,6 +29,15 @@ To include 3rd party code:
 * `Wcomma`
 * `Wassign-enum`
 * `Wunreachable-code-aggressive`
+* `Wpointer-arith`
+* `Wmissing-include-dirs`
+* `-Wdisabled-optimization`
+* `-Wvector-operation-performance`
+* `-fdiagnostics-show-option`
+* `-fcolor-diagnostics`
+* `-Wnoexcept`
+* `-Wextra-semi`
+
 
 * clang-tidy
 * scan-build
