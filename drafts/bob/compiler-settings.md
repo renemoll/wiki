@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-03T13:08:43.108Z
+date: 2025-06-05T15:02:45.919Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -15,6 +15,7 @@ dateCreated: 2025-06-02T11:15:05.792Z
 * latest clang
 * Note: `__stack_chk_fail` & `__stack_chk_guard` with `-fstack-protector-strong`
 * test
+* `-fstack-clash-protection` for all targets?
 
 # Compiler settings
 
