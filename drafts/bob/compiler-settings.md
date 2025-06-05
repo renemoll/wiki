@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-05T15:02:45.919Z
+date: 2025-06-05T15:03:46.675Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
