@@ -2,12 +2,40 @@
 title: Compiler warnings
 description: 
 published: true
-date: 2025-06-03T14:02:34.653Z
+date: 2025-06-05T15:03:04.644Z
 tags: 
 editor: markdown
 dateCreated: 2025-04-01T14:44:00.763Z
 ---
 
+
+## Leveraging Your Toolchain to Improve Security
+[Leveraging Your Toolchain to Improve Security](https://embeddedartistry.com/blog/2023/09/20/leveraging-your-toolchain-to-improve-security/)
+
+To include 3rd party code:
+* mark include folders as "system" (`-isystem`, `target_include_directories` with `SYSTEM`)
+* split build structure into libraries with different sets of warnings
+
+* `Wstrict-overflow` -> omitted due to signed integer? Note
+* `Wshift-overflow` -> omitted as I target newer C++ versions
+* `Wshift-sign-overflow`
+* `-Wstringop-overflow=4`
+* `-Wuse-after-free=3`
+* `Wuninitialized`
+* `-Wswitch-default ` -> omitted as I want all cases explicitly covered
+* `-Wjump-misses-init`
+* `Wcomma`
+* `Wassign-enum`
+* `Wunreachable-code-aggressive`
+
+* clang-tidy
+* scan-build
+* https://github.com/Ericsson/codechecker/blob/master/docs/usage.md
+
+* Implementing stack smashing protection: https://embeddedartistry.com/blog/2020/05/18/implementing-stack-smashing-protection-for-microcontrollers-and-embedded-artistrys-libc/
+* `-fsanitize=safe-stack`?
+* `-fsanitize=signed-integer-overflow`
+* `-fsanitize=bounds`
 
 
 ## Sanitizers
