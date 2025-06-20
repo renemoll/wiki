@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-20T14:26:35.306Z
+date: 2025-06-20T14:33:55.290Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -86,7 +86,6 @@ The following assumptions are taken into account:
 | --- | --- | --- | --- |
 | Specify the target processor. | [`-mcpu=<name>`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/ARM-Options.html#index-mcpu-2) | [`-mcpu=<name>`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang1-mcpu)
 | Place each function/data element into its own section to allow analysis and dead code removal. | [`-fdata-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) <br> [`-ffunction-sections`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Optimize-Options.html#index-ffunction-sections) | [`-fdata-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fdata-sections) <br> [`-ffunction-sections`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-ffunction-sections) |
-| Remove any unused sections. | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld)  | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld) |
 | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
 > Note: position independent code is [possible](https://mcuoneclipse.com/2021/06/05/position-independent-code-with-gcc-for-arm-cortex-m/), but likely only desireable in select use-cases and hence not listed here.
@@ -106,9 +105,7 @@ The following assumptions are taken into account:
 | Follow C99 standard definition for flexible array members in a structure. | [`-fstrict-flex-arrays=3`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C-Dialect-Options.html#index-fstrict-flex-arrays) | [`-fstrict-flex-arrays=3`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstrict-flex-arrays) | ? |
 | Enable Stack Smashing Protector | [`-fstack-protector-strong`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-protector-strong) | [`-fstack-protector-strong`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-protector-strong) | ? |
 | Prevent stack clash attacks by limited stack allocation size. | [`-fstack-clash-protection`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Instrumentation-Options.html#index-fstack-clash-protection) | [`-fstack-clash-protection`](https://releases.llvm.org/20.1.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-fstack-clash-protection) | ? |
-| Prevent code execution on the stack. | [`-fno-trampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-ftrampolines) <br> [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) <br> [`-Wl,-z,noexecstack`](https://linux.die.net/man/1/ld) <br> `-Wl,-z,noexecheap` | [`-Wl,-z,noexecstack`](https://linux.die.net/man/1/ld) <br> `-Wl,-z,noexecheap` | ? |
-| Link only libraries which are specified and used. | [`-Wl,--as-needed`](https://linux.die.net/man/1/ld) <br> [`-Wl,--no-copy-dt-needed-entries`](https://linux.die.net/man/1/ld) | [`-Wl,--as-needed`](https://linux.die.net/man/1/ld) <br> [`-Wl,--no-copy-dt-needed-entries`](https://linux.die.net/man/1/ld) | ? |
-| Disable lazy binding, resolve all symbols at start-up. | [`-Wl,-z,relro`](https://linux.die.net/man/1/ld) <br> [`-Wl,-z,now`](https://linux.die.net/man/1/ld)| [`-Wl,-z,relro`](https://linux.die.net/man/1/ld) <br> [`-Wl,-z,now`](https://linux.die.net/man/1/ld) | ? |
+| Prevent code execution on the stack. | [`-fno-trampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Code-Gen-Options.html#index-ftrampolines) <br> [`-Wtrampolines`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wtrampolines) | ? | ? |
 
 ### x86
 
