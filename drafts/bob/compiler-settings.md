@@ -2,7 +2,7 @@
 title: Compiler settings
 description: 
 published: true
-date: 2025-06-05T15:03:46.675Z
+date: 2025-06-20T14:26:35.306Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-02T11:15:05.792Z
@@ -89,7 +89,7 @@ The following assumptions are taken into account:
 | Remove any unused sections. | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld)  | [`-Wl,--gc-sections`](https://linux.die.net/man/1/ld) |
 | Warn about single-precision values being implictly converted to double-precision values. | [`-Wdouble-promotion`](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wdouble-promotion) | [`-Wdouble-promotion`](https://releases.llvm.org/20.1.0/tools/clang/docs/DiagnosticsReference.html#wdouble-promotion) |
 
-> Note: position independent code is [possible](https://mcuoneclipse.com/2021/06/05/position-independent-code-with-gcc-for-arm-cortex-m/), but likely only desireable is select use-cases and hence not listed here.
+> Note: position independent code is [possible](https://mcuoneclipse.com/2021/06/05/position-independent-code-with-gcc-for-arm-cortex-m/), but likely only desireable in select use-cases and hence not listed here.
 
 ### ARM Cortex-M specific
 
@@ -138,4 +138,4 @@ The following assumptions are taken into account:
 1. GCC - [Options Controlling C++ Dialect](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/C_002b_002b-Dialect-Options.html)
 1. [What is the Strict Aliasing Rule and Why do we care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 1. [Compiler Options Hardening Guide for C and C++](https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html)
-1. [-fstack-protector, -fstack-protector-all, -fstack-protector-strong, -fno-stack-protector](https://developer.arm.com/documentation/dui0774/l/Compiler-Command-line-Options/-fstack-protector---fstack-protector-all---fstack-protector-strong---fno-stack-protector)
+1. ARM - [-fstack-protector, -fstack-protector-all, -fstack-protector-strong, -fno-stack-protector](https://developer.arm.com/documentation/dui0774/l/Compiler-Command-line-Options/-fstack-protector---fstack-protector-all---fstack-protector-strong---fno-stack-protector)
