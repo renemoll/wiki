@@ -2,7 +2,7 @@
 title: Execution model
 description: 
 published: true
-date: 2025-06-24T18:39:06.323Z
+date: 2025-06-24T18:44:15.679Z
 tags: 
 editor: markdown
 dateCreated: 2025-06-24T18:39:06.323Z
@@ -51,6 +51,7 @@ API options:
   
 * cooperative multitasking (fibers/coroutines)
   Either a fiber (application module) blocks (and does not get scheduled) until the driver completes its action.
-  
+
+* work queues
 
 
