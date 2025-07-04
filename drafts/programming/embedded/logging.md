@@ -2,7 +2,7 @@
 title: Logging
 description: 
 published: true
-date: 2025-07-04T20:52:18.109Z
+date: 2025-07-04T20:58:30.350Z
 tags: 
 editor: markdown
 dateCreated: 2025-07-04T20:15:00.067Z
@@ -10,7 +10,9 @@ dateCreated: 2025-07-04T20:15:00.067Z
 
 # TODO
 
-Find a place for: [Howto: Porting newlib - A Simple Guide](https://www.embecosm.com/appnotes/ean9/ean9-howto-newlib-1.0.html#id2719973)
+* [STM32 C++ and Retargeting std::cout to UART](https://stackoverflow.com/questions/71442249/stm32-c-and-retargeting-stdcout-to-uart)
+* Find a place for: [Howto: Porting newlib - A Simple Guide](https://www.embecosm.com/appnotes/ean9/ean9-howto-newlib-1.0.html#id2719973)
+
 
 # Logging
 
