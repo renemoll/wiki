@@ -2,7 +2,7 @@
 title: Logging
 description: 
 published: true
-date: 2025-07-04T20:18:00.473Z
+date: 2025-07-04T20:52:18.109Z
 tags: 
 editor: markdown
 dateCreated: 2025-07-04T20:15:00.067Z
@@ -57,3 +57,7 @@ speeds
 * SWO/ITM is quite fast, blocking call but data transfers at high speed
 * Semihosting is slow
 * UART depends on configuration and if it is shared or dedicated
+
+## IO libs
+
+* https://github.com/Viatorus/emio
