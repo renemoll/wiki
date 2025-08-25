@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-05-28T07:04:26.316Z
+date: 2025-08-25T18:50:06.617Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -27,6 +27,8 @@ By taking the original object and representing it as something else, i.e. floats
 
 ### What is the problem?
 
+In general it is not a good idea to do type punning, as you are bypassing the type system. However, sometimes you may need it for low-level data manipulation. If you do need to use type punning, better use a proper method.
+
 There are several methods to perform type punning, more than the standard specifies. This means there is a good chance you have to deal with undefined behaviour or non-portable code.
 
 Is that a problem? That depends on what you want to achieve.
@@ -41,7 +43,7 @@ The problems are explained very well by others, so I will refer to this article:
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
-| `std::bit_cast` | n/a | Y (from C++20) |
+| `std::bit_cast` (from C++20) | n/a | Y |
 | `std::memcpy` | Y | Y |
 | C style casts | Conditionally | N |
 | `unions` | Conditionally | N |
@@ -73,7 +75,7 @@ Converting between two types with `std::memcpy`:
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
-| `std::bit_cast` | n/a | Y (from C++20) |
+| `std::bit_cast` (from C++20) | n/a | Y |
 | `std::memcpy` | Y | Y |
 | `reinterpret_cast` | n/a | N* |
 
@@ -101,8 +103,8 @@ Converting an object in bytes using `std::memcpy`:
 
 Method | Valid C | Valid C++
 | --- | --- | --- |
-| `std::bit_cast` | n/a | Y (from C++20) |
-| `std::start_lifetime_as` | n/a | Y (from C++23)
+| `std::bit_cast` (from C++20) | n/a | Y |
+| `std::start_lifetime_as` (from C++23) | n/a | Y |
 | placement `new` | n/a | Y |
 | `std::memcpy` | Y | Y |
 
