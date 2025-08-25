@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-08-25T19:00:30.866Z
+date: 2025-08-25T19:01:52.347Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -150,7 +150,7 @@ Sanitizer:
 * [Practical Type Punning in C++11 and higher](https://blog.hiebl.cc/posts/practical-type-punning-in-cpp/)
 * [What is the modern, correct way to do type punning in C++?](https://stackoverflow.com/questions/67636231/what-is-the-modern-correct-way-to-do-type-punning-in-c)
 * C++ Core Guidelines - [C.183: Don’t use a union for type punning](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Ru-pun)
-
+* [C++ Memory Management](https://www.packtpub.com/en-us/product/c-memory-management-9781805129806)
 
  
  
