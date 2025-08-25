@@ -2,7 +2,7 @@
 title: Type punning
 description: 
 published: true
-date: 2025-08-25T18:50:06.617Z
+date: 2025-08-25T19:00:30.866Z
 tags: 
 editor: markdown
 dateCreated: 2025-05-16T14:04:22.085Z
@@ -70,6 +70,8 @@ Converting between two types with `std::memcpy`:
     return result;
 }
 ```
+
+Note that the resulting object is allocated on the stack. This is important as it both allocates memory for the object and starts the lifetime for that object.
 
 ### Use-case: convert an object to an array of bytes
 
