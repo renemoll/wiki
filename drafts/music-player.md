@@ -2,7 +2,7 @@
 title: Music player
 description: 
 published: true
-date: 2025-09-12T08:16:08.950Z
+date: 2025-09-12T15:02:11.358Z
 tags: 
 editor: markdown
 dateCreated: 2025-09-12T08:16:08.950Z
@@ -25,3 +25,4 @@ I want to play music:
 
 
 https://news.ycombinator.com/item?id=45167846
+https://news.ycombinator.com/item?id=45108066
