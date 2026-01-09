@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-09T15:56:39.074Z
+date: 2026-01-09T15:56:44.374Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -70,8 +70,10 @@ Time complexity (worst-case, for indication of array access)
 1. Observe
   i.e. measure memory usage, or run time (costs) over different input sizes (doubling -> will show logs/power law)
   Using the results (i.e. log/log plot helps to analyze) to determine trend (i,e, approximation function)
+
 1. Hypothesize
   From the observered trend and approximation function, predict next observations.
+
 1. Predict
   Model to describe the costs (cost model)
   Possible to do all in detail, but too tedious
