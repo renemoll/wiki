@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-09T15:15:43.267Z
+date: 2026-01-09T15:24:43.410Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -53,13 +53,13 @@ There are various ways to implement a datatype such as union-find, this shows th
   extend Weighted quick-union and flatten the tree even further by assign each node to its grandparent when looking up a specific node.
 
 
-Time complexity (worst-case, for indication)
+Time complexity (worst-case, for indication of array access)
 
 | Algoritm       | Initialization | Merge | Find  |
 | -------------- | -------------- | ----- | ----- |
 | Quick-find     |              N |     N |     1 |
 | Quick-union    |              N |     N |     N |
 | Weighted QU    |              N | lg(N) | lg(N) |
-| WQUPC          |              N |  α(n) |  α(n) |
+| WQUPC          |              N | lg(N) | lg(N) |
 
 > TODO: do above table properly
