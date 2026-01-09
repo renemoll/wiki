@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-06T13:49:12.644Z
+date: 2026-01-09T14:58:06.503Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -29,7 +29,9 @@ Algorithms
 
 
 
-union-find - implementations
+Example: implementations of union-find
+
+There are various ways to implement a datatype such as union-find, this shows that different algorithms lead to different time and space characteristics.
 
 * Quick-find: assigns a set identifier to each element. 
 * Quick-union: assigns a parent identifier to each element.
@@ -39,7 +41,7 @@ union-find - implementations
 
 Time complexity (worst-case, for indication)
 
-| Implementation | Initialization | Merge | Find  |
+| Algoritm       | Initialization | Merge | Find  |
 | -------------- | -------------- | ----- | ----- |
 | Quick-find     |              N |     N |     1 |
 | Quick-union    |              N |     N |     N |
