@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-09T15:24:43.410Z
+date: 2026-01-09T15:53:53.084Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -63,3 +63,17 @@ Time complexity (worst-case, for indication of array access)
 | WQUPC          |              N | lg(N) | lg(N) |
 
 > TODO: do above table properly
+
+
+### Algorithm alanysis
+
+1. Observe
+  i.e. measure memory usage, or run time (costs) over different input sizes (doubling -> will show logs/power law)
+  Using the results (i.e. log/log plot helps to analyze) to determine trend (i,e, approximation function)
+1. Hypothesize
+  From the observered trend and approximation function, predict next observations.
+1. Predict
+  Model to describe the costs (cost model)
+1. Verify
+1. Validate
+
