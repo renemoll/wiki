@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-09T15:53:53.084Z
+date: 2026-01-09T15:56:39.074Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -74,6 +74,9 @@ Time complexity (worst-case, for indication of array access)
   From the observered trend and approximation function, predict next observations.
 1. Predict
   Model to describe the costs (cost model)
+  Possible to do all in detail, but too tedious
+  Instead, use the most expensive and/or most used/executed one (assuming that will dominate the costs)
+  
 1. Verify
 1. Validate
 
