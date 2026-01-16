@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-16T11:05:03.055Z
+date: 2026-01-16T16:18:08.935Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -97,14 +97,14 @@ $$aN^3 + bN^2 + cN + d \sim aN^3$$
 
 Order of Growth (OoG)
 
-Name         | OoG | Description
--------------|-----|
-Constant     | 1
-Logarithmic  | log N
-Linear       | N
-linearithmic | N log N
-Quadratic    | N^2^
-Cubic        | N^3^
-Exponential  | 2^N^
+Name         | Order of Growth | Description
+-------------|-----------------|------------
+Constant     |        1        | Statement
+Logarithmic  |        log(N)   | Divide in half
+Linear       |        N        | Loop
+linearithmic |        N log(N) | Divide and conquer
+Quadratic    |        N^2^     | Double loop 
+Cubic        |        N^3^     | Tripple loop
+Exponential  |        2^N^     | 
 
 
