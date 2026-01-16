@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-16T16:18:08.935Z
+date: 2026-01-16T16:29:07.114Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -99,12 +99,13 @@ Order of Growth (OoG)
 
 Name         | Order of Growth | Description
 -------------|-----------------|------------
-Constant     |        1        | Statement
-Logarithmic  |        log(N)   | Divide in half
-Linear       |        N        | Loop
-linearithmic |        N log(N) | Divide and conquer
-Quadratic    |        N^2^     | Double loop 
-Cubic        |        N^3^     | Tripple loop
-Exponential  |        2^N^     | 
+Constant     |        1        | Statement, look-up
+Logarithmic  |        log(n)   | Divide in half
+Linear       |        n        | Loop
+linearithmic |        n log(n) | Divide and conquer
+Quadratic    |        n^2^     | Double loop 
+Cubic        |        n^3^     | Tripple loop
+Exponential  |        2^n^     | 
+Factorial    |        n!
 
 
