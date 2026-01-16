@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-09T16:03:45.501Z
+date: 2026-01-16T10:37:20.321Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -65,14 +65,38 @@ Time complexity (worst-case, for indication of array access)
 > TODO: do above table properly
 
 
-### Algorithm alanysis
+### Algorithm analysis
 
-1. Observe
-  i.e. measure memory usage, or run time (costs) over different input sizes (doubling -> will show logs/power law)
-  Using the results (i.e. log/log plot helps to analyze) to determine trend (i,e, approximation function)
+Basic steps:
 
-1. Hypothesize
-  From the observered trend and approximation function, predict next observations.
+1. Observe: observe some quantity (i.e run time, memory usage, ...), over different input sizes (doubling the input with each experiment will reviel a power law.)
+
+1. Hypothesize: using the results of the observation (i.e. in the form of a log/log plot), determine the trend (i.e. approximation function). This will form the basis of a **cost model**.
+
+1. Predict: using the model, predict the change of the observed quantity (**cost**) for new inputs.
+
+1. Verify: verify the new predictions, made using the hypothesized model, agree with new observations. 
+
+1. Validate: continue the above until the hypothesis (cost model) and observations agree.  
+
+Now, when we make observations we may also measure undesired effects which are unrelated to the algorithm under analysis. Such as impact of the OS scheduler, IO latency (system), CPU processing power (hardware), used programming language (software). The goal is not to be a 100% accurate, but to determine the trend.
+
+#### The cost model
+
+Run-time is generally the cost to look at. In that case, two factors are important: 
+1. the cost of executing each statement and;
+1. the number of times that statement is executed.
+
+
+
+----------------
+
+
+
+
+
+
+using the observered trend and approximation function, predict next observations.
 
 1. Predict
   Model to describe the costs (cost model)
