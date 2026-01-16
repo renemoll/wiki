@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-16T10:37:20.321Z
+date: 2026-01-16T10:47:32.229Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -43,7 +43,7 @@ There are various ways to implement a datatype such as union-find, this shows th
   
   Cons:
   While is can be faster, worst case for find could still be N due to tall trees
-    -> large trees possble due to unbalanced composition.
+    -> large trees possible due to unbalanced composition.
 
 * Weighted quick-union
 	extend quick-union with tree size, and merge the root of the smaller tree into the root of the larger one. 
@@ -55,7 +55,7 @@ There are various ways to implement a datatype such as union-find, this shows th
 
 Time complexity (worst-case, for indication of array access)
 
-| Algoritm       | Initialization | Merge | Find  |
+| Algorithm      | Initialization | Merge | Find  |
 | -------------- | -------------- | ----- | ----- |
 | Quick-find     |              N |     N |     1 |
 | Quick-union    |              N |     N |     N |
@@ -69,7 +69,7 @@ Time complexity (worst-case, for indication of array access)
 
 Basic steps:
 
-1. Observe: observe some quantity (i.e run time, memory usage, ...), over different input sizes (doubling the input with each experiment will reviel a power law.)
+1. Observe: observe some quantity (i.e run time, memory usage, ...), over different input sizes (doubling the input with each experiment will reveal a power law.)
 
 1. Hypothesize: using the results of the observation (i.e. in the form of a log/log plot), determine the trend (i.e. approximation function). This will form the basis of a **cost model**.
 
@@ -84,29 +84,13 @@ Now, when we make observations we may also measure undesired effects which are u
 #### The cost model
 
 Run-time is generally the cost to look at. In that case, two factors are important: 
-1. the cost of executing each statement and;
-1. the number of times that statement is executed.
+1. the cost of executing a set of statement and;
+1. the number of times each statement is executed.
 
+**Approximation**
+While it is possible to analyze the run-time for each statement in detail, it is a tedious excersive with limited value. Instead, focus on the most expensive and/or most executed statements (assuming that will dominate the costs (hypothesis)).
 
+Next, approximate by ignoring lower order terms:
+$$aN^3 + bN^2 + cN + d \sim aN^3$$
 
-----------------
-
-
-
-
-
-
-using the observered trend and approximation function, predict next observations.
-
-1. Predict
-  Model to describe the costs (cost model)
-  Possible to do all in detail, but too tedious
-  Instead, use the most expensive and/or most used/executed one (assuming that will dominate the costs)
-  
-  Next, approximate by ignoring lower order forms
-  i.e. aN^3 + bN^2 + cN + d ~ aN^3 (assuming we are looking for large N)
-  
-  
-1. Verify
-1. Validate
 
