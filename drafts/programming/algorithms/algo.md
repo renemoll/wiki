@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-16T10:47:32.229Z
+date: 2026-01-16T11:05:03.055Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -87,10 +87,24 @@ Run-time is generally the cost to look at. In that case, two factors are importa
 1. the cost of executing a set of statement and;
 1. the number of times each statement is executed.
 
-**Approximation**
+**Tilde approximation**
 While it is possible to analyze the run-time for each statement in detail, it is a tedious excersive with limited value. Instead, focus on the most expensive and/or most executed statements (assuming that will dominate the costs (hypothesis)).
 
 Next, approximate by ignoring lower order terms:
 $$aN^3 + bN^2 + cN + d \sim aN^3$$
+
+**Order of growth classifications**
+
+Order of Growth (OoG)
+
+Name         | OoG | Description
+-------------|-----|
+Constant     | 1
+Logarithmic  | log N
+Linear       | N
+linearithmic | N log N
+Quadratic    | N^2^
+Cubic        | N^3^
+Exponential  | 2^N^
 
 
