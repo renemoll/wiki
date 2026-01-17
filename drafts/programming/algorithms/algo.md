@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-17T08:29:26.890Z
+date: 2026-01-17T08:32:59.590Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -107,6 +107,11 @@ Quadratic    |        n^2^     | Double loop
 Cubic        |        n^3^     | Tripple loop
 Exponential  |        2^n^     | 
 Factorial    |        n!
+
+Notations:
+- $\Omega$ used for lower bound
+- O: used for upper bound
+- $\Theta$: used both(?) (clasification?)
 
 ### Theory of algorithms
 
