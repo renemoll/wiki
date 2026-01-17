@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-16T16:29:07.114Z
+date: 2026-01-17T08:11:44.643Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
