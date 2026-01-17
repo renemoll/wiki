@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-17T08:11:44.643Z
+date: 2026-01-17T08:29:26.890Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -108,4 +108,17 @@ Cubic        |        n^3^     | Tripple loop
 Exponential  |        2^n^     | 
 Factorial    |        n!
 
+### Theory of algorithms
 
+- best case: easiest input -> goal
+- worst case: most dificult input -> guarantee for all inputs
+- average case: "random" input -> prediction
+
+Goal
+ - determine dificulty of a problem
+ - find "optimal" algorithms
+ 
+Approach
+ - Suppress details during analysis
+ - focus on worst case input to avoid variation
+ 
