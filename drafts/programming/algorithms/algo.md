@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-17T08:32:59.590Z
+date: 2026-01-17T08:42:43.110Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -127,3 +127,17 @@ Approach
  - Suppress details during analysis
  - focus on worst case input to avoid variation
  
+"Optimal" algorithm
+ - guaranteed worst case
+ - proof best-case (lower bound as no alternative can do better)
+
+Given a problem
+ - determine upper bound
+   - can start with brute force
+   - can improve by using better algorithms to reduce the gap between upper and lower bound
+ - determine lower bound
+   - might not be available / found / best we have right now.
+
+Caveats:
+ - do we really need worst case or do we need to properly analyze our inputs?
+ - which details can be ignored and which not?
