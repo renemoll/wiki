@@ -2,7 +2,7 @@
 title: Algo
 description: 
 published: true
-date: 2026-01-17T08:42:43.110Z
+date: 2026-01-17T08:43:15.581Z
 tags: 
 editor: markdown
 dateCreated: 2026-01-06T13:49:12.644Z
@@ -139,5 +139,5 @@ Given a problem
    - might not be available / found / best we have right now.
 
 Caveats:
- - do we really need worst case or do we need to properly analyze our inputs?
+ - do we really need worst case or do we need to properly analyze (properties of) our inputs?
  - which details can be ignored and which not?
