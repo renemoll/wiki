@@ -2,7 +2,7 @@
 title: Error handling
 description: 
 published: true
-date: 2026-02-27T13:06:01.082Z
+date: 2026-02-27T15:01:51.122Z
 tags: 
 editor: markdown
 dateCreated: 2026-02-27T10:58:02.909Z
