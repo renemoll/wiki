@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2025-08-28T19:25:03.156Z
+date: 2026-04-21T19:59:36.683Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -15,3 +15,50 @@ dateCreated: 2025-08-28T19:25:03.156Z
 Compare
 * std::mutex
 * [Michael & Scott](https://www.cs.rochester.edu/~scott/papers/1996_PODC_queues.pdf)
+
+Design and implement queues as an embedded software components.
+
+Constraints:
+ - Targets: embedded / microcontrollers (32-bits), and PC (amd64/arm64).
+
+Use-cases:
+ - Exchange data between context (main/interrupts/threads).
+
+> FIFO behaviour
+> overwrite or not
+
+## Single producer single consumer
+
+1. Capacity: fixed or dynamic
+
+First decision is to decide if the queue size is fixed or dynamic. The actual question is will the queue items live on the heap (dynamic allocation) or the stack.
+
+Since I am focussing on embedded systems, dynamic allocation is limited to initialisation. This implies a fixed size queue. Wether is lives on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+
+> +1 for empty
+
+2. Blocking vs non-blocking
+
+Next up, will the interface allow blocking or non-blocking functions. 
+
+I will need non-blocking method to push and pop data from the queue, when used in interrupt context a message should be posted directly such that the system can continue. When I do need blocking behaviour, this can simply be added with a wrapper/decorator.  
+
+3. Indexing (power of 2 capacity)
+
+Wrap-around versus "infinite" indexing. Elements stored in the queue will be stored in an array, and both a read and write "pointer" or index are needed to point to the oldest data or lastly written slot.
+
+Now, the indices must be limited to the size of the queue, it does not make sense to access data outside of the queue. There are a few ways to do this:
+
+- apply modulo to any index manipulation, this will ensure indices always point to a valid slot.
+- but modulo can be expansive, instruction wise, so an alternative is a manual wrap around with a simple branch.
+- an alternative is to apply a mask. This does limit the capacity to a power of two, but a mask is a simple AND instruction and therefore fast. Additionally, since a mask is applied, the index is never reset until it wraps around. Then the question becomes, when will it wrap around. When using 64bit integers, you will likely not run into any issues.
+
+Now, I do not want to constrain my queues to a power of 2, nor do I want to use 64-bit integers on a 32-bit platform as these will not be atomic anymore. This leaves modulo and manual wrap around. Modulo can be expensive instruction wise, especially when the microcontroller does not have a floating point unit (FPU) available (either hardware wise or allocated to an other function).
+
+> atomic first mentioned.
+
+
+
+
+> wait-free
+> lock-free
