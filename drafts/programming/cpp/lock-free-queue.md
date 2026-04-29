@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-04-21T19:59:36.683Z
+date: 2026-04-29T20:17:02.976Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -59,6 +59,8 @@ Now, I do not want to constrain my queues to a power of 2, nor do I want to use 
 
 
 
+[SPSC Lock-free, Wait-free Fifo from the Ground Up]() with [code](https://github.com/CharlesFrasch/cppcon2023/)
+> todo: sanitizers
 
 > wait-free
 > lock-free
