@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-04-30T11:23:14.892Z
+date: 2026-05-04T20:10:49.097Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -59,6 +59,22 @@ Now, I do not want to constrain my queues to a power of 2, nor do I want to use 
 > atomic first mentioned.
 
 
+ * V1: base implementation
+ * V2: added memory orderings to the atomic operations.
+ * V3: aligned storage for the read and write indices to different cache lines to avoid false sharing.
+ * V4: replaced modulo with a branch to wrap around the indices.
+ * V5: cache read/write indices.
+ * V6: added likely/unlikely hints.
+ *
+ * Variation   | (items/s)
+ * ----------- | -----------
+ *  QueueV1    |  12.8153M/s
+ *  QueueV2    |  60.1057M/s
+ *  QueueV3    |  78.4198M/s
+ *  QueueV4    |  66.4483M/s
+ *  QueueV5    | 152.294M/s
+ *  QueueV6    | 177.823M/s
+ *
 
 [SPSC Lock-free, Wait-free Fifo from the Ground Up](https://www.youtube.com/watch?v=K3P_Lmq6pw0&t=611s) with [code](https://github.com/CharlesFrasch/cppcon2023/)
 > todo: sanitizers
