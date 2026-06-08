@@ -2,14 +2,83 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T14:35:05.236Z
+date: 2026-06-08T19:21:44.895Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
 ---
 
-# Lock free queue
+# Single producer single consumer queue
 
+> TODO: non-blocking, wait free
+
+
+First, lets go through the design of a single producer, single consumer queue. The main use-case will be to transfer data from an interrupt to either the main loop or another interrupt. 
+
+## Design considerations
+
+### Capacity: bounding or unbounded
+
+The first decision is if the queue size is fixed (bounded) or dynamic (unbounded), as this impacts run-time behaviour and the kind of memory used.
+
+With a fixed capacity, the queue size is predetermined and stable during runtime, also no (re)-allocations. With a dynamic capacity, the queue can grow/shrink depending on the needs at run-time at the cost of variable latency at possible blocking system calls.
+
+Regarding the memory, fixed capacity queues can either place their on the stack or on the heap. In case of a dynamic capacity, the data has be placed on the heap.
+
+Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Whether the data is placed on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+
+### Queue policy
+
+For this queue I want simple FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest.
+
+### Blocking vs non-blocking
+
+The modifiers, `pop`/`push`, can either block till there is data/space available or implement a over/underflow policy and return inmediatly. 
+
+As I will be using this queue in interrupt contexts, I need non-blocking functions to ensure interrupt time can be bounded.
+
+### Backpressure policy
+
+Modifiers such as `pop` and `push` require a policy in case the queue is empty or full. For example, when the queue is full and new data is pushed, does `push`:
+
+* spin and continously check if there is space to place the new element?
+* yield and allow for another thread to possibly make space for the new data?
+* sleep and retry;
+* drop the latest/oldest element;
+* overwrite the oldest element;
+* some variation or combination of the above.
+
+Given I require non-blocking behaviour, waiting is not an option. This does mean selecting a policy which looses data. Given that data will be lost, I want `push` to drop the newest element and return an error signal. In case  blocking behaviour is required, a simple decorator will allow for this functionality later on.
+
+Simalairly, `pop` will return an error signal when there is no data to return.
+
+### Element lifetime / memory management
+
+> TODO
+
+### Requirements
+
+* Fixed capacity, defined at compile-time;
+* FIFO behaviour, using `push` and `pop` modifiers;
+* Non-blocking API;
+* Backpressure policy: drop new data and a return error signal;
+* Track statistics, such as elements dropped;
+* No operating system dependencies;
+
+## Design
+
+Basic data structure: ring-buffer (vs list)
+Data: primtive data / POD
+Memory ordering: release for producer, aquire for consumer
+Cache: seperate cache lines + copy of head/tail
+Backpressure: reject latest when full
+
+
+
+
+
+
+# Scratchpad
 
 
 Compare
@@ -24,39 +93,7 @@ Constraints:
 Use-cases:
  - Exchange data between context (main/interrupts/threads).
 
-> FIFO behaviour
-> overwrite or not
 > move
-
-# Single producer single consumer queue
-
-First, lets go through the design of a single producer, single consumer queue. The main use-case will be to transfer data from an interrupt to either the main loop or another interrupt. 
-
-## Design considerations
-
-### Capacity: fixed or dynamic
-
-The first decision is if the queue size is fixed or dynamic. This impacts the kind of memory used. In case of a fixed capacity, the queue data can either be allocated on the stack of heap. For a dynamic capacity, the queue elements will live on the heap.
-
-Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Wether is lives on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
-
-### API: adding/comsuming data
-
-For this queue I want standard FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest. 
-
-### Blocking vs non-blocking
-
-Tied to the modifiers, `pop`/`push` can either block till there is data/space or fail when they cant perform their operation. 
-
-As I will be using this queue in interrupt contexts, I need non-blocking functions to make sure interrupt time can be bounded/limited. This means  `push` will fail when there is no empty space left and `pop` fails when the queue is empty.
-
-In case I do need blocking behaviour, this can simply be added with a simple decorator.
-
-
-
-
-
-
 
 > +1 for empty
 
