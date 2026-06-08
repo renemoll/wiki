@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T19:21:44.895Z
+date: 2026-06-08T19:25:12.700Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -16,6 +16,10 @@ dateCreated: 2025-08-28T19:25:03.156Z
 First, lets go through the design of a single producer, single consumer queue. The main use-case will be to transfer data from an interrupt to either the main loop or another interrupt. 
 
 ## Design considerations
+
+### Target machine
+
+I target 32-bit microcontrollers, gennerally single core but with several interrupts.
 
 ### Capacity: bounding or unbounded
 
@@ -64,6 +68,9 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 * Backpressure policy: drop new data and a return error signal;
 * Track statistics, such as elements dropped;
 * No operating system dependencies;
+* Low latency
+
+> How to test each?
 
 ## Design
 
