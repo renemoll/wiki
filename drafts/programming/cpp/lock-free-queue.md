@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T19:28:14.996Z
+date: 2026-06-08T20:13:04.128Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -71,19 +71,34 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 * Low latency
 
 > How to test each?
+> batch modifiers?
 
 ## Design
 
-Basic data structure: ring-buffer (vs list)
+### Basic data structure
+
+Options: ring-buffer, list, deque
+
+Ring buffer, or circular buffer, has a fixed block of memory (fixed capacity) and 2 pointers which wrap around to provide a continous buffer.
+
+A list can provide unbounded capacity, as each node refers to the next node. However this also means each node can be anywhere in memory.
+
+> Deque
+> Lock free linked ring (scot)
+
 Data: primtive data / POD
 Memory ordering: release for producer, aquire for consumer
 Cache: seperate cache lines + copy of head/tail
 Backpressure: reject latest when full
 
+Todo: power of 2 capacity & indexing
+ * simple mask (AND) vs modulo
+ * basic instruction vs either FPU or soft-fpu
+> TODO: add to benchmark
 
-
-
-
+Elements
+* array of type T -> good for trivial/POD
+* aligned storage + placement new -> for non-trivial types
 
 # Scratchpad
 
