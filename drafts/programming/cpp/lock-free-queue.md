@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T14:26:08.261Z
+date: 2026-06-08T14:35:05.236Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -40,6 +40,20 @@ The first decision is if the queue size is fixed or dynamic. This impacts the ki
 
 Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Wether is lives on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
 
+### API: adding/comsuming data
+
+For this queue I want standard FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest. 
+
+### Blocking vs non-blocking
+
+Tied to the modifiers, `pop`/`push` can either block till there is data/space or fail when they cant perform their operation. 
+
+As I will be using this queue in interrupt contexts, I need non-blocking functions to make sure interrupt time can be bounded/limited. This means  `push` will fail when there is no empty space left and `pop` fails when the queue is empty.
+
+In case I do need blocking behaviour, this can simply be added with a simple decorator.
+
+
+
 
 
 
@@ -50,11 +64,7 @@ Since I am focussing on embedded systems, dynamic allocation during run-time is 
 
 
 
-2. Blocking vs non-blocking
-
-Next up, will the interface allow blocking or non-blocking functions. 
-
-I will need non-blocking method to push and pop data from the queue, when used in interrupt context a message should be posted directly such that the system can continue. When I do need blocking behaviour, this can simply be added with a wrapper/decorator.  
+2. 
 
 3. Indexing (power of 2 capacity)
 
