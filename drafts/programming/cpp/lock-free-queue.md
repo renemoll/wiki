@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-05-04T20:10:49.097Z
+date: 2026-06-08T14:26:08.261Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -28,15 +28,27 @@ Use-cases:
 > overwrite or not
 > move
 
-## Single producer single consumer
+# Single producer single consumer queue
 
-1. Capacity: fixed or dynamic
+First, lets go through the design of a single producer, single consumer queue. The main use-case will be to transfer data from an interrupt to either the main loop or another interrupt. 
 
-First decision is to decide if the queue size is fixed or dynamic. The actual question is will the queue items live on the heap (dynamic allocation) or the stack.
+## Design considerations
 
-Since I am focussing on embedded systems, dynamic allocation is limited to initialisation. This implies a fixed size queue. Wether is lives on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+### Capacity: fixed or dynamic
+
+The first decision is if the queue size is fixed or dynamic. This impacts the kind of memory used. In case of a fixed capacity, the queue data can either be allocated on the stack of heap. For a dynamic capacity, the queue elements will live on the heap.
+
+Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Wether is lives on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+
+
+
+
 
 > +1 for empty
+
+
+
+
 
 2. Blocking vs non-blocking
 
