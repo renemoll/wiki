@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T19:25:12.700Z
+date: 2026-06-08T19:28:14.996Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -58,7 +58,7 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 
 ### Element lifetime / memory management
 
-> TODO
+> TODO: simple POD / trivially copy
 
 ### Requirements
 
@@ -67,7 +67,7 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 * Non-blocking API;
 * Backpressure policy: drop new data and a return error signal;
 * Track statistics, such as elements dropped;
-* No operating system dependencies;
+* No dependency on a operating system (bare metal);
 * Low latency
 
 > How to test each?
