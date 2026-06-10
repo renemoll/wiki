@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-10T19:18:39.850Z
+date: 2026-06-10T19:19:29.747Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -58,7 +58,13 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 
 ### Element lifetime / memory management
 
-> TODO: simple POD / trivially copy
+TODO:
+* simple POD / trivially copy
+  Can use basic array of T
+* Objects which need to be created in-place, non-trivial, move only
+  `AlignedStorage`
+
+
 
 ### Requirements
 
