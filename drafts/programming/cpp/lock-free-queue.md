@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-08T20:13:04.128Z
+date: 2026-06-10T19:18:39.850Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -102,6 +102,24 @@ Elements
 
 # Scratchpad
 
+```bash
+sudo cpupower frequency-set --governor performance
+./build/benchmark-ninja-gcc/benchmark/queue_spsc/Release/benchmark_queue_spsc --benchmark_min_time=5s
+```
+
+```bash
+--------------------------------------------------------------------------------------------------------
+Benchmark                                              Time             CPU   Iterations UserCounters...
+--------------------------------------------------------------------------------------------------------
+BM_QueueSpsc<QueueV1<int, 100'000>>/100000000 7473049388 ns   7470885184 ns            1 items_per_second=13.3853M/s
+BM_QueueSpsc<QueueV2<int, 100'000>>/100000000 2504674100 ns   2504215456 ns            3 items_per_second=39.9327M/s
+BM_QueueSpsc<QueueV3<int, 100'000>>/100000000 1922750180 ns   1921855757 ns            4 items_per_second=52.033M/s
+BM_QueueSpsc<QueueV4<int, 100'000>>/100000000 2062196912 ns   2056701112 ns            3 items_per_second=48.6216M/s
+BM_QueueSpsc<QueueV5<int, 100'000>>/100000000  334848867 ns    334322909 ns           21 items_per_second=299.112M/s
+BM_QueueSpsc<QueueV6<int, 100'000>>/100000000  333380632 ns    332783305 ns           21 items_per_second=300.496M/s
+BM_QueueSpsc<QueueV7<int, 131'072>>/100000000  293380110 ns    292728666 ns           24 items_per_second=341.613M/s
+
+```
 
 Compare
 * std::mutex
