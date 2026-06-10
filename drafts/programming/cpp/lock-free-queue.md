@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-10T19:19:29.747Z
+date: 2026-06-10T20:17:02.005Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -126,6 +126,11 @@ BM_QueueSpsc<QueueV6<int, 100'000>>/100000000  333380632 ns    332783305 ns     
 BM_QueueSpsc<QueueV7<int, 131'072>>/100000000  293380110 ns    292728666 ns           24 items_per_second=341.613M/s
 
 ```
+
+
+## Inspirations
+
+* [Erik Rigtorp - SPSCQueue](https://github.com/rigtorp/SPSCQueue) for caching the read and write index.
 
 Compare
 * std::mutex
