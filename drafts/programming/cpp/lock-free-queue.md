@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-11T07:03:18.459Z
+date: 2026-06-13T20:57:30.455Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -117,14 +117,13 @@ sudo cpupower frequency-set --governor performance
 --------------------------------------------------------------------------------------------------------
 Benchmark                                              Time             CPU   Iterations UserCounters...
 --------------------------------------------------------------------------------------------------------
-BM_QueueSpsc<QueueV1<int, 100'000>>/100000000 7473049388 ns   7470885184 ns            1 items_per_second=13.3853M/s
-BM_QueueSpsc<QueueV2<int, 100'000>>/100000000 2504674100 ns   2504215456 ns            3 items_per_second=39.9327M/s
-BM_QueueSpsc<QueueV3<int, 100'000>>/100000000 1922750180 ns   1921855757 ns            4 items_per_second=52.033M/s
-BM_QueueSpsc<QueueV4<int, 100'000>>/100000000 2062196912 ns   2056701112 ns            3 items_per_second=48.6216M/s
-BM_QueueSpsc<QueueV5<int, 100'000>>/100000000  334848867 ns    334322909 ns           21 items_per_second=299.112M/s
-BM_QueueSpsc<QueueV6<int, 100'000>>/100000000  333380632 ns    332783305 ns           21 items_per_second=300.496M/s
-BM_QueueSpsc<QueueV7<int, 131'072>>/100000000  293380110 ns    292728666 ns           24 items_per_second=341.613M/s
-
+BM_QueueSpsc<QueueV1<int, 100'000>>/100000000 7436520301 ns   7434176850 ns            1 items_per_second=13.4514M/s
+BM_QueueSpsc<QueueV2<int, 100'000>>/100000000 2491948784 ns   2490989109 ns            3 items_per_second=40.1447M/s
+BM_QueueSpsc<QueueV3<int, 100'000>>/100000000 1899773307 ns   1873090305 ns            3 items_per_second=53.3877M/s
+BM_QueueSpsc<QueueV4<int, 100'000>>/100000000 2088300980 ns   2088033872 ns            3 items_per_second=47.8919M/s
+BM_QueueSpsc<QueueV5<int, 100'000>>/100000000  338641363 ns    338195298 ns           21 items_per_second=295.687M/s
+BM_QueueSpsc<QueueV6<int, 100'000>>/100000000  331586611 ns    331201190 ns           21 items_per_second=301.931M/s
+BM_QueueSpsc<QueueV7<int, 131'072>>/100000000  281274476 ns    280923424 ns           30 items_per_second=355.969M/s
 ```
 
 
