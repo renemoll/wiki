@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T11:39:17.410Z
+date: 2026-06-17T12:05:22.495Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -10,10 +10,12 @@ dateCreated: 2025-08-28T19:25:03.156Z
 
 # Single producer single consumer queue
 
+This document goes through the design of a single producer, single consumer (SPSC) queue. My main use-case will be to transfer data from an interrupt to either the main loop or another interrupt/context/thread. 
+
+First, we go through my needs which form the requirements for the queue. Next, I walk you through various design options and which choises I made. 
+
+> TODO: finally
 > TODO: non-blocking, wait free
-
-
-First, lets go through the design of a single producer, single consumer queue. The main use-case will be to transfer data from an interrupt to either the main loop or another interrupt. 
 
 ## Design considerations
 
@@ -30,6 +32,11 @@ With a fixed capacity, the queue size is predetermined and stable during runtime
 Regarding the memory, fixed capacity queues can either place their on the stack or on the heap. In case of a dynamic capacity, the data has be placed on the heap.
 
 Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Whether the data is placed on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+
+### Capacity: power of 2
+
+Allow for quick indexing, does limit tuning of queue size.
+Optional configuration? -> impact on testing?
 
 ### Queue policy
 
