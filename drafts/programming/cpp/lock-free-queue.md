@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T12:35:48.643Z
+date: 2026-06-17T14:09:59.841Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -15,15 +15,37 @@ For my embedded applications, I need to transfer data from interupts to another 
 Now, there are already quite a few implementation available, yet I wanted to go through the design and constraint choises and understand their implact. This document documents my journey. 
 
 First, we go through my needs which form the requirements for the queue. Next, I walk you through various design options and which choises I made. 
-
 > TODO: finally
-> TODO: non-blocking, wait free
 
 ## Requirements
 
 ### Target machine
 
-I primairily aim for 32-bit microcontrollers, while usability on general computers is nice to have.
+I primairily aim for 32-bit microcontrollers, specifically Cortex-M4/7/33. While staying compatible with general computers.
+
+The goal is to use the same code on all targets, only using feature based conditional compilation. This allows both for re-use and allows testing of the embedded application on the PC. 
+
+On the Cortex-M side, we do have a range of microcontrollers. Some have data caches, or special memory regions (i.e. TCM), which are to be taken into account.
+
+### Intended use
+
+As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. Given that generally you want your interrupt code to be as quick as possible, this implies the following:
+* low latency, hence non-blocking API calls and no system/OS/RTOS calls;
+* wait-free, meaning any operating has a limited number of steps;
+
+
+
+> TODO: concurrency model: bare-metal (no RTOS) producer and consumer in different context -> atomic + memory ordering
+> TODO: non-blocking, wait free
+> Targeting Cortex-M MCU, with atomic operations for 32bit 
+> No DMA support (for now)
+> Operations may be interrupted by antoher interrupt. -> can be pre empted
+> Oparations may not block
+
+### Testing
+
+Initial unit-testing will be done on a PC, together with benchmarking to compare different implementations.
+Once integrated into an embedded application, the queue will be tested as part of integration tests. There are currently no plans to perform unit-testing on target.
 
 ### Capacity: bounding or unbounded
 
@@ -125,7 +147,12 @@ TODO:
 * Objects which need to be created in-place, non-trivial, move only
   `AlignedStorage`
 
+### Indexing
 
+Head/tail counters
+Mask, modulo
+
+### Memory ordering
 
 # Scratchpad
 
