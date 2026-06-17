@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-13T20:57:30.455Z
+date: 2026-06-17T11:36:00.507Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -70,14 +70,16 @@ TODO:
 
 * Fixed capacity, defined at compile-time;
 * FIFO behaviour, using `push` and `pop` modifiers;
-* Non-blocking API;
+* Low latency, which implies: non-blocking API and no system/OS calls;
+
 * Backpressure policy: drop new data and a return error signal;
 * Track statistics, such as elements dropped;
-* No dependency on a operating system (bare metal);
-* Low latency
 
 > How to test each?
 > batch modifiers?
+
+Properties
+ * Retains total order
 
 ## Design
 
