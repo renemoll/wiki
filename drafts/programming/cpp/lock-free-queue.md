@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T14:53:47.815Z
+date: 2026-06-17T20:36:53.706Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -10,7 +10,7 @@ dateCreated: 2025-08-28T19:25:03.156Z
 
 # Single producer single consumer queue
 
-For my embedded applications, I need to transfer data from interupts to another context/thread quickly. A good solution for this is to use a single producer single consumer (SPSC) queue.
+For my embedded applications, I need to transfer data from inside interupt context to another context quickly. A good solution for this is to use a single producer single consumer (SPSC) queue.
 
 Now, there are already quite a few implementation available, yet I wanted to go through the design and constraint choises and understand their implact. This document documents my journey. 
 
@@ -19,31 +19,40 @@ First, we go through my needs which form the requirements for the queue. Next, I
 
 ## Requirements
 
+Now, I want simple FIFO behaviour for this queue: `push` to add the newest data element to the queue and `pop` to remove the oldest. The next sections elaborate the queue's behaviour.
+
 ### Target machine
 
-I primairily aim for ARM Cortex-M based microcontrollers, specifically the Cortex-M4/M7/M33 families. While staying compatible with general computers.
+I primairily aim for ARM Cortex-M based microcontrollers, specifically the Cortex-M4/M7/M33 families.
 
-These microcontrollers are all 32-bit based, support 32-bit atomic operations, may have a data cache, and may have special RAM depending on the variation.
+These microcontrollers feature:
+* 32-bit architecture with 32-bit atomic operations;
+* optional data cache;
+* optional tichtly coupled memory (TCM);
 
-My goal is to use the same code on all these targets, only using conditional compilation on a feature basis. Allowing both for re-use and testing of the embedded application on the PC. 
+Besides microcontrollers, the implementation must be compatible with generic computers. Allowing for both re-use and testing of the embedded application on a PC.
 
-### Concurrency
+The goal is to use the same code on all these targets, only using conditional compilation on a feature basis.
+
+### Concurrency model
 
 As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. 
 
 This implies the following:
-* All operations must be bounded to a fixed number of instructions and execution time. This means operations  may not block, spin, retry, or otherwise perform work which can take unconstrained time.
-* Interrupts will always be enabled, otherwise data can be lost, which also means any operation itself can be interrupted.
+* All operations must complete their action in a fixed, bounded number of instructions;
+* Operations may not block, spin,or retry;
+* Interrupts will always be enabled, otherwise data can be lost.
+* The previous also means any operation itself can be interrupted.
 
-This means the implementation has to be wait-free, each operating must perform its task within a fixed amount of time.
+This means the implementation has to be wait-free.
 
-Given the wait-free requirements, it is also good to avoid operating system dependencies, as these can introduce undeterministic delays. And implementing the queue in standard C++ also avoids external depencencies.
+Given the wait-free requirements, it is also good to avoid operating system dependencies, as these can introduce undeterministic delays. And implementing the queue in standard C++ avoids external depencencies.
 
 ### Limitations
 
 There will not be any DMA support.
 
-### Testing
+### Testing requirements
 
 Initial unit-testing will be done on a PC, together with several benchmarks to compare different implementations.
 
@@ -61,25 +70,22 @@ Since I am focussing on embedded systems, dynamic allocation during run-time is 
 
 ### Capacity: power of 2
 
+> TODO
 
 Allow for quick indexing, does limit tuning of queue size.
 Optional configuration? -> impact on testing?
-
+ * fast indexing with bit mask and therby avoiding modulo
+ 
 
 ### Blocking vs non-blocking
-> TODO: this is actually low latency...
 
-The modifiers, `pop`/`push`, can either block till there is data/space available or implement a over/underflow policy and return inmediatly. 
+Getting data in and out of the queue will be done via the `pop`/`push` modifiers. Now these operations can either block until there is data/space available, or implement a over/underflow policy and return inmediatly. 
 
-As I will be using this queue in interrupt contexts, I need non-blocking functions to ensure interrupt time can be bounded. This does mean the operation can fail, this will be indicated via return values (simpel booleans).
-
-### Queue behaviour
-
-For this queue I want simple FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest.
+Since I want to use these operations in interrupt context, with low latency and in a wait-free manner, we need to go for the non-blocking implementation. This means `pop`/`push` return inmediatly and need to indicate wether their operation was successful or failed.
 
 ### Backpressure policy
 
-Modifiers such as `pop` and `push` require a policy in case the queue is empty or full. For example, when the queue is full and new data is pushed, does `push`:
+Operations `pop` and `push` require a policy in case the queue is empty or full. For example, when the queue is full and new data is pushed, does `push`:
 
 * spin and continously check if there is space to place the new element?
 * yield and allow for another thread to possibly make space for the new data?
@@ -88,30 +94,43 @@ Modifiers such as `pop` and `push` require a policy in case the queue is empty o
 * overwrite the oldest element;
 * some variation or combination of the above.
 
-Given I require non-blocking behaviour, waiting is not an option. This does mean selecting a policy which looses data. Given that data will be lost, I want `push` to drop the newest element and return an error signal. In case  blocking behaviour is required, a simple decorator will allow for this functionality later on.
+As I require non-blocking behaviour, waiting is not an option. This does mean selecting a policy which looses data when pushing new data. Given that data will be lost, I want `push` to drop the newest element and return an error signal. In case  blocking behaviour is required, a simple decorator will allow for this functionality later on.
 
-Simalairly, `pop` will return an error signal when there is no data to return.
+Simalairly, `pop` will return inmediatly with a signal indicating if the returned data is valid.
 
-### Element lifetime / memory management
+To be able to detect if data has been lost, the queue will track this in the form of a counter. Similairly, there will be a counter when `pop` is called while the queue is empty.
+
+### Element lifetime & memory management
 
 The queue can be used to store the following data types:
 * Primitive data types, such as bytes, integers, etc;
 * Simple POD structures;
 * Objects which can either be copied or moved.
 
-The queue will manage the lifetime of the enqueued object for as long as the object is stored in the queue. Once popped, the reader is responsible the  lifetime and memeory management.
+The queue will manage the lifetime of any enqueued object for as long as the object is stored in the queue. Once popped, the consumer is responsible for the  lifetime and memeory management.
+
+### Memory model
+
+Given that Cortex-M is the main taget, data needs to be properly aligned to avoid unaligned exceptions. This means the internal buffer must be properly aligned for the stored type.
+
+Next to that, internal pointers/counters are requried to be atomic, thus limited to 32-bits.
+
+For microcontrollers and PCs with data caches, we want to align the pointers/counters to the cache line size to avoid false sharing. In these cases, memory bariers will likely be needed.
 
 ### Summary
 
-* Fixed capacity, defined at compile-time;
-* FIFO behaviour, using `push` and `pop` modifiers;
-* Low latency, which implies: non-blocking API and no system/OS calls;
-
+* Targetting ARM Cortex-M4/7/33 and generic PC;
+* Used to transfer data from/to interrupt context;
+* Low latency and wait free: non-blocking API and no system/OS calls;
+* Fixed capacity: defined at compile-time;
 * Backpressure policy: drop new data and a return error signal;
-* Track statistics, such as elements dropped;
+* Element lifetime: managed by the queue only while stored;
+* Tracks error statistics: elements dropped, pop while empty;
+* Portability: feature-based conditional compilation. 
 
 > How to test each?
 > batch modifiers?
+> Worst-case execution time -> no loops, no dynamic memory, no disabling of irq
 
 Properties
  * Retains total order
