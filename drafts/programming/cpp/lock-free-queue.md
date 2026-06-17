@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T14:13:10.781Z
+date: 2026-06-17T14:15:47.681Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -31,7 +31,8 @@ On the Cortex-M side, we do have a range of microcontrollers. Some have data cac
 
 As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. Given that generally you want your interrupt code to be as quick as possible, this implies the following:
 * low latency, hence non-blocking API calls and no system/OS/RTOS calls;
-* wait-free, meaning any operating has a limited number of steps;
+* wait-free, meaning any operating has a limited number of steps, no spinning/retry loops, etc;
+* no locks, critical sections, etc.
 
 The queue should be usable without any (RT)OS.
 
@@ -66,8 +67,7 @@ Optional configuration? -> impact on testing?
 
 The modifiers, `pop`/`push`, can either block till there is data/space available or implement a over/underflow policy and return inmediatly. 
 
-As I will be using this queue in interrupt contexts, I need non-blocking functions to ensure interrupt time can be bounded.
-
+As I will be using this queue in interrupt contexts, I need non-blocking functions to ensure interrupt time can be bounded. This does mean the operation can fail, this will be indicated via return values (simpel booleans).
 
 ### Queue behaviour
 
