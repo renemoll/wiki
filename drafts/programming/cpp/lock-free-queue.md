@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T12:33:07.592Z
+date: 2026-06-17T12:35:48.643Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -40,15 +40,18 @@ Since I am focussing on embedded systems, dynamic allocation during run-time is 
 Allow for quick indexing, does limit tuning of queue size.
 Optional configuration? -> impact on testing?
 
-### Queue policy
-
-For this queue I want simple FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest.
 
 ### Blocking vs non-blocking
+> TODO: this is actually low latency...
 
 The modifiers, `pop`/`push`, can either block till there is data/space available or implement a over/underflow policy and return inmediatly. 
 
 As I will be using this queue in interrupt contexts, I need non-blocking functions to ensure interrupt time can be bounded.
+
+
+### Queue behaviour
+
+For this queue I want simple FIFO behaviour, using `push` to add the latest element and `pop` to remove the oldest.
 
 ### Backpressure policy
 
@@ -74,7 +77,7 @@ The queue can be used to store the following data types:
 
 The queue will manage the lifetime of the enqueued object for as long as the object is stored in the queue. Once popped, the reader is responsible the  lifetime and memeory management.
 
-### Requirements
+### Summary
 
 * Fixed capacity, defined at compile-time;
 * FIFO behaviour, using `push` and `pop` modifiers;
