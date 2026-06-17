@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T14:15:47.681Z
+date: 2026-06-17T14:47:30.005Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -21,25 +21,27 @@ First, we go through my needs which form the requirements for the queue. Next, I
 
 ### Target machine
 
-I primairily aim for 32-bit microcontrollers, specifically Cortex-M4/7/33. While staying compatible with general computers.
+I primairily aim for ARM Cortex-M based microcontrollers, specifically the Cortex-M4/M7/M33 families. While staying compatible with general computers.
 
-The goal is to use the same code on all targets, only using feature based conditional compilation. This allows both for re-use and allows testing of the embedded application on the PC. 
+These microcontrollers are all 32-bit based, support 32-bit atomic operations, may have a data cache, and may have special RAM depending on the variation.
 
-On the Cortex-M side, we do have a range of microcontrollers. Some have data caches, or special memory regions (i.e. TCM), which are to be taken into account.
+My goal is to use the same code on all these targets, only using conditional compilation on a feature basis. Allowing both for re-use and testing of the embedded application on the PC. 
 
-### Intended use
+### Concurrency
 
-As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. Given that generally you want your interrupt code to be as quick as possible, this implies the following:
-* low latency, hence non-blocking API calls and no system/OS/RTOS calls;
-* wait-free, meaning any operating has a limited number of steps, no spinning/retry loops, etc;
-* no locks, critical sections, etc.
+As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. 
 
-The queue should be usable without any (RT)OS.
+This implies the following:
+* All operations must be bounded to a fixed number of instructions and execution time. This means operations  may not block, spin, or otherwise perform work which can take unconstrained time.
+* Interrupts will always be enabled, otherwise data can be lost, which also means any operation itself can be interrupted.
 
-Given that the queue will run on a microcontroller with interrupts, any operation can be preemptied. 
-> TODO impact
+This means the implementation has to be wait-free, each operating must perform its task within a fixed amount of time.
 
-> TODO: concurrency model: bare-metal (no RTOS) producer and consumer in different context -> atomic + memory ordering
+Given the wait-free requirements, it is also good to avoid operating system dependencies, as these can introduce undeterministic delays. And implementing the queue in standard C++ also avoids external depencencies.
+
+### Limitations
+
+There will not be any DMA support.
 
 ### Testing
 
@@ -153,6 +155,8 @@ Mask, modulo
 ### Memory ordering
 
 # Scratchpad
+
+> TODO: concurrency model: bare-metal (no RTOS) producer and consumer in different context -> atomic + memory ordering
 
 
 
