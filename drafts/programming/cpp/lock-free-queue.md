@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T14:09:59.841Z
+date: 2026-06-17T14:13:10.781Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -33,14 +33,12 @@ As mentioned in the introduction, I want to use this queue to transfer data from
 * low latency, hence non-blocking API calls and no system/OS/RTOS calls;
 * wait-free, meaning any operating has a limited number of steps;
 
+The queue should be usable without any (RT)OS.
 
+Given that the queue will run on a microcontroller with interrupts, any operation can be preemptied. 
+> TODO impact
 
 > TODO: concurrency model: bare-metal (no RTOS) producer and consumer in different context -> atomic + memory ordering
-> TODO: non-blocking, wait free
-> Targeting Cortex-M MCU, with atomic operations for 32bit 
-> No DMA support (for now)
-> Operations may be interrupted by antoher interrupt. -> can be pre empted
-> Oparations may not block
 
 ### Testing
 
