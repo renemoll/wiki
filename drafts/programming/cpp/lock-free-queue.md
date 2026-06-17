@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T20:36:53.706Z
+date: 2026-06-17T20:48:26.064Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -109,9 +109,9 @@ The queue can be used to store the following data types:
 
 The queue will manage the lifetime of any enqueued object for as long as the object is stored in the queue. Once popped, the consumer is responsible for the  lifetime and memeory management.
 
-### Memory model
+### Memory model & alignment
 
-Given that Cortex-M is the main taget, data needs to be properly aligned to avoid unaligned exceptions. This means the internal buffer must be properly aligned for the stored type.
+Given that Cortex-M is the main taget, data needs to be properly aligned to avoid unaligned exceptions. This means the internal data buffer must be properly aligned for the stored type.
 
 Next to that, internal pointers/counters are requried to be atomic, thus limited to 32-bits.
 
@@ -121,10 +121,11 @@ For microcontrollers and PCs with data caches, we want to align the pointers/cou
 
 * Targetting ARM Cortex-M4/7/33 and generic PC;
 * Used to transfer data from/to interrupt context;
-* Low latency and wait free: non-blocking API and no system/OS calls;
+* Low latency and wait free: non-blocking API;
 * Fixed capacity: defined at compile-time;
-* Backpressure policy: drop new data and a return error signal;
-* Element lifetime: managed by the queue only while stored;
+* Backpressure policy: drop new data when full and a return error signal when empty;
+* Element lifetime: managed by the queue while stored;
+* Memory model & alignment: proper datatype alignment and optional cache alignment;
 * Tracks error statistics: elements dropped, pop while empty;
 * Portability: feature-based conditional compilation. 
 
@@ -174,6 +175,12 @@ Head/tail counters
 Mask, modulo
 
 ### Memory ordering
+
+* atomics
+* bariers (DMB vs atomic?)
+* cache line
+
+
 
 # Scratchpad
 
