@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T12:05:22.495Z
+date: 2026-06-17T12:33:07.592Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -10,18 +10,20 @@ dateCreated: 2025-08-28T19:25:03.156Z
 
 # Single producer single consumer queue
 
-This document goes through the design of a single producer, single consumer (SPSC) queue. My main use-case will be to transfer data from an interrupt to either the main loop or another interrupt/context/thread. 
+For my embedded applications, I need to transfer data from interupts to another context/thread quickly. A good solution for this is to use a single producer single consumer (SPSC) queue.
+
+Now, there are already quite a few implementation available, yet I wanted to go through the design and constraint choises and understand their implact. This document documents my journey. 
 
 First, we go through my needs which form the requirements for the queue. Next, I walk you through various design options and which choises I made. 
 
 > TODO: finally
 > TODO: non-blocking, wait free
 
-## Design considerations
+## Requirements
 
 ### Target machine
 
-I target 32-bit microcontrollers, gennerally single core but with several interrupts.
+I primairily aim for 32-bit microcontrollers, while usability on general computers is nice to have.
 
 ### Capacity: bounding or unbounded
 
