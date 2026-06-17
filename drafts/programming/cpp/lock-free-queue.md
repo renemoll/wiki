@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T14:47:30.005Z
+date: 2026-06-17T14:53:47.815Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -32,7 +32,7 @@ My goal is to use the same code on all these targets, only using conditional com
 As mentioned in the introduction, I want to use this queue to transfer data from interupt context to main context or vice versa. 
 
 This implies the following:
-* All operations must be bounded to a fixed number of instructions and execution time. This means operations  may not block, spin, or otherwise perform work which can take unconstrained time.
+* All operations must be bounded to a fixed number of instructions and execution time. This means operations  may not block, spin, retry, or otherwise perform work which can take unconstrained time.
 * Interrupts will always be enabled, otherwise data can be lost, which also means any operation itself can be interrupted.
 
 This means the implementation has to be wait-free, each operating must perform its task within a fixed amount of time.
@@ -45,20 +45,22 @@ There will not be any DMA support.
 
 ### Testing
 
-Initial unit-testing will be done on a PC, together with benchmarking to compare different implementations.
+Initial unit-testing will be done on a PC, together with several benchmarks to compare different implementations.
+
 Once integrated into an embedded application, the queue will be tested as part of integration tests. There are currently no plans to perform unit-testing on target.
 
 ### Capacity: bounding or unbounded
 
-The first decision is if the queue size is fixed (bounded) or dynamic (unbounded), as this impacts run-time behaviour and the kind of memory used.
+The queue size can either be bounded (fixed) or unbounded (dynamic), this impacts run-time behaviour and the kind of memory used.
 
-With a fixed capacity, the queue size is predetermined and stable during runtime, also no (re)-allocations. With a dynamic capacity, the queue can grow/shrink depending on the needs at run-time at the cost of variable latency at possible blocking system calls.
+With a fixed capacity, the queue size is predetermined and stable during runtime, also no (re)-allocations. With a dynamic capacity, the queue can grow/shrink depending on run-time usage.
 
-Regarding the memory, fixed capacity queues can either place their on the stack or on the heap. In case of a dynamic capacity, the data has be placed on the heap.
+Regarding the kind of memory, fixed capacity queues can place their data either on the stack or on the heap. In case of a dynamic capacity, the data has be placed on the heap.
 
-Since I am focussing on embedded systems, dynamic allocation during run-time is not done. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Whether the data is placed on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
+Since I am focussing on embedded systems, dynamic allocation during run-time is not an option. And if allowed, limited to an initialisation phase. This implies a fixed size queue. Whether the data is placed on the heap or stack is a choise, in this case I prefer the stack as this makes memory requirements explicit.
 
 ### Capacity: power of 2
+
 
 Allow for quick indexing, does limit tuning of queue size.
 Optional configuration? -> impact on testing?
