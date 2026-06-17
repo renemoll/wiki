@@ -2,7 +2,7 @@
 title: Lock free queue
 description: 
 published: true
-date: 2026-06-17T11:36:00.507Z
+date: 2026-06-17T11:39:17.410Z
 tags: 
 editor: markdown
 dateCreated: 2025-08-28T19:25:03.156Z
@@ -58,13 +58,12 @@ Simalairly, `pop` will return an error signal when there is no data to return.
 
 ### Element lifetime / memory management
 
-TODO:
-* simple POD / trivially copy
-  Can use basic array of T
-* Objects which need to be created in-place, non-trivial, move only
-  `AlignedStorage`
+The queue can be used to store the following data types:
+* Primitive data types, such as bytes, integers, etc;
+* Simple POD structures;
+* Objects which can either be copied or moved.
 
-
+The queue will manage the lifetime of the enqueued object for as long as the object is stored in the queue. Once popped, the reader is responsible the  lifetime and memeory management.
 
 ### Requirements
 
@@ -108,7 +107,17 @@ Elements
 * array of type T -> good for trivial/POD
 * aligned storage + placement new -> for non-trivial types
 
+TODO:
+* simple POD / trivially copy
+  Can use basic array of T
+* Objects which need to be created in-place, non-trivial, move only
+  `AlignedStorage`
+
+
+
 # Scratchpad
+
+
 
 ```bash
 sudo cpupower frequency-set --governor performance
